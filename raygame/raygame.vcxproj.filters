@@ -99,6 +99,9 @@
       <Filter>Source Files\Actors</Filter>
     </ClCompile>
     <ClCompile Include="MainScene.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="BatActor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -155,6 +158,9 @@
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
     <ClInclude Include="MainScene.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="BatActor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

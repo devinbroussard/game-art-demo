@@ -2,12 +2,15 @@
 #include "Actor.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "BatActor.h"
 #include "Scene.h"
 #include "Transform2D.h"
 
 void MainScene::start()
 {
 	Player* player = new Player(200, 200, "player", 100, 10);
+	BatActor* bat = new BatActor(player);
+
 	Enemy* enemy = new Enemy(10, 100, "enemy", 60, 10, player);
 	player->getTransform()->setScale({ 50, 50 });
 	enemy->getTransform()->setScale({ 50, 50 });
