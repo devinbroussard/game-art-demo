@@ -10,6 +10,7 @@ public:
 	InputComponent(Actor* owner);
 
 	MathLibrary::Vector2 getMoveAxis();
+	void getAttackInput();
 	void update(float deltaTime) override;
 
 private:
