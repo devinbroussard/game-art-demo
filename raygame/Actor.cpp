@@ -42,7 +42,7 @@ Component* Actor::addComponent(Component* component)
     Component** tempArray = new Component* [m_componentCount + 1];
     
     int j = 0;
-    for (int i = 0; i < m_componentCount; i++)
+     for (int i = 0; i < m_componentCount; i++)
     {
         tempArray[i] = m_components[i];
         j++;
