@@ -9,8 +9,10 @@ public:
 	~Enemy() {}
 
 	void start() override;
+	void update(float deltaTime);
 
 private:
 	Actor* m_targetActor;
+	MoveComponent* m_movementComponet;
 };
 

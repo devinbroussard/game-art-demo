@@ -4,7 +4,7 @@ class FollowComponent :
 	public Component
 {
 public:
-	FollowComponent(Actor* owner, const char* name, Actor* targetActor);
+	FollowComponent(const char* name, Actor* targetActor);
 
 	void update(float deltaTime) override;
 
