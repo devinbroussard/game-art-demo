@@ -101,8 +101,11 @@
     <ClCompile Include="MainScene.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="BatActor.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="MeleeWeaponActor.cpp">
+      <Filter>Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="MeleeSwingComponent.cpp">
+      <Filter>Source Files\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -160,8 +163,11 @@
     <ClInclude Include="MainScene.h">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="BatActor.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="MeleeWeaponActor.h">
+      <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="MeleeSwingComponent.h">
+      <Filter>Header Files\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
