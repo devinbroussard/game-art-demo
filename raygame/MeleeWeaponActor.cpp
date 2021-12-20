@@ -7,6 +7,7 @@ MeleeWeaponActor::MeleeWeaponActor(Actor* owner)
 {
 	m_owner = owner;
 	getTransform()->setScale({ 70, 70 });
+	m_doSwing = false;
 }
 
 void MeleeWeaponActor::start()

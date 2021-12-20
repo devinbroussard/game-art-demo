@@ -12,6 +12,7 @@ public:
 
 private:
 	Actor* m_owner;
+	bool m_doSwing;
 	
 };
 
