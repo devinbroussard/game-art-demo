@@ -1,6 +1,7 @@
 #include "MeleeSwingComponent.h"
 #include "MeleeWeaponActor.h"
 #include "Transform2D.h"
+#include "Player.h"
 
 MeleeSwingComponent::MeleeSwingComponent()
 {

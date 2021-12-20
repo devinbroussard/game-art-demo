@@ -11,6 +11,7 @@ public:
 	void update(float deltaTime) override;
 
 private:
+	MeleeWeaponActor* m_owner;
 	float m_swingTimer;
 	float m_swingDuration;
 };

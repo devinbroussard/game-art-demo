@@ -7,11 +7,13 @@ public:
 	MeleeWeaponActor(Actor* owner);
 	~MeleeWeaponActor() {}
 
+	Actor* getOwner() { return m_owner; }
+
 	void start() override;
 	void update(float deltaTime) override;
 
 private:
-	Actor* m_owner;
+	Player* m_owner;
 	bool m_doSwing;
 	
 };
