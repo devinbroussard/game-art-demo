@@ -1,13 +1,20 @@
 #include "MeleeWeaponActor.h"
 #include "SpriteComponent.h"
 #include "Actor.h"
+#include "Player.h"
 #include "Transform2D.h"
+#include "InputComponent.h"
 
-MeleeWeaponActor::MeleeWeaponActor(Actor* owner)
+MeleeWeaponActor::MeleeWeaponActor(Player* owner)
 {
 	m_owner = owner;
 	getTransform()->setScale({ 70, 70 });
 	m_doSwing = false;
+}
+
+bool MeleeWeaponActor::getSwingInput()
+{
+	return m_owner->getInputComponent()->getAttackInput();
 }
 
 void MeleeWeaponActor::start()

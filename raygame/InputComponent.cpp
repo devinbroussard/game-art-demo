@@ -25,6 +25,11 @@ MathLibrary::Vector2 InputComponent::getForwardAxis()
 	return MathLibrary::Vector2(xDirection, yDirection).getNormalized();
 }
 
+bool InputComponent::getAttackInput()
+{
+	return IsKeyDown(m_meleeSwing);
+}
+
 
 void InputComponent::update(float deltaTime)
 {

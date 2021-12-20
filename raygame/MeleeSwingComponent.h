@@ -1,18 +1,22 @@
 #pragma once
 #include "Component.h"
+class MeleeWeaponActor;
+
 class MeleeSwingComponent :
 	public Component
 {
 public:
-	MeleeSwingComponent();
+	MeleeSwingComponent(float swingDuration, float swingCooldown);
 	~MeleeSwingComponent();
+
+	MeleeWeaponActor* getMeleeWeapon() { return dynamic_cast<MeleeWeaponActor*>(getOwner()); }
 
 	void start() override;
 	void update(float deltaTime) override;
 
 private:
-	MeleeWeaponActor* m_owner;
 	float m_swingTimer;
 	float m_swingDuration;
+	float m_swingCooldown;
 };
 

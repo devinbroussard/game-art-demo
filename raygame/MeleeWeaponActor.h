@@ -1,20 +1,22 @@
 #pragma once
 #include "Actor.h"
+class Player;
+
 class MeleeWeaponActor :
 	public Actor
 {
 public:
-	MeleeWeaponActor(Actor* owner);
+	MeleeWeaponActor(Player* owner);
 	~MeleeWeaponActor() {}
 
-	Actor* getOwner() { return m_owner; }
+	bool getSwingInput();
 
 	void start() override;
 	void update(float deltaTime) override;
 
 private:
-	Player* m_owner;
 	bool m_doSwing;
+	Player* m_owner;
 	
 };
 

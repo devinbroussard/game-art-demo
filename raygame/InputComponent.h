@@ -11,7 +11,7 @@ public:
 
 	MathLibrary::Vector2 getMoveAxis();
 	MathLibrary::Vector2 getForwardAxis();
-	bool getAttackInput() { return IsKeyDown(m_meleeSwing); }
+	bool getAttackInput();
 	void update(float deltaTime) override;
 
 private:
