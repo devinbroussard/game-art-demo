@@ -5,6 +5,7 @@
 #include "MeleeWeaponActor.h"
 #include "Scene.h"
 #include "Transform2D.h"
+#include <raylib.h>
 
 void MainScene::start()
 {
@@ -18,4 +19,10 @@ void MainScene::start()
 	addActor(player);
 	addActor(enemy);
 	addActor(bat);
+}
+
+void MainScene::draw()
+{
+	RAYLIB_H::DrawTextureEx(RAYLIB_H::LoadTexture("Sprites/Map.aseprite"), { 0, 0 }, 0, 1, WHITE);
+	Scene::draw();
 }

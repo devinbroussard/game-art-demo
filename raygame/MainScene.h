@@ -4,5 +4,6 @@ class MainScene :
 	public Scene
 {
 	void start() override;
+	void draw() override;
 };
 
