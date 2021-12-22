@@ -9,12 +9,14 @@ public:
 	MeleeSwingComponent(float swingDuration, float swingCooldown);
 	~MeleeSwingComponent();
 
-	MeleeWeaponActor* getMeleeWeapon() { return dynamic_cast<MeleeWeaponActor*>(getOwner()); }
+	MeleeWeaponActor* getMeleeWeapon() { return (MeleeWeaponActor*)getOwner(); }
 
 	void start() override;
 	void update(float deltaTime) override;
+	void swingWeapon();
 
 private:
+	bool m_swingWeapon;
 	float m_swingTimer;
 	float m_swingDuration;
 	float m_swingCooldown;

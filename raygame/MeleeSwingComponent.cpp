@@ -1,7 +1,6 @@
 #include "MeleeSwingComponent.h"
 #include "MeleeWeaponActor.h"
 #include "Transform2D.h"
-#include "Player.h"
 
 MeleeSwingComponent::MeleeSwingComponent(float swingDuration, float swingCooldown)
 {
@@ -20,5 +19,23 @@ void MeleeSwingComponent::start()
 
 void MeleeSwingComponent::update(float deltaTime)
 {
-	if (getMeleeWeapon()->getSwingInput());
+	m_swingTimer += deltaTime;
+
+	if (getMeleeWeapon()->getSwingInput() && m_swingTimer > m_swingCooldown)
+		m_swingWeapon = true;
+
+	if (m_swingWeapon)
+		swingWeapon();
+
+}
+
+void MeleeSwingComponent::swingWeapon()
+{
+	//if (m_swingTimer > m_swingDuration)
+	//{
+ //		m_swingWeapon = false;
+	//	return;
+	//}
+
+	getMeleeWeapon()->getTransform()->rotate(1);
 }

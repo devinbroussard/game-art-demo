@@ -12,6 +12,7 @@ public:
 	MathLibrary::Vector2 getMoveAxis();
 	MathLibrary::Vector2 getForwardAxis();
 	bool getAttackInput();
+
 	void update(float deltaTime) override;
 
 private:

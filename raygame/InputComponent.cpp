@@ -30,7 +30,6 @@ bool InputComponent::getAttackInput()
 	return IsKeyDown(m_meleeSwing);
 }
 
-
 void InputComponent::update(float deltaTime)
 {
 	MathLibrary::Vector2 forwardAxis = getForwardAxis();
