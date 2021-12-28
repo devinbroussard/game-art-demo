@@ -22,13 +22,13 @@ void MeleeWeaponActor::start()
 {
 	m_owner->getTransform()->addChild(getTransform());
 
-	MeleeSwingComponent* meleeSwingComponent = new MeleeSwingComponent(5, 5);
+	MeleeSwingComponent* meleeSwingComponent = new MeleeSwingComponent(0.7, 0.3);
 	addComponent(meleeSwingComponent);
 	SpriteComponent* spriteComponent = new SpriteComponent("Sprites/bat.png");
 	addComponent(spriteComponent);
+	getTransform()->setRotation(PI);
 
 	Actor::start();
-	getTransform()->setRotation(PI);
 }
 
 void MeleeWeaponActor::update(float deltaTime)
