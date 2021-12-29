@@ -7,12 +7,9 @@ class MainScene :
 {
 public:
 	void start() override;
-<<<<<<< Updated upstream
-=======
 	void draw() override;
 
 private:
 	Texture2D m_map;
->>>>>>> Stashed changes
 };
 

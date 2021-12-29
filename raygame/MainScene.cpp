@@ -20,13 +20,9 @@ void MainScene::start()
 	addActor(enemy);
 	addActor(bat);
 }
-<<<<<<< Updated upstream
-=======
 
 void MainScene::draw()
 {
 	RAYLIB_H::DrawTextureEx(m_map, { -200, -1350 }, 0, 3, WHITE);
 	Scene::draw();
 }
-
->>>>>>> Stashed changes
