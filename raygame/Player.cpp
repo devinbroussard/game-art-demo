@@ -15,7 +15,7 @@ void Player::start()
 	//Set move speed
 	//Set position clamps
 	SpriteComponent* spriteComponent = dynamic_cast<SpriteComponent*>(addComponent(new SpriteComponent("Sprites/player/idle/idledown1.png")));
-	getTransform()->setScale({ 120, 120 });
+	getTransform()->setScale({ 240, 240 });
 
 	Character::start();
 	m_inputComponent = dynamic_cast<InputComponent*>(addComponent(new InputComponent(this)));
