@@ -154,6 +154,9 @@ void Actor::update(float deltaTime)
 {
     for (int i = 0; i < m_componentCount; i++)
     {
+        if (!m_components[i]->getStarted())
+            m_components[i]->start();
+
         m_components[i]->update(deltaTime);
     }
 }
