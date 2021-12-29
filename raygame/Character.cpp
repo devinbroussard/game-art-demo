@@ -26,7 +26,6 @@ void Character::start()
 {
 	HealthComponent* healthComponent = dynamic_cast<HealthComponent*>(addComponent(new HealthComponent(m_maxHealth, this)));
 	m_moveComponent = dynamic_cast<MoveComponent*>(addComponent(new MoveComponent()));
-	SpriteComponent* spriteComponent = dynamic_cast<SpriteComponent*>(addComponent(new SpriteComponent("Sprites/player.png")));
 
 	Actor::start();
 }
