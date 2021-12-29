@@ -27,7 +27,7 @@ void MeleeSwingComponent::update(float deltaTime)
 	{
 		m_swingTimer = 0;
 		m_swingWeapon = false;
-		getMeleeWeapon()->getTransform()->setRotation(3.14);
+		getMeleeWeapon()->getTransform()->setRotation(2 * 3.14);
 	}
 
 	if (m_swingWeapon)
