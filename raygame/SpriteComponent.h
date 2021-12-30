@@ -12,10 +12,13 @@ public:
 	SpriteComponent(Texture2D* texture, const  char* name = "SpriteComponent");
 	~SpriteComponent() override;
 
+	Texture2D* getTexture() { return m_texture; }
+
 	int getWidth() { return m_width; }
 	int getHeight() { return m_height; }
 
-	void draw() override;
+	virtual void update(float deltaTime) override {}
+	virtual void draw() override;
 
 private:
 	Texture2D* m_texture;

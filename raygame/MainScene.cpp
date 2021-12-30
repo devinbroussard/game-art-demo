@@ -8,6 +8,7 @@
 
 void MainScene::start()
 {
+	m_map = RAYLIB_H::LoadTexture("Sprites/Map.png");
 	Player* player = new Player(200, 200, "player", 100, 10);
 	MeleeWeaponActor* bat = new MeleeWeaponActor(player);
 
@@ -18,4 +19,10 @@ void MainScene::start()
 	addActor(player);
 	addActor(enemy);
 	addActor(bat);
+}
+
+void MainScene::draw()
+{
+	RAYLIB_H::DrawTextureEx(m_map, { -200, -1350 }, 0, 3, WHITE);
+	Scene::draw();
 }
