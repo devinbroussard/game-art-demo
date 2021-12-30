@@ -29,11 +29,11 @@ void SpriteComponent::draw()
 
 {
 	//Scale
-	m_width = getOwner()->getTransform()->getScale().x;
-	m_height = getOwner()->getTransform()->getScale().y;
+	int xScale = getOwner()->getTransform()->getScale().x;
+	int yScale = getOwner()->getTransform()->getScale().y;
 
-	m_texture->width = m_width;
-	m_texture->height = m_height;
+	m_texture->width = m_width * xScale;
+	m_texture->height = m_height * yScale;
 
 	//Position
 	MathLibrary::Vector2 up = { getOwner()->getTransform()->getGlobalMatrix()->m01, getOwner()->getTransform()->getGlobalMatrix()->m11 };

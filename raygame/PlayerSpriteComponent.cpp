@@ -21,6 +21,9 @@ void PlayerSpriteComponent::update(float deltaTime)
 	getTexture()->width = getWidth() * getOwner()->getTransform()->getScale().x;
 	getTexture()->height = getHeight() * getOwner()->getTransform()->getScale().y;
 
+	m_frameRec.width = getTexture()->width / 6;
+	m_frameRec.height = getTexture()->height / 5;
+
 	m_framesCounter++;
 	if (m_framesCounter >= (60 / m_framesSpeed))
 	{
@@ -29,8 +32,8 @@ void PlayerSpriteComponent::update(float deltaTime)
 
 		if (m_currentFrame > 5) m_currentFrame = 0;
 
-		m_frameRec.x = (float)m_currentFrame * (float)getTexture()->width / 6;
-		//m_frameRec.y = (float)m_currentFrame * (float)getTexture()->height / 5;
+		m_frameRec.x = m_currentFrame * getTexture()->width / 6;
+		m_frameRec.y = getTexture()->height / 5;
 	}
 }
 
