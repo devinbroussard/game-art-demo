@@ -11,9 +11,10 @@ PlayerSpriteComponent::PlayerSpriteComponent(const char* name) :
 	m_rightTexture = new Texture2D(LoadTexture("Sprites/sprites/characters/player.png"));
 	m_leftTexture = new Texture2D(LoadTexture("Sprites/sprites/characters/playerleft.png"));
 
-	m_framesSpeed = 10;
+	m_framesSpeed = 12;
 	m_framesCounter = 0;
 	m_currentXFrame = 0;
+	m_currentYFrame = 0;
 }
 
 PlayerSpriteComponent::~PlayerSpriteComponent()
