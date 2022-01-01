@@ -13,6 +13,7 @@ public:
 	~SpriteComponent() override;
 
 	Texture2D* getTexture() { return m_texture; }
+	void setTexture(Texture2D* texture) { m_texture = texture; }
 
 	int getWidth() { return m_width; }
 	int getHeight() { return m_height; }

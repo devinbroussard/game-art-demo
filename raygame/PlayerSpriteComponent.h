@@ -2,6 +2,7 @@
 #include "SpriteComponent.h"
 #include <raylib.h>
 class Player;
+class Texture2D;
 
 class PlayerSpriteComponent :
     public SpriteComponent
@@ -19,6 +20,9 @@ public:
 
 
 private:
+    Texture2D* m_rightTexture;
+    Texture2D* m_leftTexture;
+
     int m_framesCounter;
     int m_framesSpeed;
     int m_currentXFrame;

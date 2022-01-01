@@ -16,7 +16,7 @@ void Player::start()
 	//Set position clamps
 	PlayerSpriteComponent* playerSpriteComponent = new PlayerSpriteComponent();
 	addComponent(playerSpriteComponent);
-	getTransform()->setScale({2, 2});
+	getTransform()->setScale({2.5, 2.5});
 
 	Character::start();
 	m_inputComponent = dynamic_cast<InputComponent*>(addComponent(new InputComponent(this)));

@@ -8,7 +8,10 @@
 PlayerSpriteComponent::PlayerSpriteComponent(const char* name) :
 	SpriteComponent("Sprites/sprites/characters/player.png", name)
 {
-	m_framesSpeed = 8;
+	m_rightTexture = new Texture2D(LoadTexture("Sprites/sprites/characters/player.png"));
+	m_leftTexture = new Texture2D(LoadTexture("Sprites/sprites/characters/playerleft.png"));
+
+	m_framesSpeed = 10;
 	m_framesCounter = 0;
 	m_currentXFrame = 0;
 }
@@ -21,6 +24,7 @@ PlayerSpriteComponent::~PlayerSpriteComponent()
 
 void PlayerSpriteComponent::update(float deltaTime)
 {
+	getCurrentFrames();
 	updateFrames();
 }
 
@@ -33,7 +37,20 @@ void PlayerSpriteComponent::draw()
 
 void PlayerSpriteComponent::getCurrentFrames()
 {
-	getPlayerOwner()->getInputComponent()->getMoveAxis();
+	//Getting whether or not the player is moving left or right
+	if (0 < getPlayerOwner()->getInputComponent()->getMoveAxis().x)
+		setTexture(m_rightTexture);
+	if (getPlayerOwner()->getInputComponent()->getMoveAxis().x < 0)
+		setTexture(m_leftTexture);
+
+	//Getting whether or not the player is standing still
+	if (getPlayerOwner()->getInputComponent()->getMoveAxis().getMagnitude() > 0)
+		m_currentYFrame = 1;
+	else m_currentYFrame = 0;
+
+	//Getting whether or not the player is attacking
+	if (getPlayerOwner()->getInputComponent()->getAttackInput())
+		m_currentYFrame = 2;
 }
 
 void PlayerSpriteComponent::updateFrames()

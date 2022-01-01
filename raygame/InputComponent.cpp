@@ -18,7 +18,7 @@ MathLibrary::Vector2 InputComponent::getMoveAxis()
 
 bool InputComponent::getAttackInput()
 {
-	return IsKeyDown(m_meleeSwing);
+	return m_isAttacking;
 }
 
 void InputComponent::update(float deltaTime)
@@ -27,4 +27,7 @@ void InputComponent::update(float deltaTime)
 
 	if (forwardAxis.getMagnitude() > 0)
 		getOwner()->getTransform()->setForward(forwardAxis);
+
+	if (IsKeyPressed(m_meleeSwing))
+		m_isAttacking = true;
 }
