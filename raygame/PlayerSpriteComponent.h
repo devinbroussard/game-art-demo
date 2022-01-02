@@ -22,6 +22,7 @@ public:
 private:
     Texture2D* m_rightTexture;
     Texture2D* m_leftTexture;
+    bool m_textureIsLeft;
 
     int m_framesCounter;
     int m_framesSpeed;
