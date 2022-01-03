@@ -16,7 +16,7 @@ public:
     void update(float deltaTime) override;
     void draw() override;
     void getCurrentFrames();
-    void updateFrames();
+    void updateFrames(float deltaTime);
 
 
 private:
@@ -24,8 +24,8 @@ private:
     Texture2D* m_leftTexture;
     bool m_textureIsLeft;
 
-    int m_framesCounter;
-    int m_framesSpeed;
+    int m_timeTracker;
+    int m_frameDuration;
     int m_currentXFrame;
     int m_currentYFrame;
     Rectangle m_frameRec = { 0, 0, (float)getWidth() / 6, (float)getHeight() / 5 };
