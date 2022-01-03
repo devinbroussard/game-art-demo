@@ -24,8 +24,9 @@ private:
     Texture2D* m_leftTexture;
     bool m_textureIsLeft;
 
-    int m_timeTracker;
-    int m_frameDuration;
+    float m_timeTracker;
+    float m_frameDuration;
+    float m_fps;
     int m_currentXFrame;
     int m_currentYFrame;
     Rectangle m_frameRec = { 0, 0, (float)getWidth() / 6, (float)getHeight() / 5 };

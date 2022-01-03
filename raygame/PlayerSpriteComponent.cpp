@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "InputComponent.h"
 #include <Vector2.h>
+#include <iostream>
 
 PlayerSpriteComponent::PlayerSpriteComponent(const char* name) :
 	SpriteComponent("Sprites/sprites/characters/player.png", name)
@@ -11,7 +12,7 @@ PlayerSpriteComponent::PlayerSpriteComponent(const char* name) :
 	m_rightTexture = new Texture2D(LoadTexture("Sprites/sprites/characters/player.png"));
 	m_leftTexture = new Texture2D(LoadTexture("Sprites/sprites/characters/playerleft.png"));
 
-	m_frameDuration = 12;
+	m_fps = 8;
 	m_timeTracker = 0;
 	m_currentXFrame = 0;
 	m_currentYFrame = 0;
@@ -69,8 +70,10 @@ void PlayerSpriteComponent::updateFrames(float deltaTime)
 	m_frameRec.width = getTexture()->width / 6;
 	m_frameRec.height = getTexture()->height / 5;
 
-	m_timeTracker =+ deltaTime;
-	if (m_timeTracker >= (60 / m_frameDuration) && !m_textureIsLeft)
+	std::cout << (1/m_fps) << std::endl;
+	m_timeTracker += deltaTime;
+
+	if (m_timeTracker >= (1/m_fps) && !m_textureIsLeft)
 	{
 		m_timeTracker = 0;
 		m_currentXFrame++;
@@ -84,7 +87,7 @@ void PlayerSpriteComponent::updateFrames(float deltaTime)
 			//If the current x frame reaches the end of the tile image, set it back to 0
 			if (m_currentXFrame > 3) m_currentXFrame = 0;
 	}
-	else if (m_timeTracker >= (60 / m_frameDuration) && m_textureIsLeft)
+	else if (m_timeTracker >= (1/m_fps) && m_textureIsLeft)
 	{
 		m_timeTracker = 0;
 		m_currentXFrame--;
