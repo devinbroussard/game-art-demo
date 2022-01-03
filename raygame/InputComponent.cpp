@@ -6,6 +6,7 @@ InputComponent::InputComponent(Actor* owner) :
 	Component::Component("Input Component")
 {}
 
+//get Move Axis allow for movement on the x and y axis with the wasd keys.
 MathLibrary::Vector2 InputComponent::getMoveAxis()
 {
 	if (!m_isAttacking)
@@ -35,3 +36,5 @@ void InputComponent::update(float deltaTime)
 	if (forwardAxis.getMagnitude() > 0)
 		getOwner()->getTransform()->setForward(forwardAxis);
 }
+
+

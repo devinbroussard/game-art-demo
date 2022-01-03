@@ -11,8 +11,8 @@ public:
 
 	MathLibrary::Vector2 getMoveAxis();
 	bool getAttackInput();
-
 	void update(float deltaTime) override;
+	MathLibrary::Vector2 getForwardAxis();
 
 private:
 	bool m_isAttacking;

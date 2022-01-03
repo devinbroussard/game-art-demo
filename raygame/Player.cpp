@@ -20,7 +20,6 @@ void Player::start()
 
 	Character::start();
 	m_inputComponent = dynamic_cast<InputComponent*>(addComponent(new InputComponent(this)));
-	
 }
 
 void Player::update(float deltaTime)
