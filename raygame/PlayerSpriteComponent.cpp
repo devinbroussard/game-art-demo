@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "InputComponent.h"
 #include <Vector2.h>
+#include <iostream>
 
 PlayerSpriteComponent::PlayerSpriteComponent(const char* name) :
 	SpriteComponent("Sprites/sprites/characters/player.png", name)
@@ -11,8 +12,8 @@ PlayerSpriteComponent::PlayerSpriteComponent(const char* name) :
 	m_rightTexture = new Texture2D(LoadTexture("Sprites/sprites/characters/player.png"));
 	m_leftTexture = new Texture2D(LoadTexture("Sprites/sprites/characters/playerleft.png"));
 
-	m_framesSpeed = 12;
-	m_framesCounter = 0;
+	m_fps = 8;
+	m_timeTracker = 0;
 	m_currentXFrame = 0;
 	m_currentYFrame = 0;
 }
@@ -26,7 +27,7 @@ PlayerSpriteComponent::~PlayerSpriteComponent()
 void PlayerSpriteComponent::update(float deltaTime)
 {
 	getCurrentFrames();
-	updateFrames();
+	updateFrames(deltaTime);
 }
 
 void PlayerSpriteComponent::draw()
@@ -61,7 +62,7 @@ void PlayerSpriteComponent::getCurrentFrames()
 
 }
 
-void PlayerSpriteComponent::updateFrames()
+void PlayerSpriteComponent::updateFrames(float deltaTime)
 {
 	getTexture()->width = getWidth() * getOwner()->getTransform()->getScale().x;
 	getTexture()->height = getHeight() * getOwner()->getTransform()->getScale().y;
@@ -69,10 +70,12 @@ void PlayerSpriteComponent::updateFrames()
 	m_frameRec.width = getTexture()->width / 6;
 	m_frameRec.height = getTexture()->height / 5;
 
-	m_framesCounter++;
-	if (m_framesCounter >= (60 / m_framesSpeed) && !m_textureIsLeft)
+	std::cout << (1/m_fps) << std::endl;
+	m_timeTracker += deltaTime;
+
+	if (m_timeTracker >= (1/m_fps) && !m_textureIsLeft)
 	{
-		m_framesCounter = 0;
+		m_timeTracker = 0;
 		m_currentXFrame++;
 
 		if (m_currentYFrame > 2)
@@ -84,9 +87,9 @@ void PlayerSpriteComponent::updateFrames()
 			//If the current x frame reaches the end of the tile image, set it back to 0
 			if (m_currentXFrame > 3) m_currentXFrame = 0;
 	}
-	else if (m_framesCounter >= (60 / m_framesSpeed) && m_textureIsLeft)
+	else if (m_timeTracker >= (1/m_fps) && m_textureIsLeft)
 	{
-		m_framesCounter = 0;
+		m_timeTracker = 0;
 		m_currentXFrame--;
 
 		if (m_currentYFrame > 2)
