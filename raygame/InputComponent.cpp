@@ -6,6 +6,7 @@ InputComponent::InputComponent(Actor* owner) :
 	Component::Component("Input Component")
 {}
 
+//get Move Axis allow for movement on the x and y axis with the wasd keys.
 MathLibrary::Vector2 InputComponent::getMoveAxis()
 {
 	//Get the direction of the individual axis
@@ -16,6 +17,7 @@ MathLibrary::Vector2 InputComponent::getMoveAxis()
 	return MathLibrary::Vector2(xDirection, yDirection).getNormalized();
 }
 
+//get Forward Axis allow for the rotation of the player on the xy and the yx axis
 MathLibrary::Vector2 InputComponent::getForwardAxis()
 {
 	//Get the direction of the individual axis
@@ -27,13 +29,17 @@ MathLibrary::Vector2 InputComponent::getForwardAxis()
 
 bool InputComponent::getAttackInput()
 {
-	return IsKeyDown(m_meleeSwing);
+	bool attackKey = RAYLIB_H::IsKeyDown(m_attackKey);
+
+	return attackKey;
 }
 
 void InputComponent::update(float deltaTime)
 {
 	MathLibrary::Vector2 forwardAxis = getForwardAxis();
 
-	if (forwardAxis.getMagnitude() > 0)
+	if (forwardAxis.getMagnitude() > 0 )
 		getOwner()->getTransform()->setForward(forwardAxis);
 }
+
+

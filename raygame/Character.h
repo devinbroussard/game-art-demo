@@ -2,6 +2,7 @@
 #include "Actor.h"
 #include <Vector2.h>
 class MoveComponent;
+class FollowComponet;
 
 class Character :
 	public Actor
@@ -15,6 +16,7 @@ public:
 	void setSpeed(float speed) { m_speed = speed; }
 
 	MoveComponent* getMoveComponent() { return m_moveComponent; }
+	FollowComponet* getFollowComponet() { return m_followComponet; }
 
 
 	void start();
@@ -24,6 +26,8 @@ public:
 private:
 	MathLibrary::Vector2 m_velocity;
 	MoveComponent* m_moveComponent;
+	FollowComponet* m_followComponet;
+	Actor* m_targetActor;
 
 	float m_speed;
 	int m_maxHealth;

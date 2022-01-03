@@ -2,6 +2,7 @@
 #include "HealthComponent.h"
 #include "MoveComponent.h"
 #include "SpriteComponent.h"
+#include "FollowComponent.h"
 
 Character::Character(float x, float y, const char* name, float speed, int maxHealth) :
 	Actor::Actor(x, y, name)

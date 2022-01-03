@@ -10,10 +10,9 @@ public:
 	InputComponent(Actor* owner);
 
 	MathLibrary::Vector2 getMoveAxis();
-	MathLibrary::Vector2 getForwardAxis();
 	bool getAttackInput();
-
 	void update(float deltaTime) override;
+	MathLibrary::Vector2 getForwardAxis();
 
 private:
 	RAYLIB_H::KeyboardKey m_up = RAYLIB_H::KeyboardKey::KEY_W;
