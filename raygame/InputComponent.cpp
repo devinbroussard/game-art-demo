@@ -39,7 +39,7 @@ void InputComponent::update(float deltaTime)
 {
 	MathLibrary::Vector2 forwardAxis = getForwardAxis();
 
-	if (forwardAxis.getMagnitude() > 0)
+	if (forwardAxis.getMagnitude() > 0 )
 		getOwner()->getTransform()->setForward(forwardAxis);
 }
 

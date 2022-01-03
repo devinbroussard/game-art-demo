@@ -16,6 +16,8 @@ void Enemy::start()
 
 void Enemy::update(float deltaTime)
 {
+	MathLibrary::Vector2 getMoveDiection = (m_targetActor->getTransform()->getWorldPosition());
+	getMoveDiection.getNormalized();
 	Actor::update(deltaTime);
 	
 	//allows for movement
