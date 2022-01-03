@@ -1,7 +1,6 @@
 #include "FollowComponent.h"
 #include "Actor.h"
-#include <Vector2.h>
-#include "Transform2D.h"
+
 
 FollowComponent::FollowComponent(const char* name, Actor* targetActor) :
 	Component::Component(name)
@@ -9,15 +8,13 @@ FollowComponent::FollowComponent(const char* name, Actor* targetActor) :
 	m_targetActor = targetActor;
 }
 
-
+MathLibrary::Vector2 FollowComponent::getMoveAxis()
+{
+	MathLibrary::Vector2 direction = (m_targetActor->getTransform()->getWorldPosition() - getOwner()->getTransform()->getWorldPosition()).getNormalized();
+	return direction;
+}
 
 void FollowComponent::update(float deltaTime)
 {
-	//set targetDiection with the target actor and made the target get its transform and worldposition. Then subtracted the owners worldPosition
-	MathLibrary::Vector2 targetDirection = (m_targetActor->getTransform()->getWorldPosition() - getOwner()->getTransform()->getWorldPosition()).getNormalized();
-	
-
-	getOwner()->getTransform()->setForward(targetDirection) ;
-
-	
+	Component::update(deltaTime);
 }

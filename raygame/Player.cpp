@@ -10,13 +10,8 @@ Player::Player(float x, float y, const char* name, float speed, int maxHealth) :
 
 void Player::start()
 {
-	// Set spawn point
-	//Set move speed
-	//Set position clamps
-	
 	Character::start();
 	m_inputComponent = dynamic_cast<InputComponent*>(addComponent(new InputComponent(this)));
-	
 }
 
 void Player::update(float deltaTime)

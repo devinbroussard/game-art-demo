@@ -27,6 +27,7 @@ private:
 	MathLibrary::Vector2 m_velocity;
 	MoveComponent* m_moveComponent;
 	FollowComponet* m_followComponet;
+	Actor* m_targetActor;
 
 	float m_speed;
 	int m_maxHealth;

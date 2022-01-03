@@ -2,6 +2,7 @@
 #include "HealthComponent.h"
 #include "MoveComponent.h"
 #include "SpriteComponent.h"
+#include "FollowComponent.h"
 
 Character::Character(float x, float y, const char* name, float speed, int maxHealth) :
 	Actor::Actor(x, y, name)
@@ -27,7 +28,7 @@ void Character::start()
 	HealthComponent* healthComponent = dynamic_cast<HealthComponent*>(addComponent(new HealthComponent(m_maxHealth, this)));
 	m_moveComponent = dynamic_cast<MoveComponent*>(addComponent(new MoveComponent()));
 	SpriteComponent* spriteComponent = dynamic_cast<SpriteComponent*>(addComponent(new SpriteComponent("Sprites/player.png")));
-
+	
 	Actor::start();
 }
 
