@@ -18,7 +18,7 @@ public:
 	/// <param name="velocity"></param>
 
 	MathLibrary::Vector2 getMoveAxis();
-
+	
 	void update(float deltaTime) override;
 
 private:
