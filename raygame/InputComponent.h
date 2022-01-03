@@ -25,6 +25,6 @@ private:
 	RAYLIB_H::KeyboardKey m_lookDown = RAYLIB_H::KeyboardKey::KEY_DOWN;
 	RAYLIB_H::KeyboardKey m_lookRight = RAYLIB_H::KeyboardKey::KEY_RIGHT;
 
-	RAYLIB_H::KeyboardKey m_meleeSwing = RAYLIB_H::KeyboardKey::KEY_SPACE;
+	RAYLIB_H::KeyboardKey m_attackKey = RAYLIB_H::KeyboardKey::KEY_SPACE;
 };
 

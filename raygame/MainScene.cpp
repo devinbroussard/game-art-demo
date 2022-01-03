@@ -16,7 +16,6 @@ void MainScene::start()
 
 	addActor(player);
 	addActor(enemy);
-	addActor(bat);
 }
 
 void MainScene::draw()
