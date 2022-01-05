@@ -9,30 +9,39 @@
 EnemySpriteComponent::EnemySpriteComponent(const char* name) :
 	SpriteComponent("Sprites/sprites/characters/player.png", name)
 {
+	//This is the path that the textur is folling to get its png
 	m_rightTexture = new Texture2D(LoadTexture("Sprites/sprites/characters/player.png"));
 	m_leftTexture = new Texture2D(LoadTexture("Sprites/sprites/characters/playerleft.png"));
 
+	//gives it fps and a Frame counter that is x and y
 	m_fps = 8;
 	m_timeTracker = 0;
 	m_currentXFrame = 0;
 	m_currentYFrame = 0;
 }
 
+//Decontructor
 EnemySpriteComponent::~EnemySpriteComponent()
 {
+	//unloads the textures that were set and...
 	UnloadTexture(*getTexture());
+	//deletes them
 	delete getTexture();
 }
 
 void EnemySpriteComponent::update(float deltaTime)
 {
+	//gets the current frames then...
 	getCurrentFrames();
+	//updates those frames by deltaTime
 	updateFrames(deltaTime);
 }
 
 void EnemySpriteComponent::draw()
 {
+	//Gets the world Posistion for the x and the y
 	Vector2 worldPosition = { getOwner()->getTransform()->getWorldPosition().x, getOwner()->getTransform()->getWorldPosition().y };
+	//draws the texture using the world position and the frameRec
 	DrawTextureRec(*getTexture(), m_frameRec, worldPosition, WHITE);
 }
 
@@ -62,9 +71,11 @@ void EnemySpriteComponent::getCurrentFrames()
 
 void EnemySpriteComponent::updateFrames(float deltaTime)
 {
+	//gets the y and x then updates them
 	getTexture()->width = getWidth() * getOwner()->getTransform()->getScale().x;
 	getTexture()->height = getHeight() * getOwner()->getTransform()->getScale().y;
 
+	
 	m_frameRec.width = getTexture()->width / 6;
 	m_frameRec.height = getTexture()->height / 5;
 

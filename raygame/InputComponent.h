@@ -7,16 +7,20 @@ class InputComponent :
 	public Component
 {
 public:
+	//default constructor of input COmponet
 	InputComponent(Actor* owner);
 
+	//gets the move Axis ...( it moves things)
 	MathLibrary::Vector2 getMoveAxis();
+	//gets the attack Input 
 	bool getAttackInput();
+	//called update
 	void update(float deltaTime) override;
-	MathLibrary::Vector2 getForwardAxis();
 
 private:
 	bool m_isAttacking;
 
+	//These are Raylib KEys that are in the program
 	RAYLIB_H::KeyboardKey m_up = RAYLIB_H::KeyboardKey::KEY_W;
 	RAYLIB_H::KeyboardKey m_left = RAYLIB_H::KeyboardKey::KEY_A;
 	RAYLIB_H::KeyboardKey m_down = RAYLIB_H::KeyboardKey::KEY_S;

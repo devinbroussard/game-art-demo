@@ -9,14 +9,21 @@ class EnemySpriteComponent :
 	public SpriteComponent
 {
 public:
+    //default constructor for the enemySpriteComponent
     EnemySpriteComponent(const char* name = "PlayerSpriteComponent");
+    //default deconstructor for the enemySprite
     ~EnemySpriteComponent() override;
 
+    //returns a Enemy pointer that is its owner
+    //Gets the players Owner
     Enemy* getPlayerOwner() { return (Enemy*)getOwner(); }
 
+    //called update
     void update(float deltaTime) override;
     void draw() override;
+    //gets the current frames of the sprite or the current scene
     void getCurrentFrames();
+    //updates the frames of the sprite or the current scnene
     void updateFrames(float deltaTime);
 
 
@@ -30,6 +37,7 @@ private:
     float m_fps;
     int m_currentXFrame;
     int m_currentYFrame;
+    //set a paraminter for the texture
     Rectangle m_frameRec = { 0, 0, (float)getWidth() / 6, (float)getHeight() / 5 };
 };
 

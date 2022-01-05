@@ -1,6 +1,5 @@
 #pragma once
 #include "Character.h"
-#include "InputComponent.h"
 
 class MainScene;
 class FollowComponent;
@@ -10,12 +9,15 @@ class Enemy :
 	public Character
 {
 public:
+	//deflat contructor for the enemy
 	Enemy(float x, float y, const char* name, float speed, int maxHealth, Actor* targetActor);
+	//default decontructor for the enemy
 	~Enemy() {};
 
 	void start() override;
 	void update(float deltaTime);
 
+	//made a int to keep the enemy count and made it static
 	static int m_enemyCount;
 	//InputComponent* getInputComponent() { return m_inputComponent; }
 

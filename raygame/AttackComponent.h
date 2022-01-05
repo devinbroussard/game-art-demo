@@ -5,7 +5,9 @@ class AttackComponent :
 	public Component
 {
 public:
+	//Made a default contructor for the Attack Componet
 	AttackComponent();
+	//called update
 	void update(float deltaTime) override;
 
 private:
