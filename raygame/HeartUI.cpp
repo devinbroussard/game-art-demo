@@ -2,7 +2,7 @@
 #include "SpriteComponent.h"
 #include "HealthDisplay.h"
 #include "Transform2D.h"
-#include "Character.h"+
+#include "Character.h"
 
 HeartUI::HeartUI(float x, float y, Character* owner, HealthDisplay* display)
 	: Actor(x, y, "HeartUI")
@@ -18,4 +18,22 @@ void HeartUI::start()
 	addComponent(spriteComponent);
 
 	Actor::start();
+}
+
+void HeartUI::update(float deltaTime)
+{
+	Actor::update(deltaTime);
+}
+
+void HeartUI::idleFloat()
+{
+}
+
+void HeartUI::killHeart()
+{
+	m_spriteComponent->setTexture("Sprites/sprites/objects/deadheart.png");
+}
+
+void HeartUI::rotateHeart()
+{
 }

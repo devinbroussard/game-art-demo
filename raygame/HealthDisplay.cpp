@@ -15,13 +15,13 @@ HealthDisplay::HealthDisplay(float x, float y, Character* owner) :
 
 void HealthDisplay::start()
 {
-	m_firstHeart = new HeartUI(0, 0, m_owner, this);
-	m_secondHeart = new HeartUI(2, 0, m_owner, this);
-	m_thirdHeart = new HeartUI(0, 0, m_owner, this);
+	m_firstHeart = new HeartUI(-6, 0, m_owner, this);
+	m_secondHeart = new HeartUI(0, 0, m_owner, this);
+	m_thirdHeart = new HeartUI(6, 0, m_owner, this);
 
-	//Engine::getCurrentScene()->addActor(m_firstHeart);
+	Engine::getCurrentScene()->addActor(m_firstHeart);
 	Engine::getCurrentScene()->addActor(m_secondHeart);
-	//Engine::getCurrentScene()->addActor(m_thirdHeart);
+	Engine::getCurrentScene()->addActor(m_thirdHeart);
 
 	Actor::start();
 }

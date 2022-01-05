@@ -10,13 +10,10 @@ void MainScene::start()
 {
 	m_map = RAYLIB_H::LoadTexture("Sprites/Map.png");
 
-	Player* player = new Player(200, 200, "player", 100, 10);
-	//Enemy* enemy = new Enemy(10, 100, "enemy", 60, 10, player);
+	Player* player = new Player(150, 150, "player", 100, 10);
+	Enemy* enemy = new Enemy(10, 100, "enemy", 60, 10, player);
 
-	HealthDisplay* playerHealthDisplay = new HealthDisplay(0, 0, player);
-	
-	player->getTransform()->setScale({ 50, 50 });
-	//enemy->getTransform()->setScale({ 50, 50 });
+	HealthDisplay* playerHealthDisplay = new HealthDisplay(24, 23, player);
 
 	addActor(player);
 	//addActor(enemy);

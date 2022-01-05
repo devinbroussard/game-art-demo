@@ -14,6 +14,7 @@ public:
 
 	Texture2D* getTexture() { return m_texture; }
 	void setTexture(Texture2D* texture) { m_texture = texture; }
+	void setTexture(const char* path) { m_texture = &RAYLIB_H::LoadTexture(path); }
 
 	int getWidth() { return m_width; }
 	int getHeight() { return m_height; }
