@@ -1,6 +1,5 @@
 #pragma once
 #include "Character.h"
-#include "BoxBoundaryComponent.h"
 #include "AABBCollider.h"
 class InputComponent;
 
@@ -18,7 +17,6 @@ public:
 	void  onCollision(Actor* other);
 private:
 	InputComponent* m_inputComponent;
-	BoxBoundaryComponent* m_boxBoundaryComponent;
 	AABBCollider* m_aabbCollider;
 };
 
