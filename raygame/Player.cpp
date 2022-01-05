@@ -4,6 +4,7 @@
 #include "MoveComponent.h"
 #include "PlayerSpriteComponent.h"
 
+
 Player::Player(float x, float y, const char* name, float speed, int maxHealth) :
 	Character::Character(x, y, name, speed, maxHealth)
 {
@@ -17,7 +18,7 @@ void Player::start()
 	PlayerSpriteComponent* playerSpriteComponent = new PlayerSpriteComponent();
 	addComponent(playerSpriteComponent);
 	getTransform()->setScale({2.5, 2.5});
-
+	
 	Character::start();
 	m_inputComponent = dynamic_cast<InputComponent*>(addComponent(new InputComponent(this)));
 }
@@ -26,4 +27,9 @@ void Player::update(float deltaTime)
 {
 	Character::getMoveComponent()->setVelocity(m_inputComponent->getMoveAxis() * Character::getSpeed());
 	Character::update(deltaTime);
+}
+
+void Player::onCollision(Actor* other)
+{
+		
 }

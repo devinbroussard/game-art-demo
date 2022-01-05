@@ -1,5 +1,7 @@
 #pragma once
 #include "Character.h"
+#include "BoxBoundaryComponent.h"
+#include "AABBCollider.h"
 class InputComponent;
 
 class Player :
@@ -13,7 +15,10 @@ public:
 
 	void start() override;
 	void update(float deltaTime) override;
+	void  onCollision(Actor* other);
 private:
 	InputComponent* m_inputComponent;
+	BoxBoundaryComponent* m_boxBoundaryComponent;
+	AABBCollider* m_aabbCollider;
 };
 
