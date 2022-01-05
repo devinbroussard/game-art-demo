@@ -2,6 +2,9 @@
 #include "Scene.h"
 #include <raylib.h>
 
+
+class EnemeySpawner;
+
 class MainScene :
 	public Scene
 {
@@ -11,6 +14,8 @@ public:
 
 private:
 	Texture2D m_map;
+	int m_enemyCounter;
+	EnemeySpawner* m_enemySpawner;
 	
 };
 
