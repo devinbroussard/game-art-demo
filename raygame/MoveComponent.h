@@ -37,5 +37,9 @@ public:
 private:
 	MathLibrary::Vector2 m_velocity;
 	float m_maxSpeed;
+	int m_maxX =620;
+	int m_maxY = 700;
+	int m_minX = -10;
+	int m_minY = -10;
 };
 
