@@ -25,12 +25,16 @@ void Character::setVelocity(float x, float y)
 /// </summary>
 void Character::start()
 {
+	//Initilizes the health componet for every charctor...
 	HealthComponent* healthComponent = new HealthComponent(m_maxHealth, this);
+	//...renames the Movecomponet to the m)moveComponet
 	m_moveComponent = new MoveComponent();
 
+	//adds both of the healthcomponet and the move componet to the charactor
 	addComponent(healthComponent);
 	addComponent(m_moveComponent);
 
+	//calls start
 	Actor::start();
 }
 

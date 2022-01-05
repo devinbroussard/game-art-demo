@@ -6,12 +6,17 @@ class HealthComponent :
 	public Component
 {
 public:
+	//default constructor for the healthComponet
 	HealthComponent(int maxHealth, Actor* owner);
+	//default deconstructor for the healthComponet
 	~HealthComponent();
 
+	//called start
 	void start() override;
+	//called update
 	void update(float deltaTime) override;
 
+	//is called when a collision happens
 	void onCollision(Actor* actor) override;
 
 private:

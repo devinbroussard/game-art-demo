@@ -6,7 +6,9 @@
 SpriteComponent::SpriteComponent(const char* path, const char* name) :
 	Component::Component(name)
 {
+	//sets the texture to the RAYLIB load texture path
 	m_texture = new Texture2D(RAYLIB_H::LoadTexture(path));
+	//sets the height and the width
 	m_height = m_texture->height;
 	m_width = m_texture->width;
 }

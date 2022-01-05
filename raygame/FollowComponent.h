@@ -10,15 +10,13 @@ class FollowComponent :
 	public Component
 {
 public:
+	//default constructor for the followComponet
 	FollowComponent(const char* name, Actor* targetActor);
 
-	/// <summary>
-	/// Set the current speed and direction of this actor
-	/// </summary>
-	/// <param name="velocity"></param>
-
+	//gets the move Axis
 	MathLibrary::Vector2 getMoveAxis();
 	
+	//calls update
 	void update(float deltaTime) override;
 
 private:

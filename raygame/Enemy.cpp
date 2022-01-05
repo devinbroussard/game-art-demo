@@ -14,21 +14,28 @@ Enemy::Enemy(float x, float y, const char* name, float speed, int maxHealth, Act
 
 void Enemy::start()
 {
+	//called start
 	Character::start();
+	//incruments the enemy count
 	m_enemyCount++;
+	//initializes the followComonet and sets the target Actor...
 	m_followComponent = new FollowComponent( "Follow Component", m_targetActor);
+	//...adds the componet to the enemy
 	addComponent(m_followComponent);
 
-	//m_inputComponent = new InputComponent(this);
-	//addComponent(m_inputComponent);
-
+	//Initializes the enemySpriteComponet
 	EnemySpriteComponent* enemySpriteComponent = new EnemySpriteComponent();
+	//adds the enmeySprite to the enemy
 	addComponent(enemySpriteComponent);
+	//sets the scale for the componet (sprite)
 	getTransform()->setScale({ 2.5, 2.5 });
 }
 
 void Enemy::update(float deltaTime)
 {
+	//allows the for the enmey to move my get the move Componet and setting its velocity and putting in the get mvoe Axis then multipling 
+	//... with its speed
 	Character::getMoveComponent()->setVelocity(m_followComponent->getMoveAxis() * Character::getSpeed());
+	//Then update
 	Character::update(deltaTime);
 }
