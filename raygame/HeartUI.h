@@ -12,10 +12,7 @@ public:
 
 	void start() override;
 	void update(float deltaTime) override;
-
-	void idleFloat();
 	void killHeart();
-	void rotateHeart();
 
 private:
 	Character* m_owner;

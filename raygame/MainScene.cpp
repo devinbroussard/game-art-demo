@@ -13,7 +13,7 @@ void MainScene::start()
 	Player* player = new Player(150, 150, "player", 100, 10);
 	Enemy* enemy = new Enemy(10, 100, "enemy", 60, 10, player);
 
-	HealthDisplay* playerHealthDisplay = new HealthDisplay(24, 23, player);
+	HealthDisplay* playerHealthDisplay = new HealthDisplay(24, 22, player);
 
 	addActor(player);
 	//addActor(enemy);

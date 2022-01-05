@@ -13,27 +13,22 @@ HeartUI::HeartUI(float x, float y, Character* owner, HealthDisplay* display)
 
 void HeartUI::start()
 {
-	SpriteComponent* spriteComponent = new SpriteComponent("Sprites/sprites/objects/heart.png");
-
-	addComponent(spriteComponent);
+	m_spriteComponent = new SpriteComponent("Sprites/sprites/objects/heart.png");
+	addComponent(m_spriteComponent);
 
 	Actor::start();
 }
 
 void HeartUI::update(float deltaTime)
 {
-	Actor::update(deltaTime);
-}
+	if (m_owner)
 
-void HeartUI::idleFloat()
-{
+	Actor::update(deltaTime);
 }
 
 void HeartUI::killHeart()
 {
-	m_spriteComponent->setTexture("Sprites/sprites/objects/deadheart.png");
-}
-
-void HeartUI::rotateHeart()
-{
+	m_spriteComponent->getTexture();
+	Texture2D* texture = new Texture2D(LoadTexture("Sprites/sprites/objects/deadheart.png"));                              
+	m_spriteComponent->setTexture(texture);
 }

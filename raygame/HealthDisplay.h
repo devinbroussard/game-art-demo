@@ -11,6 +11,7 @@ public:
 
     void start() override;
     void update(float deltaTime) override;
+    void checkHealth();
 
 private:
     Character* m_owner;

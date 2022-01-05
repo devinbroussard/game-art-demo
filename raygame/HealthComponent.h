@@ -9,9 +9,12 @@ public:
 	HealthComponent(int maxHealth, Actor* owner);
 	~HealthComponent();
 
+	int getHealth() { return m_currentHealth; }
+	float getTimeSinceDamage(){ return m_timeSinceDamage; }
+	float getDamageCooldown() { return m_damageCooldown; }
+
 	void start() override;
 	void update(float deltaTime) override;
-
 	void onCollision(Actor* actor) override;
 
 private:
