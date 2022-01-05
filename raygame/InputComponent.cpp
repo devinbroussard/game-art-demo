@@ -30,11 +30,6 @@ void InputComponent::update(float deltaTime)
 {
 	if (IsKeyPressed(m_meleeSwing))
 		m_isAttacking = true;
-
-	MathLibrary::Vector2 forwardAxis = getMoveAxis();
-
-	if (forwardAxis.getMagnitude() > 0)
-		getOwner()->getTransform()->setForward(forwardAxis);
 }
 
 

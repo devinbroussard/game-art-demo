@@ -1,19 +1,22 @@
 #pragma once
 #include "Actor.h"
 class Character;
-class SpriteComponent;
+class HeartUI;
 
 class HealthDisplay :
     public Actor
 {
 public:
+    HealthDisplay(float x, float y, Character* owner);
+
     void start() override;
+    void update(float deltaTime) override;
 
 private:
     Character* m_owner;
-    SpriteComponent* m_firstHeart;
-    SpriteComponent* m_secondHeart;
-    SpriteComponent* m_thirdHeart;
+    HeartUI* m_firstHeart;
+    HeartUI* m_secondHeart;
+    HeartUI* m_thirdHeart;
 
 };
 
