@@ -28,11 +28,9 @@ public:
 private:
 	MathLibrary::Vector2 m_velocity;
 	MoveComponent* m_moveComponent;
-	Actor* m_targetActor;
 	HealthComponent* m_healthComponent;
 
 	float m_speed;
-	int m_maxHealth;
 	float m_firingCooldown;
 
 };

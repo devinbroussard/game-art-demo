@@ -9,7 +9,9 @@ Character::Character(float x, float y, const char* name, float speed) :
 {
 	m_speed = speed;
 	m_firingCooldown = 0.3f;
-	m_maxHealth = 3;
+
+	m_healthComponent = nullptr;
+	m_moveComponent = nullptr;
 }
 
 Character::~Character()
@@ -25,7 +27,7 @@ void Character::setVelocity(float x, float y)
 /// </summary>
 void Character::start()
 {
-	m_healthComponent = dynamic_cast<HealthComponent*>(addComponent(new HealthComponent(m_maxHealth, this)));
+	m_healthComponent = dynamic_cast<HealthComponent*>(addComponent(new HealthComponent(3, this)));
 	m_moveComponent = dynamic_cast<MoveComponent*>(addComponent(new MoveComponent()));
 
 	Actor::start();

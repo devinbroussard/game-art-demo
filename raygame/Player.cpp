@@ -6,8 +6,7 @@
 
 Player::Player(float x, float y, const char* name, float speed) :
 	Character::Character(x, y, name, speed)
-{
-}
+{}
 
 void Player::start()
 {
