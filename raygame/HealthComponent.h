@@ -10,6 +10,7 @@ public:
 	~HealthComponent();
 
 	int getHealth() { return m_currentHealth; }
+	void setHealth(int health) { m_currentHealth = health; }
 	float getTimeSinceDamage(){ return m_timeSinceDamage; }
 	float getDamageCooldown() { return m_damageCooldown; }
 

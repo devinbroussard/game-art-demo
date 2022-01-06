@@ -9,16 +9,16 @@ class Character :
 	public Actor
 {
 public:
-	Character(float x, float y, const char* name, float speed, int maxHealth);
+	Character(float x, float y, const char* name, float speed);
 	~Character();
 
+	void takeDamage() { m_healthComponent->setHealth(getHealth() - 1); }
 	int getHealth() { return m_healthComponent->getHealth(); }
 	void setVelocity(float x, float y);
 	float getSpeed() { return m_speed; }
 	void setSpeed(float speed) { m_speed = speed; }
 
 	MoveComponent* getMoveComponent() { return m_moveComponent; }
-	FollowComponet* getFollowComponet() { return m_followComponet; }
 
 
 	void start();
@@ -28,7 +28,6 @@ public:
 private:
 	MathLibrary::Vector2 m_velocity;
 	MoveComponent* m_moveComponent;
-	FollowComponet* m_followComponet;
 	Actor* m_targetActor;
 	HealthComponent* m_healthComponent;
 

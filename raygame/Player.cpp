@@ -4,8 +4,8 @@
 #include "MoveComponent.h"
 #include "PlayerSpriteComponent.h"
 
-Player::Player(float x, float y, const char* name, float speed, int maxHealth) :
-	Character::Character(x, y, name, speed, maxHealth)
+Player::Player(float x, float y, const char* name, float speed) :
+	Character::Character(x, y, name, speed)
 {
 }
 
@@ -25,5 +25,7 @@ void Player::start()
 void Player::update(float deltaTime)
 {
 	Character::getMoveComponent()->setVelocity(m_inputComponent->getMoveAxis() * Character::getSpeed());
+	Character::takeDamage();
+
 	Character::update(deltaTime);
 }

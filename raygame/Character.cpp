@@ -4,12 +4,12 @@
 #include "SpriteComponent.h"
 #include "FollowComponent.h"
 
-Character::Character(float x, float y, const char* name, float speed, int maxHealth) :
+Character::Character(float x, float y, const char* name, float speed) :
 	Actor::Actor(x, y, name)
 {
 	m_speed = speed;
 	m_firingCooldown = 0.3f;
-	m_maxHealth = maxHealth;
+	m_maxHealth = 3;
 }
 
 Character::~Character()
@@ -25,7 +25,7 @@ void Character::setVelocity(float x, float y)
 /// </summary>
 void Character::start()
 {
-	HealthComponent* healthComponent = dynamic_cast<HealthComponent*>(addComponent(new HealthComponent(m_maxHealth, this)));
+	m_healthComponent = dynamic_cast<HealthComponent*>(addComponent(new HealthComponent(m_maxHealth, this)));
 	m_moveComponent = dynamic_cast<MoveComponent*>(addComponent(new MoveComponent()));
 
 	Actor::start();

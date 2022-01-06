@@ -2,8 +2,8 @@
 #include "FollowComponent.h"
 
 
-Enemy::Enemy(float x, float y, const char* name, float speed, int maxHealth, Actor* targetActor) :
-	Character::Character(x, y, name, speed, maxHealth)
+Enemy::Enemy(float x, float y, const char* name, float speed,Actor* targetActor) :
+	Character::Character(x, y, name, speed)
 {
 	m_targetActor = targetActor;
 }

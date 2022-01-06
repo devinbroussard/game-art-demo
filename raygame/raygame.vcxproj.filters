@@ -108,7 +108,7 @@
       <Filter>Source Files\Actors</Filter>
     </ClCompile>
     <ClCompile Include="HeartUI.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Actors</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -176,7 +176,7 @@
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
     <ClInclude Include="HeartUI.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Actors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
