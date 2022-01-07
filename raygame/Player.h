@@ -24,5 +24,9 @@ private:
 	
 	InputComponent* m_inputComponent;
 	AABBCollider* m_aabbCollider;
+	Player* m_player;
+	int m_x;
+	int m_y;
+	
 };
 

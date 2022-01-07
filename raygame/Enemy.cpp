@@ -9,7 +9,8 @@ Enemy::Enemy(float x, float y, const char* name, float speed, int maxHealth, Act
 	Character::Character(x, y, name, speed, maxHealth)
 {
 	m_targetActor = targetActor;
-	
+	AABBCollider* collider = new AABBCollider(8, 6, this);
+	Actor::setCollider(collider);
 }
 
 void Enemy::start()
@@ -22,7 +23,6 @@ void Enemy::start()
 	m_followComponent = new FollowComponent( "Follow Component", m_targetActor);
 	//...adds the componet to the enemy
 	addComponent(m_followComponent);
-
 	//Initializes the enemySpriteComponet
 	EnemySpriteComponent* enemySpriteComponent = new EnemySpriteComponent();
 	//adds the enmeySprite to the enemy

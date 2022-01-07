@@ -1,5 +1,6 @@
 #pragma once
 #include "Character.h"
+#include "AABBCollider.h"
 
 class MainScene;
 class FollowComponent;
@@ -25,6 +26,7 @@ private:
 	Actor* m_targetActor;
 	FollowComponent* m_followComponent;
 	MainScene* m_mainScene;
+	AABBCollider* m_aabbCollider;
 	//InputComponent* m_inputComponent;
 };
 

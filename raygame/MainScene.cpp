@@ -1,7 +1,6 @@
 #include "MainScene.h"
 #include "Actor.h"
 #include "Player.h"
-#include "Enemy.h"
 #include "Scene.h"
 #include "Transform2D.h"
 #include <iostream>
@@ -22,6 +21,7 @@ void MainScene::start()
 	EnemeySpawner* enemySpawner = new EnemeySpawner(player);
 	//adds the spawner ot the scene as a actor
 	addActor(enemySpawner);
+
 }
 
 void MainScene::draw()

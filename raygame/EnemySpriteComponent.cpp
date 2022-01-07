@@ -40,7 +40,7 @@ void EnemySpriteComponent::update(float deltaTime)
 void EnemySpriteComponent::draw()
 {
 	//Gets the world Posistion for the x and the y
-	Vector2 worldPosition = { getOwner()->getTransform()->getWorldPosition().x, getOwner()->getTransform()->getWorldPosition().y };
+	Vector2 worldPosition = { getOwner()->getTransform()->getWorldPosition().x - (getWidth() / 6 - 10), getOwner()->getTransform()->getWorldPosition().y - (getHeight() / 5 + 5) };
 	//draws the texture using the world position and the frameRec
 	DrawTextureRec(*getTexture(), m_frameRec, worldPosition, WHITE);
 }

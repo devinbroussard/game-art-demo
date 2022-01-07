@@ -4,11 +4,14 @@
 #include "MoveComponent.h"
 #include "PlayerSpriteComponent.h"
 #include "Transform2D.h"
+#include "Actor.h"
 
 
 Player::Player(float x, float y, const char* name, float speed, int maxHealth) :
 	Character::Character(x, y, name, speed, maxHealth)
 {
+	AABBCollider* collider = new AABBCollider(8, 6, this);
+	Actor::setCollider(collider);
 }
 
 void Player::start()
@@ -23,10 +26,12 @@ void Player::start()
 	Character::start();
 	//adds the input componet to the player and Initializes it.
 	m_inputComponent = dynamic_cast<InputComponent*>(addComponent(new InputComponent(this)));
+
 }
 
 void Player::update(float deltaTime)
 {
+	DrawRectangleLines(getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y, 50, 50, BLACK);
 	//made to variables that made the scale go up or down
 	float scaleUP = -5;
 	float scaleDown = 1;
@@ -59,5 +64,6 @@ void Player::update(float deltaTime)
 //happens when there is a collision
 void Player::onCollision(Actor* other)
 {
-		
+	if (other->getName() == "enemy")
+		m_player->setSpeed(1000);
 }
