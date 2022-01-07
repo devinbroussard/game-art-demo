@@ -35,16 +35,16 @@ void HealthDisplay::start()
 
 void HealthDisplay::update(float deltaTime)
 {	
-	checkHealth(); 
+	checkHealth(deltaTime); 
 	Actor::update(deltaTime);
 }
 
-void HealthDisplay::checkHealth()
+void HealthDisplay::checkHealth(float deltaTime)
 {
 	if (m_owner->getHealthComponent()->getHealth() < 3)
-		m_thirdHeart->killHeart();
+		m_thirdHeart->killHeart(deltaTime);
 	if (m_owner->getHealthComponent()->getHealth() < 2)
-		m_secondHeart->killHeart();
+		m_secondHeart->killHeart(deltaTime);
 	if (m_owner->getHealthComponent()->getHealth() < 1)
-		m_firstHeart->killHeart();
+		m_firstHeart->killHeart(deltaTime);
 }

@@ -9,10 +9,12 @@ HeartUI::HeartUI(float x, float y, Character* owner, HealthDisplay* display)
 {
 	m_owner = owner;
 	display->getTransform()->addChild(getTransform());
+	m_spinDuration = 1.2f;
 }
 
 void HeartUI::start()
 {
+	m_spinTimer = 0;
 	m_spriteComponent = new SpriteComponent("Sprites/sprites/objects/heart.png");
 	addComponent(m_spriteComponent);
 
@@ -25,9 +27,19 @@ void HeartUI::update(float deltaTime)
 	Actor::update(deltaTime);
 }
 
-void HeartUI::killHeart()
+void HeartUI::killHeart(float deltaTime)
 {
 	m_spriteComponent->getTexture();
 	Texture2D* texture = new Texture2D(LoadTexture("Sprites/sprites/objects/deadheart.png"));                              
 	m_spriteComponent->setTexture(texture);
+	
+	spinHeart(deltaTime);
+}
+
+void HeartUI::spinHeart(float deltaTime)
+{
+	m_spinTimer += deltaTime;
+	if (m_spinTimer < m_spinDuration)
+		getTransform()->rotate(0.01f);
+	else getTransform()->setRotation(0);
 }

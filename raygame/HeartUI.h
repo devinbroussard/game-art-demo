@@ -12,10 +12,14 @@ public:
 
 	void start() override;
 	void update(float deltaTime) override;
-	void killHeart();
+
+	void killHeart(float deltaTime);
+	void spinHeart(float deltaTime);
 
 private:
 	Character* m_owner;
 	SpriteComponent* m_spriteComponent;
+	float m_spinTimer;
+	float m_spinDuration;
 };
 
