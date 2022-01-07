@@ -149,6 +149,7 @@
     <ClCompile Include="AABBCollider.cpp" />
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="ActorArray.cpp" />
+    <ClCompile Include="AnimatedSpriteComponent.cpp" />
     <ClCompile Include="AttackComponent.cpp" />
     <ClCompile Include="CircleCollider.cpp" />
     <ClCompile Include="Collider.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="AABBCollider.h" />
     <ClInclude Include="Actor.h" />
     <ClInclude Include="ActorArray.h" />
+    <ClInclude Include="AnimatedSpriteComponent.h" />
     <ClInclude Include="AttackComponent.h" />
     <ClInclude Include="CircleCollider.h" />
     <ClInclude Include="Collider.h" />
