@@ -6,7 +6,7 @@ class AnimatedSpriteComponent :
 	public SpriteComponent
 {
 public:
-	AnimatedSpriteComponent(int xFrames, int yFrames);
+	AnimatedSpriteComponent(const char* rightPath, const char* leftPath, int xFrames, int yFrames);
 	~AnimatedSpriteComponent() override;
 
 	Character* getCharacter() { return (Character*)getOwner(); }

@@ -116,6 +116,9 @@
     <ClCompile Include="AnimatedSpriteComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerAnimationsComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -185,6 +188,9 @@
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
     <ClInclude Include="AnimatedSpriteComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAnimationsComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

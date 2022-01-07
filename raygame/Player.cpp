@@ -4,6 +4,7 @@
 #include "MoveComponent.h"
 #include "PlayerSpriteComponent.h"
 #include "Transform2D.h"
+#include "AnimatedSpriteComponent.h"
 
 
 Player::Player(float x, float y, const char* name, float speed, int maxHealth) :

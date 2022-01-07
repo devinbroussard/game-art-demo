@@ -1,6 +1,7 @@
 #pragma once
 #include "Actor.h"
 #include <Vector2.h>
+class HealthComponent;
 class MoveComponent;
 class FollowComponet;
 
@@ -31,15 +32,12 @@ public:
 private:
 	MathLibrary::Vector2 m_velocity;
 	MoveComponent* m_moveComponent;
-<<<<<<< Updated upstream
 	FollowComponet* m_followComponet;
 	Actor* m_targetActor;
 
-=======
 	HealthComponent* m_healthComponent;
 	
 	bool m_isAttacking;
->>>>>>> Stashed changes
 	float m_speed;
 	int m_maxHealth;
 	float m_firingCooldown;
