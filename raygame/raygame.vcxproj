@@ -170,6 +170,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SpriteComponent.cpp" />
     <ClCompile Include="Transform2D.cpp" />
+    <ClCompile Include="UIActor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBCollider.h" />
@@ -195,6 +196,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SpriteComponent.h" />
     <ClInclude Include="Transform2D.h" />
+    <ClInclude Include="UIActor.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Sprites\bullet.png" />

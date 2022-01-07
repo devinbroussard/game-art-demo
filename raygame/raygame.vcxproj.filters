@@ -116,6 +116,9 @@
     <ClCompile Include="MenuScene.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="UIActor.cpp">
+      <Filter>Source Files\Actors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -186,6 +189,9 @@
     </ClInclude>
     <ClInclude Include="MenuScene.h">
       <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="UIActor.h">
+      <Filter>Header Files\Actors</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

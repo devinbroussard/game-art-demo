@@ -5,9 +5,15 @@
 #include "Transform2D.h"
 #include <iostream>
 #include "EnemeySpawner.h"
+#include "UIActor.h"
 
 void MainScene::start()
 {
+	UIActor* UiActor = new UIActor(200, 200, 200, "Press x to fight"
+		"Press y to leave", WHITE);
+
+	Engine::getCurrentScene()->addUIElement(UiActor);
+
 	//made the map with the load Textures
 	m_map = RAYLIB_H::LoadTexture("Sprites/Map.png");
 	//Initializes the player in the scene
