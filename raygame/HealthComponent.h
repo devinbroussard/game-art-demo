@@ -6,10 +6,10 @@ class HealthComponent :
 	public Component
 {
 public:
-	HealthComponent(int maxHealth, Actor* owner);
+	HealthComponent(int maxHealth);
 	~HealthComponent();
 
-	void takeDamage() { m_currentHealth--; }
+	void takeDamage();
 	int getHealth() { return m_currentHealth; }
 	void setHealth(int health) { m_currentHealth = health; }
 	float getTimeSinceDamage(){ return m_timeSinceDamage; }

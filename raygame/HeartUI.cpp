@@ -21,7 +21,6 @@ void HeartUI::start()
 
 void HeartUI::update(float deltaTime)
 {
-	if (m_owner)
 
 	Actor::update(deltaTime);
 }

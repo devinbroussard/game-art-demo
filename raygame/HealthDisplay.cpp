@@ -7,7 +7,6 @@
 
 HealthDisplay::HealthDisplay(float x, float y, Character* owner) : 
 	Actor(x, y, "HealthDisplay")
-
 {
 	m_owner = owner;
 	m_owner->getTransform()->addChild(getTransform());
@@ -24,11 +23,11 @@ void HealthDisplay::start()
 	m_thirdHeart = new HeartUI(6, 0, m_owner, this);
 
 	//Adding heart icons to scene and calling their start functions
-	Engine::getCurrentScene()->addActor(m_firstHeart);
+	Engine::getCurrentScene()->addUIElement(m_firstHeart);
 	m_firstHeart->start();
-	Engine::getCurrentScene()->addActor(m_secondHeart);
+	Engine::getCurrentScene()->addUIElement(m_secondHeart);
 	m_secondHeart->start();
-	Engine::getCurrentScene()->addActor(m_thirdHeart);
+	Engine::getCurrentScene()->addUIElement(m_thirdHeart);
 	m_thirdHeart->start();
 
 	Actor::start();

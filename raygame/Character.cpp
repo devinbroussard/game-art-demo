@@ -27,7 +27,7 @@ void Character::setVelocity(float x, float y)
 /// </summary>
 void Character::start()
 {
-	m_healthComponent = new HealthComponent(3, this);
+	m_healthComponent = new HealthComponent(3);
 	m_moveComponent = new MoveComponent();
 	
 	addComponent(m_healthComponent);
