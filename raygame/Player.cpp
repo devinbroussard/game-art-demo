@@ -6,7 +6,9 @@
 
 Player::Player(float x, float y, const char* name, float speed) :
 	Character::Character(x, y, name, speed)
-{}
+{
+	m_inputComponent = nullptr;
+}
 
 void Player::start()
 {
@@ -15,16 +17,17 @@ void Player::start()
 	//Set position clamps
 	PlayerSpriteComponent* playerSpriteComponent = new PlayerSpriteComponent();
 	addComponent(playerSpriteComponent);
-	getTransform()->setScale({2.5, 2.5});
+	m_inputComponent = new InputComponent(this);
+	addComponent(m_inputComponent);
+	getTransform()->setScale({ 2.5, 2.5 });
 
 	Character::start();
-	m_inputComponent = dynamic_cast<InputComponent*>(addComponent(new InputComponent(this)));
 }
 
 void Player::update(float deltaTime)
 {
 	Character::getMoveComponent()->setVelocity(m_inputComponent->getMoveAxis() * Character::getSpeed());
-	Character::takeDamage();
+	getHealthComponent()->takeDamage();
 
 	Character::update(deltaTime);
 }

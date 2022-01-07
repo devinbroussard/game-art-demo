@@ -27,8 +27,11 @@ void Character::setVelocity(float x, float y)
 /// </summary>
 void Character::start()
 {
-	m_healthComponent = dynamic_cast<HealthComponent*>(addComponent(new HealthComponent(3, this)));
-	m_moveComponent = dynamic_cast<MoveComponent*>(addComponent(new MoveComponent()));
+	m_healthComponent = new HealthComponent(3, this);
+	m_moveComponent = new MoveComponent();
+	
+	addComponent(m_healthComponent);
+	addComponent(m_moveComponent);
 
 	Actor::start();
 }

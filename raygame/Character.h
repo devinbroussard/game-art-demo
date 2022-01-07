@@ -12,8 +12,7 @@ public:
 	Character(float x, float y, const char* name, float speed);
 	~Character();
 
-	void takeDamage() { m_healthComponent->setHealth(getHealth() - 1); }
-	int getHealth() { return m_healthComponent->getHealth(); }
+	HealthComponent* getHealthComponent() { return m_healthComponent; }
 	void setVelocity(float x, float y);
 	float getSpeed() { return m_speed; }
 	void setSpeed(float speed) { m_speed = speed; }
