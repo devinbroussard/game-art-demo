@@ -3,5 +3,7 @@
 class PlayerAnimationsComponent :
 	public AnimatedSpriteComponent
 {
+public:
+	void updateFrames(float deltaTime) override;
 };
 

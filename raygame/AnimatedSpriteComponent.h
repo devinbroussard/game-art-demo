@@ -9,12 +9,13 @@ public:
 	AnimatedSpriteComponent(const char* rightPath, const char* leftPath, int xFrames, int yFrames);
 	~AnimatedSpriteComponent() override;
 
+	Rectangle* getFrameRec() { return &m_frameRec; }
 	Character* getCharacter() { return (Character*)getOwner(); }
 
 	void update(float deltaTime) override;
 	void draw() override;
 	void getCurrentFrames();
-	void updateFrames(float deltaTime);
+	virtual void updateFrames(float deltaTime) {};
 
 private:	
 	Texture2D* m_rightTexture;
