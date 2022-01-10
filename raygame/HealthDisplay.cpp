@@ -41,6 +41,8 @@ void HealthDisplay::update(float deltaTime)
 
 void HealthDisplay::checkHealth(float deltaTime)
 {
+	if (!m_owner->getHealthComponent())
+		return;
 	if (m_owner->getHealthComponent()->getHealth() < 3)
 		m_thirdHeart->killHeart(deltaTime);
 	if (m_owner->getHealthComponent()->getHealth() < 2)
