@@ -18,6 +18,7 @@ public:
 	float getSpeed() { return m_speed; }
 	void setSpeed(float speed) { m_speed = speed; }
 	bool getIsAttacking() { return m_isAttacking; }
+	void setIsAttacking(bool isAttacking) { m_isAttacking = isAttacking; }
 
 	//made to functions to get the moveComponet and the follow Componet
 	MoveComponent* getMoveComponent() { return m_moveComponent; }
