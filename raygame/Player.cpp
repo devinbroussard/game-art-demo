@@ -15,7 +15,7 @@ Player::Player(float x, float y, const char* name, float speed, int maxHealth) :
 void Player::start()
 {
 	//Initializes the Player Sprite Componet
-	PlayerAnimationsComponent* playerAnimationsComponent = new PlayerAnimationsComponent("Sprites/sprites/characters/player.png", "sprites/sprites/characters/player.png", 6, 5);
+	PlayerAnimationsComponent* playerAnimationsComponent = new PlayerAnimationsComponent("Sprites/sprites/characters/player.png", "sprites/sprites/characters/playerleft.png", 6, 5);
 	//Adds the componet to the player
 	addComponent(playerAnimationsComponent);
 	//sets its scale

@@ -59,6 +59,7 @@ void AnimatedSpriteComponent::getCurrentFrames()
 		setTexture(m_leftTexture);
 		m_textureIsLeft = true;
 	}
+
 	std::cout << getCharacter()->getMoveComponent()->getVelocity().x << std::endl;
 	//Getting whether or not the player is standing still
 	if (getCharacter()->getMoveComponent()->getVelocity().x != 0 || getCharacter()->getMoveComponent()->getVelocity().y != 0)
