@@ -18,21 +18,19 @@ void MainScene::start()
 
 	//made the map with the load Textures
 	m_map = RAYLIB_H::LoadTexture("Sprites/Map.png");
-
-	Player* player = new Player(150, 150, "player", 100);
-	Enemy* enemy = new Enemy(10, 100, "enemy", 60, player);
-
-	addActor(player);
-
-	HealthDisplay* playerHealthDisplay = new HealthDisplay(24, 22, player);
-	addUIElement(playerHealthDisplay);
-	//EnemeySpawner* enemySpawner = new EnemeySpawner(player);
-	//addActor(enemySpawner);
-	//adds the spawner ot the scene as a actor
-	//Initializes the enemySpawner
 	//adds player to the scene as a actor
-	//scales the player
+	Player* player = new Player(150, 150, "player", 100);
 	//Initializes the player in the scene
+	addActor(player);
+	//adds the healthDispaly to the scene
+	HealthDisplay* playerHealthDisplay = new HealthDisplay(24, 22, player);
+	//initializes the player health display
+	addUIElement(playerHealthDisplay);
+	//adds the spawner ot the scene 
+	EnemeySpawner* enemySpawner = new EnemeySpawner(player);
+	//Initializes the enemySpawner
+	addActor(enemySpawner);
+
 }
 
 void MainScene::draw()

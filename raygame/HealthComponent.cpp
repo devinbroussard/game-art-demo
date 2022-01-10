@@ -15,9 +15,12 @@ HealthComponent::~HealthComponent()
 
 void HealthComponent::takeDamage()
 {
+	//if the time since damage is greater than the damage cooldown
 	if (m_timeSinceDamage > m_damageCooldown)
 	{
+		//reset the time since damage ...
 		m_timeSinceDamage = 0;
+		//...decrement health
 		m_currentHealth--;
 	}
 }
