@@ -29,7 +29,7 @@ public:
 	void setIsTextureLeft(bool isLeft) { m_textureIsLeft = isLeft; }
 
 	void update(float deltaTime) override;
-	void draw() override;
+	virtual void draw() override;
 	void getCurrentFrames();
 	virtual void updateFrames(float deltaTime) {};
 
