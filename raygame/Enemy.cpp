@@ -9,7 +9,7 @@ Enemy::Enemy(float x, float y, const char* name, float speed,Actor* targetActor)
 	Character::Character(x, y, name, speed)
 {
 	m_targetActor = targetActor;
-	AABBCollider* collider = new AABBCollider(8, 6, this);
+	AABBCollider* collider = new AABBCollider(40, 40, this);
 	Actor::setCollider(collider);
 }
 
@@ -46,4 +46,6 @@ void Enemy::update(float deltaTime)
 
 void Enemy::onCollision(Actor* other)
 {
+	if (other->getName() == "Attack")
+		getHealthComponent()->takeDamage();
 }

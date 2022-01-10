@@ -26,7 +26,9 @@ public:
 	void setCurrentYFrame(int yFrame) { m_currentYFrame = yFrame; }
 	void setIsTextureLeft(bool isLeft) { m_textureIsLeft = isLeft; }
 	void setStartAttack(bool startAttack) { m_startAttack = startAttack; }
-
+	void setCharacterIsDead(bool value) { m_characterIsDead = true; }
+	bool getCharacterIsDead() { return m_characterIsDead; }
+	
 	void update(float deltaTime) override;
 	virtual void draw() override;
 	void getCurrentFrames();
@@ -36,6 +38,7 @@ private:
 	Texture2D* m_rightTexture;
 	Texture2D* m_leftTexture;
 	bool m_textureIsLeft;
+	bool m_characterIsDead;
 
 	bool m_startAttack;
 	float m_timeTracker;

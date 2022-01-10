@@ -10,7 +10,7 @@ Player::Player(float x, float y, const char* name, float speed) :
 	Character::Character(x, y, name, speed)
 {
 	m_inputComponent = nullptr;
-	AABBCollider* collider = new AABBCollider(8, 6, this);
+	AABBCollider* collider = new AABBCollider(40, 40, this);
 	Actor::setCollider(collider);
 
 }

@@ -6,6 +6,7 @@
 #include "Actor.h"
 #include "Character.h"
 #include "MoveComponent.h"
+#include "Engine.h"
 
 AttackComponent::AttackComponent(float fps, int attackFrames)
 {
@@ -21,8 +22,11 @@ void AttackComponent::update(float deltaTime)
 		{	
 			if (getCharacterOwner()->getMoveComponent()->getMovedRightLast())
 			{
+				Actor* actor = new Actor(40, 30, "Attack");
+				getOwner()->getTransform()->addChild(actor->getTransform());
 				DrawCircleLines(getOwner()->getTransform()->getWorldPosition().x+ 40, getOwner()->getTransform()->getWorldPosition().y + 30, 30, RAYLIB_H::BLACK);
-				CircleCollider* circleCollider = new CircleCollider(30, getOwner());
+				CircleCollider* circleCollider = new CircleCollider(30, actor);
+				Engine::getCurrentScene()->addActor(actor);
 			}
 			if (!getCharacterOwner()->getMoveComponent()->getMovedRightLast())
 			{
