@@ -12,6 +12,7 @@ Player::Player(float x, float y, const char* name, float speed, int maxHealth) :
 {
 	AABBCollider* collider = new AABBCollider(8, 6, this);
 	Actor::setCollider(collider);
+	m_maxHelath = maxHealth;
 }
 
 void Player::start()
@@ -31,6 +32,7 @@ void Player::start()
 
 void Player::update(float deltaTime)
 {
+
 	DrawRectangleLines(getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y, 50, 50, BLACK);
 	//made to variables that made the scale go up or down
 	float scaleUP = -5;
@@ -63,7 +65,5 @@ void Player::update(float deltaTime)
 }
 //happens when there is a collision
 void Player::onCollision(Actor* other)
-{
-	if (other->getName() == "enemy")
-		m_player->setSpeed(1000);
+{		
 }

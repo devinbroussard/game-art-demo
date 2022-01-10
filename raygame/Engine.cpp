@@ -29,10 +29,10 @@ void Engine::start()
 	SetTargetFPS(0);
 
 	//Start the scene
-	m_currentSceneIndex = addScene(new MenuScene());
-	m_scenes[m_currentSceneIndex]->start();
 	m_currentSceneIndex = addScene(new MainScene());
+	//addScene(new MainScene());
 	m_scenes[m_currentSceneIndex]->start();
+
 }
 
 void Engine::update(float deltaTime)

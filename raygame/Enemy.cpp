@@ -11,10 +11,13 @@ Enemy::Enemy(float x, float y, const char* name, float speed, int maxHealth, Act
 	m_targetActor = targetActor;
 	AABBCollider* collider = new AABBCollider(8, 6, this);
 	Actor::setCollider(collider);
+	m_maxHealth = maxHealth;
 }
 
 void Enemy::start()
 {
+
+
 	//called start
 	Character::start();
 	//incruments the enemy count
@@ -33,9 +36,14 @@ void Enemy::start()
 
 void Enemy::update(float deltaTime)
 {
+		
 	//allows the for the enmey to move my get the move Componet and setting its velocity and putting in the get mvoe Axis then multipling 
 	//... with its speed
 	Character::getMoveComponent()->setVelocity(m_followComponent->getMoveAxis() * Character::getSpeed());
 	//Then update
 	Character::update(deltaTime);
+}
+
+void Enemy::onCollision(Actor* other)
+{
 }

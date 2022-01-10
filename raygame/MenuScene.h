@@ -1,6 +1,6 @@
 #pragma once
-#include "Scene.h"
 #include <raylib.h>
+#include "Engine.h"
 
 
 class MenuScene :
@@ -9,8 +9,10 @@ class MenuScene :
 public:
 	void start() override;
 	void update(float deltaTime) override;
+	void draw() override;
 private:
-	Scene* m_sceneUI;
+	Engine* m_engine;
+
 	
 	
 };
