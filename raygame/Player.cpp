@@ -17,13 +17,15 @@ Player::Player(float x, float y, const char* name, float speed) :
 
 void Player::start()
 {
-	// Set spawn point
-	//Set move speed
-	//Set position clamps
+	//adds the player animatimes to the player
 	PlayerAnimationsComponent* playerAnimationsComponent = new PlayerAnimationsComponent("Sprites/sprites/characters/player.png", "Sprites/sprites/characters/playerleft.png", 6, 5);
+	//initalizes the input Component to player
 	m_inputComponent = new InputComponent(this);
+	//adds the player animations to player
 	addComponent(playerAnimationsComponent);
+	//adds the input component to plyaer
 	addComponent(m_inputComponent);
+	//set the players scale
 	getTransform()->setScale({ 2.5, 2.5 });
 
 	Character::start();
@@ -31,8 +33,8 @@ void Player::start()
 
 void Player::update(float deltaTime)
 {
-
-	DrawRectangleLines(getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y, 50, 50, BLACK);
+	
+	DrawRectangleLines((getTransform()->getWorldPosition().x) + 35 , (getTransform()->getWorldPosition().y) + 60 , 50, 50, BLACK);
 	//made to variables that made the scale go up or down
 	float scaleUP = -5;
 	float scaleDown = 1;
