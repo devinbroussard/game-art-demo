@@ -59,8 +59,8 @@ void PlayerAnimationsComponent::updateFrames(float deltaTime)
 			}
 
 	}
-	else if (getCharacterIsDead())
-		setCurrentXFrame(2);
+	/*else if (getCharacterIsDead())
+		setCurrentXFrame(2);*/
 
 	getFrameRec()->x = getCurrentXFrame() * getTexture()->width / getXFrameCount();
 	getFrameRec()->y = getCurrentYFrame() * getTexture()->height / getYFrameCount();

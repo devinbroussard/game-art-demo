@@ -76,7 +76,6 @@ void AnimatedSpriteComponent::getCurrentFrames()
 		m_currentYFrame = 2;
 		m_startAttack = true;
 	}
-
 	//Getting whether or not the character is dead
 	if (getCharacter()->getHealthComponent()->getHealth() <= 0)
 		m_currentYFrame = 4;
