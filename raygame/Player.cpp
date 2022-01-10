@@ -12,7 +12,7 @@ Player::Player(float x, float y, const char* name, float speed) :
 	m_inputComponent = nullptr;
 	AABBCollider* collider = new AABBCollider(8, 6, this);
 	Actor::setCollider(collider);
-	m_maxHelath = maxHealth;
+
 }
 
 void Player::start()

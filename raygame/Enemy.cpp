@@ -10,7 +10,7 @@ Enemy::Enemy(float x, float y, const char* name, float speed,Actor* targetActor)
 	m_targetActor = targetActor;
 	AABBCollider* collider = new AABBCollider(8, 6, this);
 	Actor::setCollider(collider);
-	m_maxHealth = maxHealth;
+
 }
 
 void Enemy::start()
