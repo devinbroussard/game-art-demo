@@ -156,6 +156,7 @@
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="EnemeySpawner.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyAnimationsComponent.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="FollowComponent.cpp" />
     <ClCompile Include="HealthComponent.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="EnemeySpawner.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyAnimationsComponent.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="FollowComponent.h" />
     <ClInclude Include="HealthComponent.h" />

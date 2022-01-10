@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include "FollowComponent.h"
 #include "MainScene.h"
+#include "EnemyAnimationsComponent.h"
 
 int Enemy::m_enemyCount = 0;
 
@@ -10,7 +11,6 @@ Enemy::Enemy(float x, float y, const char* name, float speed,Actor* targetActor)
 	m_targetActor = targetActor;
 	AABBCollider* collider = new AABBCollider(8, 6, this);
 	Actor::setCollider(collider);
-
 }
 
 void Enemy::start()
@@ -21,6 +21,10 @@ void Enemy::start()
 	Character::start();
 	//incruments the enemy count
 	m_enemyCount++;
+
+	EnemyAnimationsComponent* enemyAnimationsComponent = new EnemyAnimationsComponent("Sprites/sprites/characters/skeleton.png", "sprites/sprites/characters/skeletonleft.png", 6, 5);
+	addComponent(enemyAnimationsComponent);
+
 	//initializes the followComonet and sets the target Actor...
 	m_followComponent = new FollowComponent( "Follow Component", m_targetActor);
 	//...adds the componet to the enemy

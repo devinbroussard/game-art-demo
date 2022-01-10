@@ -1,14 +1,12 @@
-#include "PlayerAnimationsComponent.h"
-#include "AnimatedSpriteComponent.h"
-#include "Component.h"
-#include "Actor.h"
+#include "EnemyAnimationsComponent.h"
 #include "Transform2D.h"
+#include "Actor.h"
 
-PlayerAnimationsComponent::PlayerAnimationsComponent(const char* rightPath, const char* leftPath, int xFrames, int yFrames)
-	: AnimatedSpriteComponent(rightPath, leftPath, xFrames, yFrames)
+EnemyAnimationsComponent::EnemyAnimationsComponent(const char* rightPath, const char* leftPath, int xFrames, int yFrames)
+	: AnimatedSpriteComponent(rightPath, leftPath, 6, 5)
 { }
 
-void PlayerAnimationsComponent::updateFrames(float deltaTime)
+void EnemyAnimationsComponent::updateFrames(float deltaTime)
 {
 	//gets the y and x then updates them
 	getTexture()->width = getWidth() * getOwner()->getTransform()->getScale().x;
@@ -45,11 +43,11 @@ void PlayerAnimationsComponent::updateFrames(float deltaTime)
 		}
 		else if (getCurrentYFrame() == 2)
 			//If the current x frame reaches the end of the tile image, set it back to 0
-  			if (getCurrentXFrame() < 2)
-		{
-			setCurrentXFrame(getXFrameCount() - 1);
-			setStartAttack(false);
-		}
+			if (getCurrentXFrame() < 2)
+			{
+				setCurrentXFrame(getXFrameCount() - 1);
+				setStartAttack(false);
+			}
 	}
 
 	getFrameRec()->x = getCurrentXFrame() * getTexture()->width / getXFrameCount();
