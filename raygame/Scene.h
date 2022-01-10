@@ -58,8 +58,12 @@ public:
 
     virtual void start();
 
+    static void destroy(Actor* actor);
     virtual void update(float deltaTime);
     virtual void updateUI(float deltaTime);
+    Actor* getActor(int index);
+
+    ActorArray getActors() { return m_actors; }
 
     virtual void draw();
     virtual void drawUI();
@@ -67,6 +71,10 @@ public:
     virtual void end();
 
 private:
+    // Don't Touch
+    static void addActorToDeletionList(Actor* actor);
+    void destroyActorsInList();
+    static ActorArray m_actorsToDelete;
     ActorArray m_actors;
     ActorArray m_UIElements;
     MathLibrary::Matrix3* m_world;
