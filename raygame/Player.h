@@ -1,6 +1,7 @@
 #pragma once
 #include "Character.h"
 #include "AABBCollider.h"
+#include "Engine.h"
 class InputComponent;
 
 class Player :
@@ -25,6 +26,7 @@ private:
 	Player* m_player;
 	int m_x;
 	int m_y;
+	int m_maxHelath;
 	
 };
 

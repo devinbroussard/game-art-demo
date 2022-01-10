@@ -12,6 +12,7 @@ Player::Player(float x, float y, const char* name, float speed) :
 	m_inputComponent = nullptr;
 	AABBCollider* collider = new AABBCollider(8, 6, this);
 	Actor::setCollider(collider);
+
 }
 
 void Player::start()
@@ -30,6 +31,7 @@ void Player::start()
 
 void Player::update(float deltaTime)
 {
+
 	DrawRectangleLines(getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y, 50, 50, BLACK);
 	//made to variables that made the scale go up or down
 	float scaleUP = -5;

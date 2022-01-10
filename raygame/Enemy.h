@@ -2,9 +2,10 @@
 #include "Character.h"
 #include "AABBCollider.h"
 
+
 class MainScene;
 class FollowComponent;
-//class InputComponent;
+
 
 class Enemy :
 	public Character
@@ -15,12 +16,14 @@ public:
 
 	void start() override;
 	void update(float deltaTime);
+	int gethealth() { return m_maxHealth; }
 
 	//made a int to keep the enemy count and made it static
 	static int m_enemyCount;
-	//InputComponent* getInputComponent() { return m_inputComponent; }
+	void  onCollision(Actor* other);
 
 private:
+	int m_maxHealth;
 	Actor* m_targetActor;
 	FollowComponent* m_followComponent;
 	MainScene* m_mainScene;
