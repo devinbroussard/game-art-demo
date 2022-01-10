@@ -23,7 +23,7 @@ void MainScene::start()
 	//Initializes the player in the scene
 	addActor(player);
 	//adds the healthDispaly to the scene
-	HealthDisplay* playerHealthDisplay = new HealthDisplay(24, 22, player);
+	HealthDisplay* playerHealthDisplay = new HealthDisplay(10, -3, player);
 	//initializes the player health display
 	addUIElement(playerHealthDisplay);
 	//adds the spawner ot the scene 
