@@ -1,6 +1,5 @@
 #include "Enemy.h"
 #include "FollowComponent.h"
-#include "EnemySpriteComponent.h"
 #include "MainScene.h"
 
 int Enemy::m_enemyCount = 0;
@@ -23,10 +22,7 @@ void Enemy::start()
 	m_followComponent = new FollowComponent( "Follow Component", m_targetActor);
 	//...adds the componet to the enemy
 	addComponent(m_followComponent);
-	//Initializes the enemySpriteComponet
-	EnemySpriteComponent* enemySpriteComponent = new EnemySpriteComponent();
-	//adds the enmeySprite to the enemy
-	addComponent(enemySpriteComponent);
+
 	//sets the scale for the componet (sprite)
 	getTransform()->setScale({ 2.5, 2.5 });
 }

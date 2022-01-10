@@ -5,7 +5,6 @@
 #include "PlayerAnimationsComponent.h"
 #include "Transform2D.h"
 #include "Actor.h"
-#include "AnimatedSpriteComponent.h"
 
 Player::Player(float x, float y, const char* name, float speed) :
 	Character::Character(x, y, name, speed)
@@ -20,9 +19,9 @@ void Player::start()
 	// Set spawn point
 	//Set move speed
 	//Set position clamps
-	PlayerSpriteComponent* playerSpriteComponent = new PlayerSpriteComponent();
-	addComponent(playerSpriteComponent);
+	PlayerAnimationsComponent* playerAnimationsComponent = new PlayerAnimationsComponent("Sprites/sprites/characters/player.png", "Sprites/sprites/characters/playerleft.png", 6, 5);
 	m_inputComponent = new InputComponent(this);
+	addComponent(playerAnimationsComponent);
 	addComponent(m_inputComponent);
 	getTransform()->setScale({ 2.5, 2.5 });
 

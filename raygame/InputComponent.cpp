@@ -32,14 +32,6 @@ void InputComponent::update(float deltaTime)
 	//if the key is = to the meleeswing
 	if (IsKeyPressed(m_meleeSwing))
 		m_isAttacking = true;//set the bool to true and continue
-	
-	//make the forwardAxis = to the move Axis
-	MathLibrary::Vector2 forwardAxis = getMoveAxis();
-
-	//if the forwardAxis after you get its magnitude is bigger than 0
-	if (forwardAxis.getMagnitude() > 0)
-		getOwner()->getTransform()->setForward(forwardAxis);//set the forward(that is currently active)
-															//	to the forward Axis ( that is being made)
 }
 
 

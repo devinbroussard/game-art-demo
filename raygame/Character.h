@@ -10,6 +10,7 @@ class Character :
 	public Actor
 {
 public:
+	Character(float x, float y, const char* name, float speed);
 	//decontructor for character
 	~Character();
 
@@ -29,8 +30,6 @@ public:
 private:
 	MathLibrary::Vector2 m_velocity;
 	MoveComponent* m_moveComponent;
-	HealthComponent* m_healthComponent;
-
 	HealthComponent* m_healthComponent;
 	
 	bool m_isAttacking;

@@ -31,8 +31,6 @@ void Character::start()
 	addComponent(m_moveComponent);
 
 	//adds both of the healthcomponet and the move componet to the charactor
-	addComponent(healthComponent);
-	addComponent(m_moveComponent);
 
 	//calls start
 	Actor::start();
