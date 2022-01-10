@@ -2,9 +2,10 @@
 #include "InputComponent.h"
 #include <Vector2.h>
 #include "MoveComponent.h"
-#include "PlayerSpriteComponent.h"
+#include "PlayerAnimationsComponent.h"
 #include "Transform2D.h"
 #include "Actor.h"
+#include "AnimatedSpriteComponent.h"
 
 
 Player::Player(float x, float y, const char* name, float speed, int maxHealth) :
@@ -17,9 +18,9 @@ Player::Player(float x, float y, const char* name, float speed, int maxHealth) :
 void Player::start()
 {
 	//Initializes the Player Sprite Componet
-	PlayerSpriteComponent* playerSpriteComponent = new PlayerSpriteComponent();
+	PlayerAnimationsComponent* playerAnimationsComponent = new PlayerAnimationsComponent("Sprites/sprites/characters/player.png", "sprites/sprites/characters/playerleft.png", 6, 5);
 	//Adds the componet to the player
-	addComponent(playerSpriteComponent);
+	addComponent(playerAnimationsComponent);
 	//sets its scale
 	getTransform()->setScale({2.5, 2.5});
 	
