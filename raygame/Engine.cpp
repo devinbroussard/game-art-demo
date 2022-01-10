@@ -1,6 +1,7 @@
 #include "Engine.h"
 #include "raylib.h"
 #include "MainScene.h"
+#include "MenuScene.h"
 #include "Transform2D.h"
 
 bool Engine::m_applicationShouldClose = false;
@@ -29,7 +30,9 @@ void Engine::start()
 
 	//Start the scene
 	m_currentSceneIndex = addScene(new MainScene());
+	//addScene(new MainScene());
 	m_scenes[m_currentSceneIndex]->start();
+
 }
 
 void Engine::update(float deltaTime)

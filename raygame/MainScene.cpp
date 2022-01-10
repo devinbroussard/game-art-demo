@@ -5,9 +5,17 @@
 #include "Transform2D.h"
 #include "HealthDisplay.h"
 #include "EnemeySpawner.h"
+#include "UIActor.h"
+#include "MenuScene.h"
 
 void MainScene::start()
 {
+
+	UIActor* UiActor = new UIActor(20, 20, 20, "Press z to increase scale." 
+		"\nPress x to decrease scale", BLACK);
+	
+	Engine::getCurrentScene()->addUIElement(UiActor);
+
 	//made the map with the load Textures
 	m_map = RAYLIB_H::LoadTexture("Sprites/Map.png");
 
