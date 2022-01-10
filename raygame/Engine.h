@@ -106,13 +106,10 @@ private:
     void end();
 
 private: 
-    static void addActorToDeletionList(Actor* actor);
-    void destroyActorsInList();
     Camera2D* m_camera;
     static bool m_applicationShouldClose;
     static Scene** m_scenes;
     static int m_sceneCount;
-    static ActorArray m_actorsToDelete;
     static int m_currentSceneIndex;
     static const int m_screenWidth = 700;
     static const int m_screenHeight = 800;

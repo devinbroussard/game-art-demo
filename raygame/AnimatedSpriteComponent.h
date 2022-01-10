@@ -27,6 +27,7 @@ public:
 	void setCurrentXFrame(int xFrame) { m_currentXFrame = xFrame; }
 	void setCurrentYFrame(int yFrame) { m_currentYFrame = yFrame; }
 	void setIsTextureLeft(bool isLeft) { m_textureIsLeft = isLeft; }
+	void setStartAttack(bool startAttack) { m_startAttack = startAttack; }
 
 	void update(float deltaTime) override;
 	virtual void draw() override;
@@ -38,6 +39,7 @@ private:
 	Texture2D* m_leftTexture;
 	bool m_textureIsLeft;
 
+	bool m_startAttack;
 	float m_timeTracker;
 	float m_frameDuration;
 	float m_fps;
