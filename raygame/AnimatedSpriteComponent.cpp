@@ -64,6 +64,16 @@ void AnimatedSpriteComponent::getCurrentFrames()
 	else m_currentYFrame = 0;
 
 	//Getting whether or not the player is attacking
-	if (getCharacter()->getIsAttacking())
+	if (getCharacter()->getIsAttacking() )
+	{
+		if (!m_startAttack)
+		{
+			if (!m_textureIsLeft)
+				m_currentXFrame = 0;
+			else m_currentXFrame = 5;
+		}
+
 		m_currentYFrame = 2;
+		m_startAttack = true;
+	}
 }
