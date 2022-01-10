@@ -34,8 +34,8 @@ void HealthDisplay::start()
 
 void HealthDisplay::update(float deltaTime)
 {	
-	checkHealth(deltaTime); 
 	Actor::update(deltaTime);
+	checkHealth(deltaTime); 
 	
 }
 
