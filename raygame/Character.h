@@ -5,6 +5,7 @@ class HealthComponent;
 class MoveComponent;
 class FollowComponet;
 #include "HealthComponent.h"
+#include "AttackComponent.h"
 
 class Character :
 	public Actor
@@ -17,8 +18,8 @@ public:
 	HealthComponent* getHealthComponent() { return m_healthComponent; }
 	float getSpeed() { return m_speed; }
 	void setSpeed(float speed) { m_speed = speed; }
-	bool getIsAttacking() { return m_isAttacking; }
-	void setIsAttacking(bool isAttacking) { m_isAttacking = isAttacking; }
+	bool getIsAttacking() { return m_attackComponent->getIsAttacking(); }
+	void startAttacking() { m_attackComponent->startAttacking(); }
 
 	//made to functions to get the moveComponet and the follow Componet
 	MoveComponent* getMoveComponent() { return m_moveComponent; }
@@ -32,8 +33,8 @@ private:
 	MathLibrary::Vector2 m_velocity;
 	MoveComponent* m_moveComponent;
 	HealthComponent* m_healthComponent;
+	AttackComponent* m_attackComponent;
 	
-	bool m_isAttacking;
 	float m_speed;
 	float m_firingCooldown;
 

@@ -28,7 +28,7 @@ void InputComponent::update(float deltaTime)
 {
 	//if the key is = to the meleeswing
 	if (IsKeyPressed(m_meleeSwing))
-		((Character*)getOwner())->setIsAttacking(true);
+		((Character*)getOwner())->startAttacking();
 }
 
 

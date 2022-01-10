@@ -21,6 +21,8 @@ public:
 	/// <param name="velocity"></param>
 	void setVelocity(MathLibrary::Vector2 velocity) { m_velocity = velocity; }
 
+	bool getMovedRightLast() { return m_movedRightLast; }
+
 	/// <summary>
 	/// Get the maximum magnitude of this actors velocity vector
 	/// </summary>
@@ -35,6 +37,7 @@ public:
 	void update(float deltaTime) override;
 
 private:
+	bool m_movedRightLast;
 	MathLibrary::Vector2 m_velocity;
 	float m_maxSpeed;
 	int m_maxX =620;

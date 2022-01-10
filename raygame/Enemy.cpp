@@ -22,7 +22,7 @@ void Enemy::start()
 	//incruments the enemy count
 	m_enemyCount++;
 
-	EnemyAnimationsComponent* enemyAnimationsComponent = new EnemyAnimationsComponent("Sprites/sprites/characters/skeleton.png", "sprites/sprites/characters/skeletonleft.png", 6, 5);
+	EnemyAnimationsComponent* enemyAnimationsComponent = new EnemyAnimationsComponent("Sprites/sprites/characters/skeleton.png", "sprites/sprites/characters/skeletonleft.png", 6, 5, 8);
 	addComponent(enemyAnimationsComponent);
 
 	//initializes the followComonet and sets the target Actor...
@@ -36,7 +36,7 @@ void Enemy::start()
 
 void Enemy::update(float deltaTime)
 {
-		
+	DrawRectangleLines((getTransform()->getWorldPosition().x), (getTransform()->getWorldPosition().y), 40, 40, BLACK);
 	//allows the for the enmey to move my get the move Componet and setting its velocity and putting in the get mvoe Axis then multipling 
 	//... with its speed
 	Character::getMoveComponent()->setVelocity(m_followComponent->getMoveAxis() * Character::getSpeed());

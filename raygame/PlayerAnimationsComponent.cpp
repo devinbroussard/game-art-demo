@@ -4,8 +4,8 @@
 #include "Actor.h"
 #include "Transform2D.h"
 
-PlayerAnimationsComponent::PlayerAnimationsComponent(const char* rightPath, const char* leftPath, int xFrames, int yFrames)
-	: AnimatedSpriteComponent(rightPath, leftPath, xFrames, yFrames)
+PlayerAnimationsComponent::PlayerAnimationsComponent(const char* rightPath, const char* leftPath, int xFrames, int yFrames, float fps)
+	: AnimatedSpriteComponent(rightPath, leftPath, xFrames, yFrames, fps)
 { }
 
 void PlayerAnimationsComponent::updateFrames(float deltaTime)

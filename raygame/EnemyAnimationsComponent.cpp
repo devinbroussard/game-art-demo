@@ -2,8 +2,8 @@
 #include "Transform2D.h"
 #include "Actor.h"
 
-EnemyAnimationsComponent::EnemyAnimationsComponent(const char* rightPath, const char* leftPath, int xFrames, int yFrames)
-	: AnimatedSpriteComponent(rightPath, leftPath, 6, 5)
+EnemyAnimationsComponent::EnemyAnimationsComponent(const char* rightPath, const char* leftPath, int xFrames, int yFrames, float fps)
+	: AnimatedSpriteComponent(rightPath, leftPath, 6, 5, fps)
 { }
 
 void EnemyAnimationsComponent::updateFrames(float deltaTime)
@@ -52,4 +52,12 @@ void EnemyAnimationsComponent::updateFrames(float deltaTime)
 
 	getFrameRec()->x = getCurrentXFrame() * getTexture()->width / getXFrameCount();
 	getFrameRec()->y = getCurrentYFrame() * getTexture()->height / getYFrameCount();
+}
+
+void EnemyAnimationsComponent::draw()
+{
+	//Gets the world Posistion for the x and the y
+	Vector2 worldPosition = { Component::getOwner()->getTransform()->getWorldPosition().x - 55, getOwner()->getTransform()->getWorldPosition().y - 90 };
+	//draws the texture using the world position and the frameRec
+	DrawTextureRec(*getTexture(), *getFrameRec(), worldPosition, WHITE);
 }

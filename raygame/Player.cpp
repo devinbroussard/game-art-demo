@@ -18,7 +18,7 @@ Player::Player(float x, float y, const char* name, float speed) :
 void Player::start()
 {
 	//adds the player animatimes to the player
-	PlayerAnimationsComponent* playerAnimationsComponent = new PlayerAnimationsComponent("Sprites/sprites/characters/player.png", "Sprites/sprites/characters/playerleft.png", 6, 5);
+	PlayerAnimationsComponent* playerAnimationsComponent = new PlayerAnimationsComponent("Sprites/sprites/characters/player.png", "Sprites/sprites/characters/playerleft.png", 6, 5, 8);
 	//initalizes the input Component to player
 	m_inputComponent = new InputComponent(this);
 	//adds the player animations to player

@@ -26,9 +26,11 @@ void Character::start()
 {
 	m_healthComponent = new HealthComponent(3);
 	m_moveComponent = new MoveComponent();
+	m_attackComponent = new AttackComponent(8, 4);
 	
 	addComponent(m_healthComponent);
 	addComponent(m_moveComponent);
+	addComponent(m_attackComponent);
 
 	//adds both of the healthcomponet and the move componet to the charactor
 
