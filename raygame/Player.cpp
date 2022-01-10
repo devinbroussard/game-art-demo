@@ -34,7 +34,7 @@ void Player::start()
 void Player::update(float deltaTime)
 {
 	
-	DrawRectangleLines((getTransform()->getWorldPosition().x) + 35 , (getTransform()->getWorldPosition().y) + 60 , 50, 50, BLACK);
+	DrawRectangleLines((getTransform()->getWorldPosition().x) , (getTransform()->getWorldPosition().y), 50, 50, BLACK);
 	//made to variables that made the scale go up or down
 	float scaleUP = -5;
 	float scaleDown = 1;
