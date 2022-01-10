@@ -4,7 +4,6 @@
 #include "Scene.h"
 #include "Transform2D.h"
 #include "HealthDisplay.h"
-#include <iostream>
 #include "EnemeySpawner.h"
 
 void MainScene::start()

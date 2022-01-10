@@ -29,9 +29,12 @@ void HeartUI::update(float deltaTime)
 
 void HeartUI::killHeart(float deltaTime)
 {
-	m_spriteComponent->getTexture();
+	if (m_isBlack) return;
+
+	delete m_spriteComponent->getTexture();
 	Texture2D* texture = new Texture2D(LoadTexture("Sprites/sprites/objects/deadheart.png"));                              
 	m_spriteComponent->setTexture(texture);
+	m_isBlack = true;
 	
 	spinHeart(deltaTime);
 }

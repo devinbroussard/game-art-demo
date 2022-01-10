@@ -26,7 +26,6 @@ void Player::start()
 	getTransform()->setScale({ 2.5, 2.5 });
 
 	Character::start();
-	m_inputComponent = dynamic_cast<InputComponent*>(addComponent(new InputComponent(this)));
 }
 
 void Player::update(float deltaTime)
@@ -66,6 +65,4 @@ void Player::update(float deltaTime)
 //happens when there is a collision
 void Player::onCollision(Actor* other)
 {
-	if (other->getName() == "enemy")
-		m_player->setSpeed(1000);
 }

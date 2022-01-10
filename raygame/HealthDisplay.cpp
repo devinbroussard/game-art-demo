@@ -3,7 +3,6 @@
 #include "Character.h"
 #include "Engine.h"
 #include "Transform2D.h"
-#include <iostream>
 
 HealthDisplay::HealthDisplay(float x, float y, Character* owner) : 
 	Actor(x, y, "HealthDisplay")

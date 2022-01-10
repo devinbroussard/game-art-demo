@@ -36,20 +36,8 @@ void HealthComponent::update(float deltaTime)
 	//adds the deltaTIme to the Time Since Damage
 	m_timeSinceDamage += deltaTime;
 	Component::update(deltaTime);
-
-	//is the health is lowner than 0
-	if (m_currentHealth <= 0)
-		getOwner()->end();//end game
 }
 
 void HealthComponent::onCollision(Actor* actor)
 {
-	//if the name of the actor is "Enemy"
-	if (actor->getName() == "Enemy")
-	{
-		//collide and decrement health and ...
-		m_currentHealth--;
-		//...reset the time since damage
-		m_timeSinceDamage = 0;
-	}
 }

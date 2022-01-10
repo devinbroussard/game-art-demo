@@ -21,5 +21,6 @@ private:
 	SpriteComponent* m_spriteComponent;
 	float m_spinTimer;
 	float m_spinDuration;
+	bool m_isBlack;
 };
 
