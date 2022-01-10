@@ -4,7 +4,6 @@
 #include "Player.h"
 #include "InputComponent.h"
 #include <Vector2.h>
-#include <iostream>
 
 PlayerSpriteComponent::PlayerSpriteComponent(const char* name) :
 	SpriteComponent("Sprites/sprites/characters/player.png", name)
@@ -79,7 +78,6 @@ void PlayerSpriteComponent::updateFrames(float deltaTime)
 	m_frameRec.width = getTexture()->width / 6;
 	m_frameRec.height = getTexture()->height / 5;
 
-	std::cout << (1/m_fps) << std::endl;
 	m_timeTracker += deltaTime;
 
 	if (m_timeTracker >= (1/m_fps) && !m_textureIsLeft)

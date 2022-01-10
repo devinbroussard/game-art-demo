@@ -160,6 +160,8 @@
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="FollowComponent.cpp" />
     <ClCompile Include="HealthComponent.cpp" />
+    <ClCompile Include="HealthDisplay.cpp" />
+    <ClCompile Include="HeartUI.cpp" />
     <ClCompile Include="InputComponent.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Character.cpp" />
@@ -189,6 +191,8 @@
     <ClInclude Include="FollowComponent.h" />
     <ClInclude Include="HealthComponent.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="HealthDisplay.h" />
+    <ClInclude Include="HeartUI.h" />
     <ClInclude Include="InputComponent.h" />
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="MenuScene.h" />
@@ -199,14 +203,6 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SpriteComponent.h" />
     <ClInclude Include="Transform2D.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\Sprites\bullet.png" />
-    <Image Include="..\Sprites\enemy.png" />
-    <Image Include="..\Sprites\player.png">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
-    </Image>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

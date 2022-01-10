@@ -39,7 +39,6 @@ bool CircleCollider::checkCollisionAABB(AABBCollider* otherCollider)
     MathLibrary::Vector2 direction = getOwner()->getTransform()->getWorldPosition() - otherCollider->getOwner()->getTransform()->getWorldPosition();
 
     //Clamp the direction vector to be within the bounds of the AABB
-    //Clamp the direction vector to be within the bounds of the AABB
     if (direction.x < -otherCollider->getWidth() / 2)
         direction.x = -otherCollider->getWidth() / 2;
     else if (direction.x > otherCollider->getWidth() / 2)

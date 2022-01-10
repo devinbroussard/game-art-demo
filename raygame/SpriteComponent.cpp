@@ -23,12 +23,15 @@ SpriteComponent::SpriteComponent(Texture2D* texture, const char* name) :
 
 SpriteComponent::~SpriteComponent()
 {
-	delete m_texture;
 	RAYLIB_H::UnloadTexture(*m_texture);
 }
 
-void SpriteComponent::draw()
+void SpriteComponent::setTexture(Texture2D* texture)
+{
+	m_texture = texture;
+}
 
+void SpriteComponent::draw()
 {
 	//Scale
 	int xScale = getOwner()->getTransform()->getScale().x;

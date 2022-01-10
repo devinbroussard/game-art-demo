@@ -4,12 +4,14 @@
 #include "SpriteComponent.h"
 #include "FollowComponent.h"
 
-Character::Character(float x, float y, const char* name, float speed, int maxHealth) :
+Character::Character(float x, float y, const char* name, float speed) :
 	Actor::Actor(x, y, name)
 {
 	m_speed = speed;
 	m_firingCooldown = 0.3f;
-	m_maxHealth = maxHealth;
+
+	m_healthComponent = nullptr;
+	m_moveComponent = nullptr;
 }
 
 Character::~Character()
@@ -22,10 +24,11 @@ Character::~Character()
 /// </summary>
 void Character::start()
 {
-	//Initilizes the health componet for every charctor...
-	HealthComponent* healthComponent = new HealthComponent(m_maxHealth, this);
-	//...renames the Movecomponet to the m)moveComponet
+	m_healthComponent = new HealthComponent(3);
 	m_moveComponent = new MoveComponent();
+	
+	addComponent(m_healthComponent);
+	addComponent(m_moveComponent);
 
 	//adds both of the healthcomponet and the move componet to the charactor
 	addComponent(healthComponent);

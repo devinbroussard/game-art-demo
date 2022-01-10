@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Scene.h"
 #include "Transform2D.h"
+#include "HealthDisplay.h"
 #include <iostream>
 #include "EnemeySpawner.h"
 
@@ -10,18 +11,21 @@ void MainScene::start()
 {
 	//made the map with the load Textures
 	m_map = RAYLIB_H::LoadTexture("Sprites/Map.png");
-	//Initializes the player in the scene
-	Player* player = new Player(200, 200, "player", 100, 10);
-	//scales the player
-	player->getTransform()->setScale({ 50, 50 });
-	//adds player to the scene as a actor
+
+	Player* player = new Player(150, 150, "player", 100);
+	Enemy* enemy = new Enemy(10, 100, "enemy", 60, player);
+
 	addActor(player);
 
-	//Initializes the enemySpawner
+	HealthDisplay* playerHealthDisplay = new HealthDisplay(24, 22, player);
+	addUIElement(playerHealthDisplay);
 	EnemeySpawner* enemySpawner = new EnemeySpawner(player);
-	//adds the spawner ot the scene as a actor
 	addActor(enemySpawner);
-
+	//adds the spawner ot the scene as a actor
+	//Initializes the enemySpawner
+	//adds player to the scene as a actor
+	//scales the player
+	//Initializes the player in the scene
 }
 
 void MainScene::draw()

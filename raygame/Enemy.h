@@ -10,9 +10,7 @@ class Enemy :
 	public Character
 {
 public:
-	//deflat contructor for the enemy
-	Enemy(float x, float y, const char* name, float speed, int maxHealth, Actor* targetActor);
-	//default decontructor for the enemy
+	Enemy(float x, float y, const char* name, float speed, Actor* targetActor);
 	~Enemy() {};
 
 	void start() override;

@@ -7,27 +7,27 @@
 #include "Actor.h"
 #include "AnimatedSpriteComponent.h"
 
-
-Player::Player(float x, float y, const char* name, float speed, int maxHealth) :
-	Character::Character(x, y, name, speed, maxHealth)
+Player::Player(float x, float y, const char* name, float speed) :
+	Character::Character(x, y, name, speed)
 {
+	m_inputComponent = nullptr;
 	AABBCollider* collider = new AABBCollider(8, 6, this);
 	Actor::setCollider(collider);
 }
 
 void Player::start()
 {
-	//Initializes the Player Sprite Componet
-	PlayerAnimationsComponent* playerAnimationsComponent = new PlayerAnimationsComponent("Sprites/sprites/characters/player.png", "sprites/sprites/characters/playerleft.png", 6, 5);
-	//Adds the componet to the player
-	addComponent(playerAnimationsComponent);
-	//sets its scale
-	getTransform()->setScale({2.5, 2.5});
-	
-	Character::start();
-	//adds the input componet to the player and Initializes it.
-	m_inputComponent = dynamic_cast<InputComponent*>(addComponent(new InputComponent(this)));
+	// Set spawn point
+	//Set move speed
+	//Set position clamps
+	PlayerSpriteComponent* playerSpriteComponent = new PlayerSpriteComponent();
+	addComponent(playerSpriteComponent);
+	m_inputComponent = new InputComponent(this);
+	addComponent(m_inputComponent);
+	getTransform()->setScale({ 2.5, 2.5 });
 
+	Character::start();
+	m_inputComponent = dynamic_cast<InputComponent*>(addComponent(new InputComponent(this)));
 }
 
 void Player::update(float deltaTime)
@@ -59,6 +59,8 @@ void Player::update(float deltaTime)
 	}
 	//moves the player by seting the velocity by mulitpling the move axis and the character speed
 	Character::getMoveComponent()->setVelocity(m_inputComponent->getMoveAxis() * Character::getSpeed());
+	getHealthComponent()->takeDamage();
+
 	//then updateing
 	Character::update(deltaTime);
 }

@@ -7,9 +7,7 @@ class Player :
 	public Character
 {
 public:
-	//made a default constructor for the player
-	Player(float x, float y, const char* name, float speed, int maxHealth);
-	//deconstructor for the player
+	Player(float x, float y, const char* name, float speed);
 	~Player() {};
 
 	//Made the getinput componet to return the input componet

@@ -17,8 +17,7 @@ public:
 
 	//returns the texture
 	Texture2D* getTexture() { return m_texture; }
-	//sets the returned texture
-	void setTexture(Texture2D* texture) { m_texture = texture; }
+	void setTexture(Texture2D* texture);
 
 	//returns the width and height
 	int getWidth() { return m_width; }

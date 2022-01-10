@@ -6,16 +6,19 @@ class HealthComponent :
 	public Component
 {
 public:
-	//default constructor for the healthComponet
-	HealthComponent(int maxHealth, Actor* owner);
-	//default deconstructor for the healthComponet
+	HealthComponent(int maxHealth);
 	~HealthComponent();
+
+	void takeDamage();
+	int getHealth() { return m_currentHealth; }
+	void setHealth(int health) { m_currentHealth = health; }
+	float getTimeSinceDamage(){ return m_timeSinceDamage; }
+	float getDamageCooldown() { return m_damageCooldown; }
 
 	//called start
 	void start() override;
 	//called update
 	void update(float deltaTime) override;
-
 	//is called when a collision happens
 	void onCollision(Actor* actor) override;
 
