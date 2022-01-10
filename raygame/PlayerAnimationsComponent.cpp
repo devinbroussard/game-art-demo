@@ -1,5 +1,14 @@
 #include "PlayerAnimationsComponent.h"
+#include "AnimatedSpriteComponent.h"
 #include "Component.h"
+#include "Actor.h"
+#include "Transform2D.h"
+
+PlayerAnimationsComponent::PlayerAnimationsComponent(const char* rightPath, const char* leftPath, int xFrames, int yFrames)
+	: AnimatedSpriteComponent(rightPath, leftPath, xFrames, yFrames)
+{
+
+}
 
 void PlayerAnimationsComponent::updateFrames(float deltaTime)
 {
@@ -10,37 +19,37 @@ void PlayerAnimationsComponent::updateFrames(float deltaTime)
 	getFrameRec()->width = getTexture()->width / 6;
 	getFrameRec()->height = getTexture()->height / 5;
 
-	m_timeTracker += deltaTime;
+	setTimeTracker(getTimeTracker() + deltaTime);
 
-	if (m_timeTracker >= (1 / m_fps) && !m_textureIsLeft)
+	if (getTimeTracker() >= (1 / getFps()) && !getIsTextureLeft())
 	{
-		m_timeTracker = 0;
-		m_currentXFrame++;
+		setTimeTracker(0);
+		setCurrentXFrame(getCurrentXFrame() + 1);
 
-		if (m_currentYFrame > 2)
+		if (getCurrentYFrame() > 2)
 		{
 			//If the current x frame reaches the end of the tile image, set it back to 0
-			if (m_currentXFrame > 5) m_currentXFrame = 0;
+			if (getCurrentXFrame() > 5) setCurrentYFrame(0);
 		}
-		else if (m_currentYFrame == 2)
+		else if (getCurrentYFrame() == 2)
 			//If the current x frame reaches the end of the tile image, set it back to 0
-			if (m_currentXFrame > 3) m_currentXFrame = 0;
+			if (getCurrentXFrame() > 3) setCurrentXFrame(0);
 	}
-	else if (m_timeTracker >= (1 / m_fps) && m_textureIsLeft)
+	else if (getTimeTracker() >= (1 / getFps()) && getIsTextureLeft())
 	{
-		m_timeTracker = 0;
-		m_currentXFrame--;
+		setTimeTracker(0);
+		setCurrentXFrame(getCurrentXFrame() - 1);
 
-		if (m_currentYFrame > 2)
+		if (getCurrentYFrame() > 2)
 		{
 			//If the current x frame reaches the end of the tile image, set it back to 0
-			if (m_currentXFrame < 0) m_currentXFrame = 5;
+			if (getCurrentXFrame() < 0) setCurrentXFrame(5);
 		}
-		else if (m_currentYFrame == 2)
+		else if (getCurrentXFrame() == 2)
 			//If the current x frame reaches the end of the tile image, set it back to 0
-			if (m_currentXFrame < 2) m_currentXFrame = 5;
+			if (getCurrentXFrame() < 2) setCurrentXFrame(5);
 	}
 
-	m_frameRec.x = m_currentXFrame * getTexture()->width / 6;
-	m_frameRec.y = m_currentYFrame * getTexture()->height / 5;
+	getFrameRec()->x = getCurrentXFrame() * getTexture()->width / 6;
+	getFrameRec()->y = getCurrentYFrame() * getTexture()->height / 5;
 }

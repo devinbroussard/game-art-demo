@@ -13,9 +13,7 @@ public:
 	Character(float x, float y, const char* name, float speed, int maxHealth);
 	//decontructor for character
 	~Character();
-	
-	void setVelocity(float x, float y);
-	MathLibrary::Vector2 getVelocity() { return m_velocity; }
+
 	float getSpeed() { return m_speed; }
 	void setSpeed(float speed) { m_speed = speed; }
 	bool getIsAttacking() { return m_isAttacking; }

@@ -16,9 +16,6 @@ Character::~Character()
 {
 }
 
-void Character::setVelocity(float x, float y)
-{
-}
 
 /// <summary>
 /// Adds all of the character's components to its components array

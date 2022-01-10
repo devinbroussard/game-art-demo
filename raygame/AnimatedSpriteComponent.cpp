@@ -2,6 +2,8 @@
 #include "Character.h"
 #include "Component.h"
 #include "Transform2D.h"
+#include "MoveComponent.h"
+#include <iostream>
 
 AnimatedSpriteComponent::AnimatedSpriteComponent(const char* rightPath, const char* leftPath, int xFrames, int yFrames) :
 	SpriteComponent(rightPath, "AnimatedSpriteComponent")
@@ -47,19 +49,19 @@ void AnimatedSpriteComponent::draw()
 void AnimatedSpriteComponent::getCurrentFrames()
 {
 	//Getting whether or not the player is moving left or right
-	if (0 < getCharacter()->getVelocity().x && m_textureIsLeft)
+	if (0 < getCharacter()->getMoveComponent()->getVelocity().x && m_textureIsLeft)
 	{
 		setTexture(m_rightTexture);
 		m_textureIsLeft = false;
 	}
-	if (getCharacter()->getVelocity().x < 0 && !m_textureIsLeft)
+	if (getCharacter()->getMoveComponent()->getVelocity().x < 0 && !m_textureIsLeft)
 	{
 		setTexture(m_leftTexture);
 		m_textureIsLeft = true;
 	}
-
+	std::cout << getCharacter()->getMoveComponent()->getVelocity().x << std::endl;
 	//Getting whether or not the player is standing still
-	if (getCharacter()->getVelocity().x && getCharacter()->getVelocity().y == 0)
+	if (getCharacter()->getMoveComponent()->getVelocity().x != 0 || getCharacter()->getMoveComponent()->getVelocity().y != 0)
 		m_currentYFrame = 1;
 	else m_currentYFrame = 0;
 
