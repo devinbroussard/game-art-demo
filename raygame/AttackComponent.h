@@ -12,7 +12,7 @@ public:
 
 	Character* getCharacterOwner() { return (Character*)getOwner(); }
 	bool getIsAttacking() { return m_isAttacking; }
-	void startAttacking() { m_isAttacking = true; }
+	void setIsAttacking(bool value) { m_isAttacking = value; }
 
 	//called update
 	void update(float deltaTime) override;

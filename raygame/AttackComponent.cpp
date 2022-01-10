@@ -21,12 +21,17 @@ void AttackComponent::update(float deltaTime)
 		{	
 			if (getCharacterOwner()->getMoveComponent()->getMovedRightLast())
 			{
-				DrawCircleLines(getOwner()->getTransform()->getWorldPosition().x, getOwner()->getTransform()->getWorldPosition().y, 30, RAYLIB_H::BLACK);
+				DrawCircleLines(getOwner()->getTransform()->getWorldPosition().x+ 40, getOwner()->getTransform()->getWorldPosition().y + 30, 30, RAYLIB_H::BLACK);
+				CircleCollider* circleCollider = new CircleCollider(30, getOwner());
+			}
+			if (!getCharacterOwner()->getMoveComponent()->getMovedRightLast())
+			{
+				DrawCircleLines(getOwner()->getTransform()->getWorldPosition().x + 10, getOwner()->getTransform()->getWorldPosition().y + 30, 30, RAYLIB_H::BLACK);
 				CircleCollider* circleCollider = new CircleCollider(30, getOwner());
 			}
 		}
 		else if (m_timeTracker > m_fps) m_timeTracker = 0;
 	}
 
-	m_isAttacking = false;
+	//m_isAttacking = false;
 }

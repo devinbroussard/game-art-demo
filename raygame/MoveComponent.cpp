@@ -8,6 +8,7 @@ MoveComponent::MoveComponent(const char* name) : Component::Component(name)
 {
 	m_maxSpeed = 0;
 	m_velocity = MathLibrary::Vector2(0, 0);
+	m_movedRightLast = true;
 }
 
 void MoveComponent::update(float deltaTime)
