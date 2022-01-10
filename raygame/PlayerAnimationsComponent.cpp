@@ -29,7 +29,7 @@ void PlayerAnimationsComponent::updateFrames(float deltaTime)
 		if (getCurrentYFrame() > 2)
 		{
 			//If the current x frame reaches the end of the tile image, set it back to 0
-			if (getCurrentXFrame() > 5) setCurrentYFrame(0);
+			if (getCurrentXFrame() > getXFrameCount()) setCurrentYFrame(0);
 		}
 		else if (getCurrentYFrame() == 2)
 			//If the current x frame reaches the end of the tile image, set it back to 0
@@ -43,13 +43,17 @@ void PlayerAnimationsComponent::updateFrames(float deltaTime)
 		if (getCurrentYFrame() > 2)
 		{
 			//If the current x frame reaches the end of the tile image, set it back to 0
-			if (getCurrentXFrame() < 0) setCurrentXFrame(5);
+			if (getCurrentXFrame() < 0) setCurrentXFrame(getXFrameCount() - 1);
 		}
-		else if (getCurrentXFrame() == 2)
+		else if (getCurrentYFrame() == 2)
 			//If the current x frame reaches the end of the tile image, set it back to 0
-			if (getCurrentXFrame() < 2) setCurrentXFrame(5);
+  			if (getCurrentXFrame() < 2)
+		{
+			setCurrentXFrame(getXFrameCount() - 1);
+			setStartAttack(false);
+		}
 	}
 
-	getFrameRec()->x = getCurrentXFrame() * getTexture()->width / 6;
-	getFrameRec()->y = getCurrentYFrame() * getTexture()->height / 5;
+	getFrameRec()->x = getCurrentXFrame() * getTexture()->width / getXFrameCount();
+	getFrameRec()->y = getCurrentYFrame() * getTexture()->height / getYFrameCount();
 }
