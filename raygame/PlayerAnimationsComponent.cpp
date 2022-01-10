@@ -27,7 +27,7 @@ void PlayerAnimationsComponent::updateFrames(float deltaTime)
 		if (getCurrentYFrame() > 2)
 		{
 			//If the current x frame reaches the end of the tile image, set it back to 0
-			if (getCurrentXFrame() > getXFrameCount()) setCurrentYFrame(0);
+			if (getCurrentXFrame() > getXFrameCount() - 1) setCurrentYFrame(0);
 		}
 		else if (getCurrentYFrame() == 2)
 			//If the current x frame reaches the end of the tile image, set it back to 0
