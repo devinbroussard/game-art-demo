@@ -30,7 +30,7 @@ public:
 	void setStartAttack(bool startAttack) { m_startAttack = startAttack; }
 
 	void update(float deltaTime) override;
-	void draw() override;
+	virtual void draw() override;
 	void getCurrentFrames();
 	virtual void updateFrames(float deltaTime) {};
 
