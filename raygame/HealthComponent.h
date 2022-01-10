@@ -27,5 +27,6 @@ private:
 	int m_currentHealth;
 	float m_damageCooldown;
 	float m_timeSinceDamage;
+	
 };
 

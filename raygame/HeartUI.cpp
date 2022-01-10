@@ -3,6 +3,7 @@
 #include "HealthDisplay.h"
 #include "Transform2D.h"
 #include "Character.h"
+#include "Engine.h"
 
 HeartUI::HeartUI(float x, float y, Character* owner, HealthDisplay* display)
 	: Actor(x, y, "HeartUI")
@@ -36,8 +37,7 @@ void HeartUI::killHeart(float deltaTime)
 	Texture2D* texture = new Texture2D(LoadTexture("Sprites/sprites/objects/deadheart.png"));                              
 	m_spriteComponent->setTexture(texture);
 
-
-	m_isBlack = true;
+	m_isBlack = true;	
 }
 
 void HeartUI::spinHeart(float deltaTime)
