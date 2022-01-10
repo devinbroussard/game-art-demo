@@ -29,8 +29,8 @@ void Engine::start()
 	SetTargetFPS(0);
 
 	//Start the scene
-	m_currentSceneIndex = addScene(new MainScene());
-	//addScene(new MainScene());
+	m_currentSceneIndex = addScene(new MenuScene());
+	addScene(new MainScene());
 	m_scenes[m_currentSceneIndex]->start();
 
 }
@@ -196,6 +196,9 @@ void Engine::setCurrentScene(int index)
 
 	//Update the current scene index
 	m_currentSceneIndex = index;
+
+	//Start the new scene
+	m_scenes[m_currentSceneIndex]->start();
 }
 
 bool Engine::getKeyDown(int key)
