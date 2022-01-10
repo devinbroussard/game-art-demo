@@ -7,10 +7,12 @@
 #include "EnemeySpawner.h"
 #include "UIActor.h"
 #include "MenuScene.h"
+#include "Enemy.h"
 
 void MainScene::start()
 {
 
+	RAYLIB_H::KEY_PAUSE;
 	UIActor* UiActor = new UIActor(20, 20, 20, "Press z to increase scale." 
 		"\nPress x to decrease scale", BLACK);
 	
@@ -30,6 +32,7 @@ void MainScene::start()
 	EnemeySpawner* enemySpawner = new EnemeySpawner(player);
 	//Initializes the enemySpawner
 	addActor(enemySpawner);
+	Scene::start();
 
 }
 
