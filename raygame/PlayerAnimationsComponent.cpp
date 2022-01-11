@@ -25,7 +25,7 @@ void PlayerAnimationsComponent::updateFrames(float deltaTime)
 		setTimeTracker(0);
 		setCurrentXFrame(getCurrentXFrame() + 1);
 
-		if (getCurrentYFrame() > 2)
+		if (getCurrentYFrame() < 2)
 		{
 			//If the current x frame reaches the end of the tile image, set it back to 0
 			if (getCurrentXFrame() > getXFrameCount() - 1) setCurrentYFrame(0);
@@ -35,7 +35,7 @@ void PlayerAnimationsComponent::updateFrames(float deltaTime)
 			//If the current x frame reaches the end of the tile image, set it back to 0
 			if (getCurrentXFrame() > 3) setCurrentXFrame(0);
 		}
-		else if (getCurrentXFrame() == 4)
+		else if (getCurrentYFrame() == 4)
 		{
 			if (getCurrentXFrame() > 2)  setCharacterIsDead(true);
 		}
@@ -45,22 +45,29 @@ void PlayerAnimationsComponent::updateFrames(float deltaTime)
 		setTimeTracker(0);
 		setCurrentXFrame(getCurrentXFrame() - 1);
 
-		if (getCurrentYFrame() > 2)
+		if (getCurrentYFrame() < 2)
 		{
 			//If the current x frame reaches the end of the tile image, set it back to 0
 			if (getCurrentXFrame() < 0) setCurrentXFrame(getXFrameCount() - 1);
 		}
 		else if (getCurrentYFrame() == 2)
+		{
 			//If the current x frame reaches the end of the tile image, set it back to 0
 			if (getCurrentXFrame() < 2)
 			{
 				setCurrentXFrame(getXFrameCount() - 1);
 				setStartAttack(false);
 			}
-
+		}
+		else if (getCurrentYFrame() == 4)
+		{
+			if (getCurrentXFrame() < 3)  setCharacterIsDead(true);
+		}
 	}
-	/*else if (getCharacterIsDead())
-		setCurrentXFrame(2);*/
+	else if (getCharacterIsDead() && !getIsTextureLeft())
+		setCurrentXFrame(2);
+	else if (getCharacterIsDead() && getIsTextureLeft())
+		setCurrentXFrame(3);
 
 	getFrameRec()->x = getCurrentXFrame() * getTexture()->width / getXFrameCount();
 	getFrameRec()->y = getCurrentYFrame() * getTexture()->height / getYFrameCount();
