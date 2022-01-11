@@ -25,7 +25,7 @@ public:
 	void setCurrentXFrame(int xFrame) { m_currentXFrame = xFrame; }
 	void setCurrentYFrame(int yFrame) { m_currentYFrame = yFrame; }
 	void setIsTextureLeft(bool isLeft) { m_textureIsLeft = isLeft; }
-	void setStartAttack(bool startAttack) { m_startAttack = startAttack; }
+	void setStartAttack(bool value) { m_startAttack = value; }
 	void setCharacterIsDead(bool value) { m_characterIsDead = true; }
 	bool getCharacterIsDead() { return m_characterIsDead; }
 	

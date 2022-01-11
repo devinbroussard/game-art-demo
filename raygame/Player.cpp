@@ -61,7 +61,6 @@ void Player::update(float deltaTime)
 	}
 	//moves the player by seting the velocity by mulitpling the move axis and the character speed
 	Character::getMoveComponent()->setVelocity(m_inputComponent->getMoveAxis() * Character::getSpeed());
-	getHealthComponent()->takeDamage();
 
 	//then updateing
 	Character::update(deltaTime);
@@ -69,4 +68,8 @@ void Player::update(float deltaTime)
 //happens when there is a collision
 void Player::onCollision(Actor* other)
 {
+	if (other->getName() == "Attack")
+	{
+		getHealthComponent()->takeDamage();
+	}
 }

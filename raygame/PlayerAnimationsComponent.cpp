@@ -3,6 +3,7 @@
 #include "Component.h"
 #include "Actor.h"
 #include "Transform2D.h"
+#include "Character.h"
 
 PlayerAnimationsComponent::PlayerAnimationsComponent(const char* rightPath, const char* leftPath, int xFrames, int yFrames, float fps)
 	: AnimatedSpriteComponent(rightPath, leftPath, xFrames, yFrames, fps)
@@ -32,8 +33,11 @@ void PlayerAnimationsComponent::updateFrames(float deltaTime)
 		}
 		else if (getCurrentYFrame() == 2)
 		{
-			//If the current x frame reaches the end of the tile image, set it back to 0
-			if (getCurrentXFrame() > 3) setCurrentXFrame(0);
+			if (getCurrentXFrame() > 3)
+			{
+				getCharacter()->setAttacking(false);
+				setStartAttack(false);
+			}
 		}
 		else if (getCurrentYFrame() == 4)
 		{
@@ -55,8 +59,9 @@ void PlayerAnimationsComponent::updateFrames(float deltaTime)
 			//If the current x frame reaches the end of the tile image, set it back to 0
 			if (getCurrentXFrame() < 2)
 			{
-				setCurrentXFrame(getXFrameCount() - 1);
+				getCharacter()->setAttacking(false);
 				setStartAttack(false);
+				getCharacter()->setAttacking(false);
 			}
 		}
 		else if (getCurrentYFrame() == 4)

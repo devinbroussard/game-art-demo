@@ -2,6 +2,7 @@
 #include "FollowComponent.h"
 #include "MainScene.h"
 #include "EnemyAnimationsComponent.h"
+#include <iostream>
 
 int Enemy::m_enemyCount = 0;
 
@@ -47,5 +48,8 @@ void Enemy::update(float deltaTime)
 void Enemy::onCollision(Actor* other)
 {
 	if (other->getName() == "Attack")
+	{
 		getHealthComponent()->takeDamage();
+		std::cout << "Collision!" << std::endl;
+	}
 }
