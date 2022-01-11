@@ -28,10 +28,19 @@ void MainScene::start()
 	HealthDisplay* playerHealthDisplay = new HealthDisplay(10, -3, player);
 	//initializes the player health display
 	addUIElement(playerHealthDisplay);
+
+
+	Enemy* enemy = new Enemy(0, 0, "Enemy", 50, player);
+	HealthDisplay* enemyHealthDisplay = new HealthDisplay(10, -3, enemy);
+	addActor(enemy);
+	addUIElement(enemyHealthDisplay);
+
+
+
 	//adds the spawner ot the scene 
-	EnemeySpawner* enemySpawner = new EnemeySpawner(player);
+	//EnemeySpawner* enemySpawner = new EnemeySpawner(player);
 	//Initializes the enemySpawner
-	addActor(enemySpawner);
+	//addActor(enemySpawner);
 	Scene::start();
 
 }
