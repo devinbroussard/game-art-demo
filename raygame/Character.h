@@ -25,9 +25,9 @@ public:
 	MoveComponent* getMoveComponent() { return m_moveComponent; }
 
 
-	void start();
-	void update(float deltaTime);
-	void draw();
+	void start() override;
+	void update(float deltaTime) override;
+	void draw() override;
 
 private:
 	MathLibrary::Vector2 m_velocity;

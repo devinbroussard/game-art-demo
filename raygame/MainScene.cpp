@@ -7,10 +7,12 @@
 #include "EnemeySpawner.h"
 #include "UIActor.h"
 #include "MenuScene.h"
+#include "Enemy.h"
 
 void MainScene::start()
 {
 
+	RAYLIB_H::KEY_PAUSE;
 	UIActor* UiActor = new UIActor(20, 20, 20, "Press z to increase scale." 
 		"\nPress x to decrease scale", BLACK);
 	
@@ -18,26 +20,20 @@ void MainScene::start()
 
 	//made the map with the load Textures
 	m_map = RAYLIB_H::LoadTexture("Sprites/Map.png");
-
-	Player* player = new Player(150, 150, "player", 100);
-	Enemy* enemy = new Enemy(10, 100, "enemy", 60, player);
-
-	addActor(player);
-	//addActor(enemy);
-
-	HealthDisplay* playerHealthDisplay = new HealthDisplay(24, 22, player);
-	addUIElement(playerHealthDisplay);
-
-	HealthDisplay* enemyHealthDisplay = new HealthDisplay(24, 22, enemy);
-	//addUIElement(enemyHealthDisplay);
-
-	//EnemeySpawner* enemySpawner = new EnemeySpawner(player);
-	//addActor(enemySpawner);
-	//adds the spawner ot the scene as a actor
-	//Initializes the enemySpawner
 	//adds player to the scene as a actor
-	//scales the player
+	Player* player = new Player(150, 150, "player", 100);
 	//Initializes the player in the scene
+	addActor(player);
+	//adds the healthDispaly to the scene
+	HealthDisplay* playerHealthDisplay = new HealthDisplay(10, -3, player);
+	//initializes the player health display
+	addUIElement(playerHealthDisplay);
+	//adds the spawner ot the scene 
+	EnemeySpawner* enemySpawner = new EnemeySpawner(player);
+	//Initializes the enemySpawner
+	addActor(enemySpawner);
+	Scene::start();
+
 }
 
 void MainScene::draw()

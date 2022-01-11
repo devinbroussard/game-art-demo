@@ -3,6 +3,7 @@
 #include "Character.h"
 #include "Engine.h"
 #include "Transform2D.h"
+#include "Engine.h"
 
 HealthDisplay::HealthDisplay(float x, float y, Character* owner) : 
 	Actor(x, y, "HealthDisplay")
@@ -41,10 +42,16 @@ void HealthDisplay::update(float deltaTime)
 
 void HealthDisplay::checkHealth(float deltaTime)
 {
+	if (!m_owner->getHealthComponent())
+		return;
 	if (m_owner->getHealthComponent()->getHealth() < 3)
 		m_thirdHeart->killHeart(deltaTime);
 	if (m_owner->getHealthComponent()->getHealth() < 2)
 		m_secondHeart->killHeart(deltaTime);
 	if (m_owner->getHealthComponent()->getHealth() < 1)
+	{
 		m_firstHeart->killHeart(deltaTime);
+		Engine::setCurrentScene(0);
+	}
+		
 }

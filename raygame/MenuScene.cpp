@@ -1,6 +1,5 @@
 #include "MenuScene.h"
 #include "UIActor.h"
-#include "MainScene.h"
 
 void MenuScene::start()
 {
@@ -21,5 +20,4 @@ void MenuScene::update(float deltaTime)
 
 void MenuScene::draw()
 {
-	Scene::draw();
 }
