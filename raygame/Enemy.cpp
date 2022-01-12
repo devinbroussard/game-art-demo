@@ -24,12 +24,14 @@ void Enemy::start()
 	//incruments the enemy count
 	m_enemyCount++;
 
-
+	//Made a intece of healthDisplay
 	HealthDisplay* enemyHealthDisplay = new HealthDisplay(10, -3, this);
-
+	//added the healthDisplay to the currentScene
 	Engine::getCurrentScene()->addUIElement(enemyHealthDisplay);
 
+	//Made a intece of enemy animation
 	EnemyAnimationsComponent* enemyAnimationsComponent = new EnemyAnimationsComponent("Sprites/sprites/characters/skeleton.png", "sprites/sprites/characters/skeletonleft.png", 6, 5, 8);
+	//made the instence
 	addComponent(enemyAnimationsComponent);
 
 	//initializes the followComonet and sets the target Actor...
