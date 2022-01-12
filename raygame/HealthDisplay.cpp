@@ -37,13 +37,13 @@ void HealthDisplay::update(float deltaTime)
 {	
 	checkHealth(deltaTime); 
 	Actor::update(deltaTime);
-	
 }
 
 void HealthDisplay::checkHealth(float deltaTime)
 {
-	if (!m_owner->getHealthComponent())
+	if (!m_owner->getHealthComponent())//if nullpointer happes return
 		return;
+	//turns the hearts to black
 	if (m_owner->getHealthComponent()->getHealth() < 3)
 		m_thirdHeart->killHeart(deltaTime);
 	if (m_owner->getHealthComponent()->getHealth() < 2)
