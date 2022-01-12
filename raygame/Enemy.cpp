@@ -23,7 +23,6 @@ void Enemy::start()
 	//called start
 	Character::start();
 	//incruments the enemy count
-	m_enemyCount++;
 
 	//Made a intece of healthDisplay
 	HealthDisplay* enemyHealthDisplay = new HealthDisplay(10, -3, this);
@@ -44,6 +43,15 @@ void Enemy::start()
 	getTransform()->setScale({ 2.5, 2.5 });
 }
 
+void Enemy::end()
+{
+	if (!m_ended)
+	{
+		m_enemyCount--;
+		m_ended = true;
+	}
+}
+
 void Enemy::update(float deltaTime)
 {
 	//DrawRectangleLines((getTransform()->getWorldPosition().x), (getTransform()->getWorldPosition().y), 40, 40, BLACK);
@@ -52,7 +60,12 @@ void Enemy::update(float deltaTime)
 	//... with its speed
 	if (getHealthComponent()->getHealth() > 0)
 		Character::getMoveComponent()->setVelocity(m_followComponent->getMoveAxis() * Character::getSpeed());
-	else getMoveComponent()->setVelocity({ 0, 0 });
+	else
+	{
+		getMoveComponent()->setVelocity({ 0, 0 });
+		end();
+	}
+
 
 	//Then update
 	Character::update(deltaTime);

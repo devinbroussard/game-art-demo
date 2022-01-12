@@ -15,6 +15,7 @@ public:
 	~Enemy() {};
 
 	void start() override;
+	void end() override;
 	void update(float deltaTime);
 	int gethealth() { return m_maxHealth; }
 
@@ -23,6 +24,7 @@ public:
 	void  onCollision(Actor* other);
 
 private:
+	bool m_ended;
 	int m_maxHealth;
 	Actor* m_targetActor;
 	FollowComponent* m_followComponent;
