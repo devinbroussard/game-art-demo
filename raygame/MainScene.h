@@ -16,7 +16,5 @@ public:
 private:
 	//is the background of the game
 	Texture2D m_map;
-	//is the number of enemies that is allowed to spawn
-	
 };
 

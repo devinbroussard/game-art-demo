@@ -166,7 +166,7 @@
       <Filter>Header Files\UI</Filter>
     </ClInclude>
     <ClInclude Include="EnemyAnimationsComponent.h">
-      <Filter>Source Files\Components</Filter>
+      <Filter>Header Files\components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
