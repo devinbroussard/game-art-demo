@@ -5,7 +5,10 @@
 #include "Actor.h"
 
 
-
+/// <summary>
+/// Spawns another enemy if all of the enemies in the scene have been slain
+/// </summary>
+/// <param name="deltaTime"></param>
 void EnemeySpawner::update(float deltaTime)
 {
 	

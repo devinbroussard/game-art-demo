@@ -24,7 +24,10 @@ MathLibrary::Vector2 InputComponent::getMoveAxis()
 	return MathLibrary::Vector2(0, 0);
 }
 
-
+/// <summary>
+/// Gets the player's input and updates the game accordingly
+/// </summary>
+/// <param name="deltaTime"></param>
 void InputComponent::update(float deltaTime)
 {
 	if (IsKeyPressed(KEY_ESCAPE))

@@ -13,6 +13,9 @@ HeartUI::HeartUI(float x, float y, Character* owner, HealthDisplay* display)
 	m_spinDuration = 1.2f;
 }
 
+/// <summary>
+/// Adds the heart icon's sprite component
+/// </summary>
 void HeartUI::start()
 {
 	m_spinTimer = 0;
@@ -22,12 +25,20 @@ void HeartUI::start()
 	Actor::start();
 }
 
+/// <summary>
+/// Calls the base actor's udpate
+/// </summary>
+/// <param name="deltaTime"></param>
 void HeartUI::update(float deltaTime)
 {
 
 	Actor::update(deltaTime);
 }
 
+/// <summary>
+/// Sets the heart icon to the dead heart icon and spins it
+/// </summary>
+/// <param name="deltaTime"></param>
 void HeartUI::killHeart(float deltaTime)
 {
 	spinHeart(deltaTime);
@@ -40,6 +51,10 @@ void HeartUI::killHeart(float deltaTime)
 	m_isBlack = true;	
 }
 
+/// <summary>
+/// Spins the heart to show rotation
+/// </summary>
+/// <param name="deltaTime"></param>
 void HeartUI::spinHeart(float deltaTime)
 {
 	m_spinTimer += deltaTime;
