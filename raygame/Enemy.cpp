@@ -2,6 +2,8 @@
 #include "FollowComponent.h"
 #include "MainScene.h"
 #include "EnemyAnimationsComponent.h"
+#include "HealthDisplay.h"
+#include "Engine.h"
 
 int Enemy::m_enemyCount = 0;
 
@@ -21,6 +23,11 @@ void Enemy::start()
 	Character::start();
 	//incruments the enemy count
 	m_enemyCount++;
+
+
+	HealthDisplay* enemyHealthDisplay = new HealthDisplay(10, -3, this);
+
+	Engine::getCurrentScene()->addUIElement(enemyHealthDisplay);
 
 	EnemyAnimationsComponent* enemyAnimationsComponent = new EnemyAnimationsComponent("Sprites/sprites/characters/skeleton.png", "sprites/sprites/characters/skeletonleft.png", 6, 5, 8);
 	addComponent(enemyAnimationsComponent);

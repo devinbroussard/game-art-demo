@@ -30,10 +30,12 @@ void MainScene::start()
 	addUIElement(playerHealthDisplay);
 
 
-	Enemy* enemy = new Enemy(0, 0, "Enemy", 50, player);
-	HealthDisplay* enemyHealthDisplay = new HealthDisplay(10, -3, enemy);
-	addActor(enemy);
-	addUIElement(enemyHealthDisplay);
+	//Enemy* enemy = new Enemy(0, 0, "Enemy", 50, player);
+	//addActor(enemy);
+	EnemeySpawner* enemySpawner = new EnemeySpawner(player);
+	//Initializes the enemySpawner
+	addActor(enemySpawner);
+	
 
 
 
