@@ -1,12 +1,10 @@
-# Zombie-game.
-Welcome to the single player art disighn trial. This trial is to show how a team of two built a game with limited resorces and showed there skills as a team. To begin the application you have to down load the zip file. Extract the file and you will find the Access key file open that and click the *.exe* file.
+This application was made to demonstrate animations using Raylib. This project was made by a group of two as a graded assignment to build teamwork skills. To open the application, download the zip file, extract it, and run the ".exe" file.
 
-To move your character
-> wasd are the keys.\
-w = up.\
-s = down.\
-a = left.\
-d = right.
+## Game Controls:
+* w > Move the character up
+* a > Move the character left
+* s > Move the character down
+* d > Move the character right
 
 To attack with your character
 > Space bar.
