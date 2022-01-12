@@ -4,6 +4,7 @@
 #include "EnemyAnimationsComponent.h"
 #include "HealthDisplay.h"
 #include "Engine.h"
+#include <iostream>
 
 int Enemy::m_enemyCount = 0;
 
@@ -45,10 +46,14 @@ void Enemy::start()
 
 void Enemy::update(float deltaTime)
 {
-	DrawRectangleLines((getTransform()->getWorldPosition().x), (getTransform()->getWorldPosition().y), 40, 40, BLACK);
+	//DrawRectangleLines((getTransform()->getWorldPosition().x), (getTransform()->getWorldPosition().y), 40, 40, BLACK);
+
 	//allows the for the enmey to move my get the move Componet and setting its velocity and putting in the get mvoe Axis then multipling 
 	//... with its speed
-	Character::getMoveComponent()->setVelocity(m_followComponent->getMoveAxis() * Character::getSpeed());
+	if (getHealthComponent()->getHealth() > 0)
+		Character::getMoveComponent()->setVelocity(m_followComponent->getMoveAxis() * Character::getSpeed());
+	else getMoveComponent()->setVelocity({ 0, 0 });
+
 	//Then update
 	Character::update(deltaTime);
 }
@@ -56,5 +61,8 @@ void Enemy::update(float deltaTime)
 void Enemy::onCollision(Actor* other)
 {
 	if (other->getName() == "Attack")
+	{
 		getHealthComponent()->takeDamage();
+		std::cout << "Collision!" << std::endl;
+	}
 }

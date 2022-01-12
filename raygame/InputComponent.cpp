@@ -2,6 +2,7 @@
 #include "Actor.h"
 #include "Transform2D.h"
 #include "Character.h"
+#include "Engine.h"
 
 InputComponent::InputComponent(Actor* owner) :
 	Component::Component("Input Component")
@@ -26,9 +27,13 @@ MathLibrary::Vector2 InputComponent::getMoveAxis()
 
 void InputComponent::update(float deltaTime)
 {
+	if (IsKeyPressed(KEY_ESCAPE))
+		Engine::CloseApplication();
+	if (IsKeyPressed(KEY_E))
+		m_killPlayer = true;
 	//if the key is = to the meleeswing
 	if (IsKeyPressed(m_meleeSwing))
-		((Character*)getOwner())->startAttacking();
+		((Character*)getOwner())->setAttacking(true);
 }
 
 
