@@ -23,7 +23,7 @@ void MainScene::start()
 	//adds player to the scene as a actor
 	Player* player = new Player(300, 300, "player", 100);
 	//Initializes the player in the scene
-	
+	addActor(player);
 	//adds the healthDispaly to the scene
 	HealthDisplay* playerHealthDisplay = new HealthDisplay(10, -3, player);
 	//initializes the player health display
