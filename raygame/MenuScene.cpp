@@ -3,7 +3,7 @@
 
 void MenuScene::start()
 {
-	UIActor* UiActor = new UIActor(200, 200, 20, "Hi. Welcome to the game.\nstart press 1.\nTo leave press 2.");
+	UIActor* UiActor = new UIActor(200, 200, 20, "Hi. Welcome to the game.\nStart press 1.\nTo leave press 2.");
 	Engine::getCurrentScene()->addUIElement(UiActor);
 }
 

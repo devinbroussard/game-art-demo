@@ -12,8 +12,8 @@
 void MainScene::start()
 {
 
-	UIActor* UiActor = new UIActor(20, 20, 20, "Press z to increase scale." 
-		"\nPress x to decrease scale" "\nPress c to go to standard scale" "\nPress e to kill the player" "\nPress ESC to leave");
+	UIActor* UiActor = new UIActor(20, 20, 20, "Press Z to increase scale." 
+		"\nPress X to decrease scale" "\nPress C to go to standard scale" "\nPress E to kill the player" "\nPress ESC to leave");
 	
 	Engine::getCurrentScene()->addUIElement(UiActor);
 
