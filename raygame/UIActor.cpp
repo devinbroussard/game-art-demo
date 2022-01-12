@@ -1,12 +1,13 @@
 #include "UIActor.h"
 #include "Transform2D.h"
 
-UIActor::UIActor(int x ,int y, int fontSize, const char* text)
+UIActor::UIActor(int x ,int y, int fontSize, const char* text, Color color)
 {
 	m_fontSize = fontSize;
 	m_text = text;
 	m_x = x;
 	m_y = y;
+	m_color = color;
 }
 
 /// <summary>

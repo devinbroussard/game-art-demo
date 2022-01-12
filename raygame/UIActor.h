@@ -7,6 +7,7 @@ class UIActor :
 {
 public:
 	UIActor(int x ,int y, int fontSize, const char* text);
+	UIActor(int x, int y, int fontSize, const char* text, Color color);
 	void draw() override;
 
 private:
@@ -14,5 +15,6 @@ private:
 	int m_x;
 	int m_y;
 	const char* m_text;
+	Color m_color;
 };
 

@@ -5,7 +5,7 @@ HealthComponent::HealthComponent(int maxHealth) :
 {
 	m_maxHealth = maxHealth;
 	m_currentHealth = maxHealth;
-	m_damageCooldown = 5;
+	m_damageCooldown = 1.2F;
 	m_timeSinceDamage = 0;
 }
 
