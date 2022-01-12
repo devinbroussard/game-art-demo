@@ -34,7 +34,7 @@ void Player::start()
 void Player::update(float deltaTime)
 {
 	
-	DrawRectangleLines((getTransform()->getWorldPosition().x) , (getTransform()->getWorldPosition().y), 50, 50, BLACK);
+	//DrawRectangleLines((getTransform()->getWorldPosition().x) , (getTransform()->getWorldPosition().y), 50, 50, BLACK);
 	//made to variables that made the scale go up or down
 	float scaleUP = -5;
 	float scaleDown = 1;
@@ -62,14 +62,12 @@ void Player::update(float deltaTime)
 	//moves the player by seting the velocity by mulitpling the move axis and the character speed
 	Character::getMoveComponent()->setVelocity(m_inputComponent->getMoveAxis() * Character::getSpeed());
 
+	if (getInputComponent()->getKillPlayer())
+		getHealthComponent()->takeDamage();
+
 	//then updateing
 	Character::update(deltaTime);
 }
 //happens when there is a collision
 void Player::onCollision(Actor* other)
-{
-	if (other->getName() == "Attack")
-	{
-		getHealthComponent()->takeDamage();
-	}
-}
+{ }

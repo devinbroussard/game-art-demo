@@ -45,7 +45,7 @@ void AttackComponent::update(float deltaTime)
 			Engine::getCurrentScene()->addActor(m_attackActor);
 			m_attackStarted = true;
 		}
-		else
+		/*else
 		{
 
 			if (getCharacterOwner()->getMoveComponent()->getMovedRightLast())
@@ -53,9 +53,9 @@ void AttackComponent::update(float deltaTime)
 
 			else if(!getCharacterOwner()->getMoveComponent()->getMovedRightLast())
 				DrawCircleLines(getOwner()->getTransform()->getWorldPosition().x + 10, getOwner()->getTransform()->getWorldPosition().y + 30, 30, RAYLIB_H::BLACK);
-		}
+		}*/
 	}
-	else
+	else if (m_attackStarted)
 	{ 
 		m_attackStarted = false;
 		Engine::getCurrentScene()->removeActor(m_attackActor);

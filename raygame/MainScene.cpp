@@ -14,27 +14,27 @@ void MainScene::start()
 
 	RAYLIB_H::KEY_PAUSE;
 	UIActor* UiActor = new UIActor(20, 20, 20, "Press z to increase scale." 
-		"\nPress x to decrease scale", BLACK);
+		"\nPress x to decrease scale" "\nPress c to go to standard scale" "\nPress e to kill the player" "\nPress ESC to leave", BLACK);
 	
 	Engine::getCurrentScene()->addUIElement(UiActor);
 
 	//made the map with the load Textures
 	m_map = RAYLIB_H::LoadTexture("Sprites/Map.png");
 	//adds player to the scene as a actor
-	Player* player = new Player(150, 150, "player", 100);
+	Player* player = new Player(300, 300, "player", 100);
 	//Initializes the player in the scene
-	addActor(player);
+	
 	//adds the healthDispaly to the scene
 	HealthDisplay* playerHealthDisplay = new HealthDisplay(10, -3, player);
 	//initializes the player health display
 	addUIElement(playerHealthDisplay);
 
 
-	Enemy* enemy = new Enemy(0, 0, "Enemy", 50, player);
+	Enemy* enemy = new Enemy(200, 200, "Enemy", 25, player);
 	HealthDisplay* enemyHealthDisplay = new HealthDisplay(10, -3, enemy);
 	addActor(enemy);
 	addUIElement(enemyHealthDisplay);
-
+	addActor(player);
 
 
 	//adds the spawner ot the scene 
