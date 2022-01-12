@@ -31,7 +31,8 @@ void Engine::start()
 	SetTargetFPS(0);
 
 	//Start the scene
-	m_currentSceneIndex = addScene(new MainScene());
+	m_currentSceneIndex = addScene(new MenuScene());
+	addScene(new MainScene);
 	m_scenes[m_currentSceneIndex]->start();
 
 }
