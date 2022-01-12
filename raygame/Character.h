@@ -37,7 +37,6 @@ private:
 	AttackComponent* m_attackComponent;
 	
 	float m_speed;
-	float m_firingCooldown;
 
 };
 
