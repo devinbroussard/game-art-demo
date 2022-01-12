@@ -49,7 +49,7 @@ void Engine::draw()
 {
 	BeginDrawing();
 
-	ClearBackground(DARKGREEN);
+	ClearBackground(DARKGRAY);
 
 	m_scenes[m_currentSceneIndex]->draw();
 	m_scenes[m_currentSceneIndex]->drawUI();

@@ -16,6 +16,8 @@ private:
 	int m_x;
 	int m_y;
 	const char* m_text;
+	Font m_font;
+	Color m_color;
 	
 };
 
