@@ -10,7 +10,7 @@ InputComponent::InputComponent(Actor* owner) :
 //get Move Axis allow for movement on the x and y axis with the wasd keys.
 MathLibrary::Vector2 InputComponent::getMoveAxis()
 {
-	if (!((Character*)getOwner())->getIsAttacking())
+	if (!((Character*)getOwner())->getIsAttacking() && ((Character*)getOwner())->getHealthComponent()->getHealth() > 0)
 	{
 		//Get the direction of the individual axis
 		float xDirection = -RAYLIB_H::IsKeyDown(m_left) + RAYLIB_H::IsKeyDown(m_right);
@@ -28,7 +28,7 @@ void InputComponent::update(float deltaTime)
 {
 	//if the key is = to the meleeswing
 	if (IsKeyPressed(m_meleeSwing))
-		((Character*)getOwner())->setIsAttacking(true);
+		((Character*)getOwner())->startAttacking();
 }
 
 

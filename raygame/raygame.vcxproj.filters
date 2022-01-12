@@ -1,204 +1,176 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Sorce\actors</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine.cpp">
-      <Filter>Sorce\scenes / Engine and transform</Filter>
+    <ClCompile Include="AABBCollider.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Actor.cpp">
-      <Filter>Sorce\actors</Filter>
-    </ClCompile>
-    <ClCompile Include="FollowComponent.cpp">
-      <Filter>Sorce\components</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemeySpawner.cpp">
-      <Filter>Sorce\actors</Filter>
-    </ClCompile>
-    <ClCompile Include="HealthComponent.cpp">
-      <Filter>Sorce\components</Filter>
-    </ClCompile>
-    <ClCompile Include="HealthDisplay.cpp">
-      <Filter>Sorce\components</Filter>
-    </ClCompile>
-    <ClCompile Include="Character.cpp">
-      <Filter>Sorce\actors</Filter>
-    </ClCompile>
-    <ClCompile Include="AttackComponent.cpp">
-      <Filter>Sorce\components</Filter>
-    </ClCompile>
-    <ClCompile Include="AnimatedSpriteComponent.cpp">
-      <Filter>Sorce\components</Filter>
-    </ClCompile>
-    <ClCompile Include="AABBCollider.cpp">
-      <Filter>Sorce\Colliders</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ActorArray.cpp">
-      <Filter>Sorce\actors</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedSpriteComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CircleCollider.cpp">
-      <Filter>Sorce\Colliders</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Collider.cpp">
-      <Filter>Sorce\Colliders</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Component.cpp">
-      <Filter>Sorce\components</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InputComponent.cpp">
-      <Filter>Sorce\components</Filter>
+    <ClCompile Include="EnemeySpawner.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Sorce\scenes / Engine and transform</Filter>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainScene.cpp">
-      <Filter>Sorce\scenes / Engine and transform</Filter>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MenuScene.cpp">
-      <Filter>Sorce\scenes / Engine and transform</Filter>
+    <ClCompile Include="FollowComponent.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MoveComponent.cpp">
-      <Filter>Sorce\components</Filter>
+    <ClCompile Include="HealthComponent.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Sorce\actors</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerAnimationsComponent.cpp">
-      <Filter>Sorce\components</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>Sorce\scenes / Engine and transform</Filter>
-    </ClCompile>
-    <ClCompile Include="Transform2D.cpp">
-      <Filter>Sorce\scenes / Engine and transform</Filter>
-    </ClCompile>
-    <ClCompile Include="SpriteComponent.cpp">
-      <Filter>Sorce\components</Filter>
+    <ClCompile Include="HealthDisplay.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="HeartUI.cpp">
-      <Filter>Sorce\Ui</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerAnimationsComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform2D.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UIActor.cpp">
-      <Filter>Sorce\Ui</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyAnimationsComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AABBCollider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Actor.h">
-      <Filter>Header\actors</Filter>
-    </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>Header\actors</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Header\actors</Filter>
-    </ClInclude>
-    <ClInclude Include="MainScene.h">
-      <Filter>Header\scenes / engine and transform</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine.h">
-      <Filter>Header\scenes / engine and transform</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>Header\scenes / engine and transform</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuScene.h">
-      <Filter>Header\scenes / engine and transform</Filter>
-    </ClInclude>
-    <ClInclude Include="AnimatedSpriteComponent.h">
-      <Filter>Header\components</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackComponent.h">
-      <Filter>Header\components</Filter>
-    </ClInclude>
-    <ClInclude Include="FollowComponent.h">
-      <Filter>Header\components</Filter>
-    </ClInclude>
-    <ClInclude Include="HealthComponent.h">
-      <Filter>Header\components</Filter>
-    </ClInclude>
-    <ClInclude Include="InputComponent.h">
-      <Filter>Header\components</Filter>
-    </ClInclude>
-    <ClInclude Include="HealthDisplay.h">
-      <Filter>Header\components</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemeySpawner.h">
-      <Filter>Header\actors</Filter>
-    </ClInclude>
-    <ClInclude Include="Component.h">
-      <Filter>Header\components</Filter>
-    </ClInclude>
-    <ClInclude Include="Collider.h">
-      <Filter>Header\Colliders</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ActorArray.h">
-      <Filter>Header\actors</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AABBCollider.h">
-      <Filter>Header\Colliders</Filter>
+    <ClInclude Include="Collider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedSpriteComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackComponent.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CircleCollider.h">
-      <Filter>Header\Colliders</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header\actors</Filter>
+    <ClInclude Include="Component.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MoveComponent.h">
-      <Filter>Header\components</Filter>
+    <ClInclude Include="EnemeySpawner.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerAnimationsComponent.h">
-      <Filter>Header\Colliders</Filter>
+    <ClInclude Include="Character.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Transform2D.h">
-      <Filter>Header\scenes / engine and transform</Filter>
+    <ClInclude Include="Engine.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteComponent.h">
-      <Filter>Header\components</Filter>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UIActor.h">
-      <Filter>Header\UI</Filter>
+    <ClInclude Include="HealthComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FollowComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthDisplay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputComponent.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeartUI.h">
-      <Filter>Header\UI</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MoveComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAnimationsComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIActor.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyAnimationsComponent.h" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Header">
-      <UniqueIdentifier>{fe19c0c3-7d01-493b-92ca-4776ba10bca8}</UniqueIdentifier>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{03ca6b8f-703a-4c0a-bcd1-422f100a0bb0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header\actors">
-      <UniqueIdentifier>{9fa36637-a2bb-4c66-a280-ec2a69576200}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sorce">
-      <UniqueIdentifier>{575c76c2-8cb1-47a0-a435-c8570cc1a6d5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sorce\actors">
-      <UniqueIdentifier>{6b98db6a-7969-490e-9cf1-b2fbb099b586}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sorce\components">
-      <UniqueIdentifier>{4513a6f4-9bba-46bb-80bc-e89237226cdb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header\components">
-      <UniqueIdentifier>{8b32c2b5-a291-4c75-9659-0341115622ad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header\Colliders">
-      <UniqueIdentifier>{8be49b8f-4952-4ed8-9796-b04877ff86e2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sorce\Colliders">
-      <UniqueIdentifier>{e33b6c22-0e0d-4574-a70f-fd395baa1544}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sorce\scenes / Engine and transform">
-      <UniqueIdentifier>{09efb102-94e2-4f9b-9ac3-88b6d5b28809}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sorce\Ui">
-      <UniqueIdentifier>{bf29e42a-281d-4200-8670-44d323c6b454}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header\UI">
-      <UniqueIdentifier>{eac42677-287d-438d-bcc5-b1ce39120358}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header\scenes / engine and transform">
-      <UniqueIdentifier>{f78f91d0-8889-4733-9f40-807b18a6a5dc}</UniqueIdentifier>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{b16313ea-4554-415a-b8f8-31639432d0a5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

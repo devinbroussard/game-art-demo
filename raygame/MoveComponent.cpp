@@ -8,10 +8,16 @@ MoveComponent::MoveComponent(const char* name) : Component::Component(name)
 {
 	m_maxSpeed = 0;
 	m_velocity = MathLibrary::Vector2(0, 0);
+	m_movedRightLast = true;
 }
 
 void MoveComponent::update(float deltaTime)
 {
+	if (m_velocity.x > 0)
+		m_movedRightLast = true;
+	else if (m_velocity.x < 0)
+		m_movedRightLast = false;
+
 	MathLibrary::Vector2 oldPosition = getOwner()->getTransform()->getLocalPosition();
 
 	//Add the new velocity to the old posiiton to get the new position

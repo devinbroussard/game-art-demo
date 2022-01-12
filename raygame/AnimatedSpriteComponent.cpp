@@ -4,7 +4,7 @@
 #include "Transform2D.h"
 #include "MoveComponent.h"
 
-AnimatedSpriteComponent::AnimatedSpriteComponent(const char* rightPath, const char* leftPath, int xFrames, int yFrames) :
+AnimatedSpriteComponent::AnimatedSpriteComponent(const char* rightPath, const char* leftPath, int xFrames, int yFrames, float fps) :
 	SpriteComponent(rightPath, "AnimatedSpriteComponent")
 {
 	//This is the path that the textur is folling to get its png
@@ -12,7 +12,7 @@ AnimatedSpriteComponent::AnimatedSpriteComponent(const char* rightPath, const ch
 	m_leftTexture = new Texture2D(LoadTexture(leftPath));
 
 	//gives it fps and a Frame counter that is x and y
-	m_fps = 8;
+	m_fps = fps;
 	m_timeTracker = 0;
 	m_currentXFrame = 0;
 	m_currentYFrame = 0;
@@ -63,7 +63,7 @@ void AnimatedSpriteComponent::getCurrentFrames()
 		m_currentYFrame = 1;
 	else m_currentYFrame = 0;
 
-	//Getting whether or not the player is attacking
+	//Getting whether or not the character is attacking
 	if (getCharacter()->getIsAttacking() )
 	{
 		if (!m_startAttack)
@@ -76,4 +76,8 @@ void AnimatedSpriteComponent::getCurrentFrames()
 		m_currentYFrame = 2;
 		m_startAttack = true;
 	}
+	//Getting whether or not the character is dead
+	if (getCharacter()->getHealthComponent()->getHealth() <= 0)
+		m_currentYFrame = 4;
+
 }

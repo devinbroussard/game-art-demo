@@ -13,13 +13,10 @@ public:
 	//gets the move Axis ...( it moves things)
 	MathLibrary::Vector2 getMoveAxis();
 	//gets the attack Input 
-	bool getAttackInput();
 	//called update
 	void update(float deltaTime) override;
 
 private:
-	bool m_isAttacking;
-
 	//These are Raylib KEys that are in the program
 	RAYLIB_H::KeyboardKey m_up = RAYLIB_H::KeyboardKey::KEY_W;
 	RAYLIB_H::KeyboardKey m_left = RAYLIB_H::KeyboardKey::KEY_A;
