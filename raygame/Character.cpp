@@ -8,7 +8,7 @@ Character::Character(float x, float y, const char* name, float speed) :
 	Actor::Actor(x, y, name)
 {
 	m_speed = speed;
-	m_firingCooldown = 0.3f;
+
 
 	m_healthComponent = nullptr;
 	m_moveComponent = nullptr;
