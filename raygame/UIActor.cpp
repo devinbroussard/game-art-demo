@@ -13,5 +13,5 @@ UIActor::UIActor(int x ,int y, int fontSize, const char* text, Color color )
 void UIActor::draw()
 {
 	Rectangle rec = Rectangle();
-	DrawText(m_text, m_x, m_y , m_fontSize, BLUE);
+	DrawText(m_text, m_x, m_y , m_fontSize, BLACK);
 }

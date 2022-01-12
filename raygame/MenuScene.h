@@ -1,7 +1,6 @@
 #pragma once
 #include <raylib.h>
 #include "Engine.h"
-#include "MainScene.h"
 
 class MenuScene :
 	public Scene
