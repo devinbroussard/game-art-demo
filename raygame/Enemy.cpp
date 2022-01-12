@@ -4,7 +4,6 @@
 #include "EnemyAnimationsComponent.h"
 #include "HealthDisplay.h"
 #include "Engine.h"
-#include <iostream>
 
 int Enemy::m_enemyCount = 0;
 
@@ -14,8 +13,13 @@ Enemy::Enemy(float x, float y, const char* name, float speed,Actor* targetActor)
 	m_targetActor = targetActor;
 	AABBCollider* collider = new AABBCollider(40, 40, this);
 	Actor::setCollider(collider);
+	//sets the scale for the componet (sprite)
+	getTransform()->setScale({ 2.5, 2.5 });
 }
 
+/// <summary>
+/// Creates and spawns the enemy's health UI and its components
+/// </summary>
 void Enemy::start()
 {
 
@@ -38,11 +42,11 @@ void Enemy::start()
 	m_followComponent = new FollowComponent( "Follow Component", m_targetActor);
 	//...adds the componet to the enemy
 	addComponent(m_followComponent);
-
-	//sets the scale for the componet (sprite)
-	getTransform()->setScale({ 2.5, 2.5 });
 }
 
+/// <summary>
+/// Called when an enemy dies
+/// </summary>
 void Enemy::end()
 {
 	if (!m_ended)
@@ -73,9 +77,9 @@ void Enemy::update(float deltaTime)
 
 void Enemy::onCollision(Actor* other)
 {
+	//If the other actor is an Attack actor, then take damage
 	if (other->getName() == "Attack")
 	{
 		getHealthComponent()->takeDamage();
-		std::cout << "Collision!" << std::endl;
 	}
 }

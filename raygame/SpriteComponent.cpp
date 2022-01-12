@@ -31,6 +31,9 @@ void SpriteComponent::setTexture(Texture2D* texture)
 	m_texture = texture;
 }
 
+/// <summary>
+/// Draws the sprite to the screen
+/// </summary>
 void SpriteComponent::draw()
 {
 	//Scale
@@ -52,5 +55,6 @@ void SpriteComponent::draw()
 	//Rotation
 	float rotation = atan2(getOwner()->getTransform()->getGlobalMatrix()->m10, getOwner()->getTransform()->getGlobalMatrix()->m00);
 
+	//Draws the texture using the actor's transform
 	RAYLIB_H::DrawTextureEx(*m_texture, rayPos, (float)(rotation * 180.0f / PI), 1, WHITE);
 }

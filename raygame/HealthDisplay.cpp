@@ -33,6 +33,10 @@ void HealthDisplay::start()
 	Actor::start();
 }
 
+/// <summary>
+/// Updates the health icons
+/// </summary>
+/// <param name="deltaTime"></param>
 void HealthDisplay::update(float deltaTime)
 {	
 	checkHealth(deltaTime); 
@@ -40,6 +44,10 @@ void HealthDisplay::update(float deltaTime)
 	
 }
 
+/// <summary>
+/// Updates the heart icons depending on the character's health
+/// </summary>
+/// <param name="deltaTime"></param>
 void HealthDisplay::checkHealth(float deltaTime)
 {
 	if (!m_owner->getHealthComponent())

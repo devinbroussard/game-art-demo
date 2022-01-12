@@ -10,8 +10,10 @@ UIActor::UIActor(int x ,int y, int fontSize, const char* text, Color color )
 	m_y = y;
 }
 
+/// <summary>
+/// Draws the text to the screen using the font size and color
+/// </summary>
 void UIActor::draw()
 {
-	Rectangle rec = Rectangle();
 	DrawText(m_text, m_x, m_y , m_fontSize, m_color);
 }
