@@ -12,7 +12,6 @@ Scene** Engine::m_scenes = new Scene*;
 int Engine::m_sceneCount = 0;
 int Engine::m_currentSceneIndex = 0;
 
-
 Engine::Engine()
 {
 	m_applicationShouldClose = false;
@@ -34,12 +33,10 @@ void Engine::start()
 	m_currentSceneIndex = addScene(new MenuScene());
 	addScene(new MainScene);
 	m_scenes[m_currentSceneIndex]->start();
-
 }
 
 void Engine::update(float deltaTime)
 {
-
 	//Update scene
 	m_scenes[m_currentSceneIndex]->update(deltaTime);
 	m_scenes[m_currentSceneIndex]->updateUI(deltaTime);
@@ -80,7 +77,6 @@ void Engine::run()
 		//Draw current scene
 		draw();
 	}
-
 	end();
 }
 
@@ -162,7 +158,6 @@ bool Engine::removeScene(Scene* scene)
 		m_scenes = tempArray;
 		m_sceneCount--;
 	}
-
 
 	return sceneRemoved;
 }

@@ -31,7 +31,6 @@ void HeartUI::start()
 /// <param name="deltaTime"></param>
 void HeartUI::update(float deltaTime)
 {
-
 	Actor::update(deltaTime);
 }
 

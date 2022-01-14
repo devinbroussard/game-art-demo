@@ -18,6 +18,5 @@ private:
     HeartUI* m_firstHeart;
     HeartUI* m_secondHeart;
     HeartUI* m_thirdHeart;
-
 };
 

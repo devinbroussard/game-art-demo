@@ -20,7 +20,6 @@ void MenuScene::update(float deltaTime)
 	}
 	if (RAYLIB_H::IsKeyDown(KEY_TWO))
 		Engine::CloseApplication();
-
 }
 
 void MenuScene::draw()

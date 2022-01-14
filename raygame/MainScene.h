@@ -2,7 +2,6 @@
 #include "Scene.h"
 #include <raylib.h>
 
-
 class EnemeySpawner;
 
 class MainScene :

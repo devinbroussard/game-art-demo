@@ -58,5 +58,4 @@ void HealthDisplay::checkHealth(float deltaTime)
 		m_secondHeart->killHeart(deltaTime);
 	if (m_owner->getHealthComponent()->getHealth() < 1)
 		m_firstHeart->killHeart(deltaTime);
-		
 }
