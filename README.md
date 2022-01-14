@@ -22,6 +22,3 @@
 
 ## 4. How to Play: 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Download the latest release on github, and run the ".exe" file.
-
-## 4. Trello link:
-https://trello.com/b/Sjje8B95/introtocpp
