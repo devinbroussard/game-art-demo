@@ -19,7 +19,7 @@
 * **Scaling:** By pressing the "Z", "X", and "C" keys, you can scale the main character.
 * **Rotation:** Whenever any character takes damage, a heart on the health display will rotate and fade away.
 * **Childing:** The health displays are childed to the character given to them in their constructor's argument list.
-*
+
 ## 4. How to Play: 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Download the latest release on github, and run the ".exe" file.
 
