@@ -1,3 +1,4 @@
+**Trello:** https://trello.com/b/Sjje8B95/introtocpp
 ## 1. Goal of Application:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This application was made to demonstrate animations using Raylib. It is not a finished game. It was made by a group of two as a graded assignment to build teamwork skills. To open the application, download the zip file, extract it, and run the ".exe" file.
 
