@@ -1,0 +1,3 @@
+## 1. Post-Mortem:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My goal on this project was to gain experience working as a team and to create a demonstration of game animations. I didn't get to add everything I wanted to the assessment, but I met all of the criteria. I plan on finishing the project later. Other than that, this project was a huge learning experience on how game animations work, and I plan on using the animations in future assessments.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As for my experience working as a team: it went well. My partner worked hard to finish his tickets, as did I. I do feel I might have taken too much control on this assessment, but I feel like this is something I will get better at over time. 

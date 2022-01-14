@@ -1,0 +1,2 @@
+## 1. Game Animations Summary:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The game animations worked by loading a texture and drawing a part defined by a rectangle. I added this to our game engine by making an animated sprite component, which took in a sprite sheet and drew sections at a time to mimic animation. 
