@@ -12,6 +12,19 @@ HealthDisplay::HealthDisplay(float x, float y, Character* owner) :
 	m_owner->getTransform()->addChild(getTransform());
 }
 
+HealthDisplay::~HealthDisplay()
+{
+	Engine::getCurrentScene()->removeUIElement(m_firstHeart);
+	delete m_firstHeart;
+	Engine::getCurrentScene()->removeUIElement(m_secondHeart);
+	delete m_secondHeart;
+	Engine::getCurrentScene()->removeUIElement(m_thirdHeart);
+	delete m_thirdHeart;
+
+	Engine::getCurrentScene()->removeUIElement(this);
+	delete this;
+}
+
 /// <summary>
 /// Called whenever the actor is added to the scene
 /// </summary>
@@ -57,6 +70,12 @@ void HealthDisplay::checkHealth(float deltaTime)
 	if (m_owner->getHealthComponent()->getHealth() < 2)
 		m_secondHeart->killHeart(deltaTime);
 	if (m_owner->getHealthComponent()->getHealth() < 1)
+	{
 		m_firstHeart->killHeart(deltaTime);
+
+		m_deathTimeTracker += deltaTime;
+		if (m_deathTimeTracker > 5)
+			delete this;
+	}
 		
 }

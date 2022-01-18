@@ -8,6 +8,7 @@ class HealthDisplay :
 {
 public:
     HealthDisplay(float x, float y, Character* owner);
+    ~HealthDisplay();
 
     void start() override;
     void update(float deltaTime) override;
@@ -18,6 +19,6 @@ private:
     HeartUI* m_firstHeart;
     HeartUI* m_secondHeart;
     HeartUI* m_thirdHeart;
-
+    float m_deathTimeTracker;
 };
 

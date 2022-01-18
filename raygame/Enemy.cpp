@@ -58,6 +58,10 @@ void Enemy::end()
 
 void Enemy::update(float deltaTime)
 {
+
+	//Then update
+	Character::update(deltaTime);
+
 	//DrawRectangleLines((getTransform()->getWorldPosition().x), (getTransform()->getWorldPosition().y), 40, 40, BLACK);
 
 	//allows the for the enmey to move my get the move Componet and setting its velocity and putting in the get mvoe Axis then multipling 
@@ -66,13 +70,18 @@ void Enemy::update(float deltaTime)
 		Character::getMoveComponent()->setVelocity(m_followComponent->getMoveAxis() * Character::getSpeed());
 	else
 	{
+		m_deathTimeTracker += deltaTime;
 		getMoveComponent()->setVelocity({ 0, 0 });
 		end();
+		
+		//if (m_deathTimeTracker > 5)
+		//{
+		//	Engine::getCurrentScene()->destroy(this);
+		//}
+		
 	}
 
 
-	//Then update
-	Character::update(deltaTime);
 }
 
 void Enemy::onCollision(Actor* other)

@@ -30,5 +30,6 @@ private:
 	FollowComponent* m_followComponent;
 	MainScene* m_mainScene;
 	AABBCollider* m_aabbCollider;
+	float m_deathTimeTracker;
 };
 
