@@ -13,16 +13,15 @@ HealthDisplay::HealthDisplay(float x, float y, Character* owner) :
 }
 
 HealthDisplay::~HealthDisplay()
-{
+ {
 	Engine::getCurrentScene()->removeUIElement(m_firstHeart);
-	delete m_firstHeart;
+  	delete m_firstHeart;
 	Engine::getCurrentScene()->removeUIElement(m_secondHeart);
 	delete m_secondHeart;
 	Engine::getCurrentScene()->removeUIElement(m_thirdHeart);
 	delete m_thirdHeart;
 
 	Engine::getCurrentScene()->removeUIElement(this);
-	delete this;
 }
 
 /// <summary>
@@ -52,8 +51,8 @@ void HealthDisplay::start()
 /// <param name="deltaTime"></param>
 void HealthDisplay::update(float deltaTime)
 {	
-	checkHealth(deltaTime); 
 	Actor::update(deltaTime);
+	checkHealth(deltaTime);
 }
 
 /// <summary>
