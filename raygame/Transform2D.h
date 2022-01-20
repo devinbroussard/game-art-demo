@@ -42,6 +42,9 @@ public:
     /// <param name="value">The new local coordinates to place the transform.</param>
     void setLocalPosition(MathLibrary::Vector2 value);
 
+    /// <returns>Sets the parent of this transform.</return>
+    void setParent(Transform2D* parent);
+
     /// <returns>A pointer to the transform that has been set as this transforms parent.</returns>
     Transform2D* getParent() { return m_parent; }
 

@@ -46,5 +46,3 @@ private:
 	Actor** m_actors;
 	int m_actorCount;
 };
-
-
