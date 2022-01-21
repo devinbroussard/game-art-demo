@@ -43,16 +43,17 @@ void SpriteComponent::draw()
 	m_texture->width = m_width * xScale;
 	m_texture->height = m_height * yScale;
 
-	//Position
+	//Positions makes a up and forward to set two points that can update.
 	MathLibrary::Vector2 up = { getOwner()->getTransform()->getGlobalMatrix()->m01, getOwner()->getTransform()->getGlobalMatrix()->m11 };
 	MathLibrary::Vector2 forward = getOwner()->getTransform()->getForward();
 	MathLibrary::Vector2 position = getOwner()->getTransform()->getWorldPosition();
 
+	
 	position = position - (forward * getWidth() / 2);
 	position = position - (up.getNormalized() * getHeight() / 2);
 	RAYLIB_H::Vector2 rayPos = { position.x, position.y };
 
-	//Rotation
+	//Rotations with using the global Matrix..
 	float rotation = atan2(getOwner()->getTransform()->getGlobalMatrix()->m10, getOwner()->getTransform()->getGlobalMatrix()->m00);
 
 	//Draws the texture using the actor's transform

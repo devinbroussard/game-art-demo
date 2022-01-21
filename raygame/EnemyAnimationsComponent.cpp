@@ -7,6 +7,11 @@ EnemyAnimationsComponent::EnemyAnimationsComponent(const char* rightPath, const 
 	: AnimatedSpriteComponent(rightPath, leftPath, 6, 5, fps)
 { }
 
+
+/// <summary>
+/// This makes the texture of the enemy update left and right...
+/// </summary>
+/// <param name="deltaTime"></param>
 void EnemyAnimationsComponent::updateFrames(float deltaTime)
 {
 	//Updates the texture's width and height depending on the character's scale
