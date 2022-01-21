@@ -14,7 +14,6 @@ HealthDisplay::HealthDisplay(float x, float y, Character* owner) :
 
 HealthDisplay::~HealthDisplay()
  {
-	Engine::destroy(this);
 }
 
 /// <summary>
@@ -67,7 +66,7 @@ void HealthDisplay::checkHealth(float deltaTime)
 
 		m_deathTimeTracker += deltaTime;
 		if (m_deathTimeTracker > 5) {
-			Engine::getCurrentScene()->removeUIElement(this);
+			Engine::destroy(this);
 		}
 
 	}
