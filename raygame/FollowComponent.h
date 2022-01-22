@@ -21,7 +21,6 @@ public:
 
 private:
 	Actor* m_targetActor;
-	MoveComponent* m_moveComponet;
 
 };
 

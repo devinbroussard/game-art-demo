@@ -67,17 +67,16 @@ void Enemy::update(float deltaTime)
 		getMoveComponent()->setVelocity({ 0, 0 });
 		end();
 		
-		//if (m_deathTimeTracker > 5)
-		//{
-		//	Engine::getCurrentScene()->destroy(this);
-		//}
+		if (m_deathTimeTracker > 5)
+		{
+			Engine::getCurrentScene()->destroy(this);
+		}
 		
 	}
 
+
 	//Then update
 	Character::update(deltaTime);
-
-
 }
 
 void Enemy::onCollision(Actor* other)
