@@ -28,11 +28,6 @@ void Enemy::start()
 	Character::start();
 	//incruments the enemy count
 
-	//Made a intece of healthDisplay
-	HealthDisplay* enemyHealthDisplay = new HealthDisplay(10, -3, this);
-	//added the healthDisplay to the currentScene
-	Engine::getCurrentScene()->addUIElement(enemyHealthDisplay);
-
 	//Made a intece of enemy animation
 	EnemyAnimationsComponent* enemyAnimationsComponent = new EnemyAnimationsComponent("Sprites/sprites/characters/skeleton.png", "sprites/sprites/characters/skeletonleft.png", 6, 5, 8);
 	//made the instence
@@ -59,8 +54,6 @@ void Enemy::end()
 void Enemy::update(float deltaTime)
 {
 
-	//Then update
-	Character::update(deltaTime);
 
 	//DrawRectangleLines((getTransform()->getWorldPosition().x), (getTransform()->getWorldPosition().y), 40, 40, BLACK);
 
@@ -80,6 +73,9 @@ void Enemy::update(float deltaTime)
 		//}
 		
 	}
+
+	//Then update
+	Character::update(deltaTime);
 
 
 }

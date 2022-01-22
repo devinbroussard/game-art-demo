@@ -35,9 +35,9 @@ private:
 	MoveComponent* m_moveComponent;
 	HealthComponent* m_healthComponent;
 	AttackComponent* m_attackComponent;
-	
-	float m_speed;
 
+	float m_deathTimeTracker;
+	float m_speed;
 };
 
 

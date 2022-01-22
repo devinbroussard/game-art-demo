@@ -65,8 +65,8 @@ void HealthDisplay::checkHealth(float deltaTime)
 		m_firstHeart->killHeart(deltaTime);
 
 		m_deathTimeTracker += deltaTime;
-		if (m_deathTimeTracker > 5) {
-			Engine::destroy(this);
+		if (m_deathTimeTracker > 2) {
+				Engine::destroy(this);
 		}
 
 	}

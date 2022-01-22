@@ -3,6 +3,7 @@
 #include "MoveComponent.h"
 #include "SpriteComponent.h"
 #include "FollowComponent.h"
+#include "Engine.h"
 
 Character::Character(float x, float y, const char* name, float speed) :
 	Actor::Actor(x, y, name)
@@ -44,6 +45,16 @@ void Character::start()
 /// <param name="deltaTime">The amount of time that has passed between frames</param>
 void Character::update(float deltaTime)
 {
+	
+
+	if (getHealthComponent()->getHealth() < 1)
+	{
+		m_deathTimeTracker += deltaTime;
+		if (m_deathTimeTracker > 4) {
+			Engine::destroy(this);
+		}
+
+	}
 	Actor::update(deltaTime);
 }
 
