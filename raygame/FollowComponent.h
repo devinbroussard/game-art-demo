@@ -3,6 +3,7 @@
 #include "MoveComponent.h"
 #include <Vector2.h>
 #include "Transform2D.h"
+class Character;
 
 
 
@@ -11,7 +12,7 @@ class FollowComponent :
 {
 public:
 	//default constructor for the followComponet
-	FollowComponent(const char* name, Actor* targetActor);
+	FollowComponent(const char* name, Character* targetActor);
 
 	//gets the move Axis
 	MathLibrary::Vector2 getMoveAxis();
@@ -20,7 +21,7 @@ public:
 	void update(float deltaTime) override;
 
 private:
-	Actor* m_targetActor;
+	Character* m_targetActor;
 
 };
 

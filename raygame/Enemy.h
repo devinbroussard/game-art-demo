@@ -11,7 +11,7 @@ class Enemy :
 	public Character
 {
 public:
-	Enemy(float x, float y, const char* name, float speed, Actor* targetActor);
+	Enemy(float x, float y, const char* name, float speed, Character* targetActor);
 	~Enemy() {};
 
 	void start() override;
@@ -26,7 +26,7 @@ public:
 private:
 	bool m_ended;
 	int m_maxHealth;
-	Actor* m_targetActor;
+	Character* m_targetActor;
 	FollowComponent* m_followComponent;
 	MainScene* m_mainScene;
 	AABBCollider* m_aabbCollider;

@@ -19,6 +19,7 @@ void EnemeySpawner::update(float deltaTime)
 		Enemy::m_enemyCount++;
 		//Initializes a new Enemy with its stats...
 		Enemy* enemy = new Enemy(200, 200, "enemy", 20, m_player );
+		enemy->start();
 		Engine::getCurrentScene()->addActor(enemy);
 		//Made a intece of healthDisplay
 		HealthDisplay* enemyHealthDisplay = new HealthDisplay(10, -3, enemy);
