@@ -5,8 +5,6 @@
 #include "Transform2D.h"
 class Character;
 
-
-
 class FollowComponent :
 	public Component
 {
@@ -22,6 +20,6 @@ public:
 
 private:
 	Character* m_targetActor;
-
+	bool m_hasDestination;
 };
 
