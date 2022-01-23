@@ -15,5 +15,6 @@ Component::Component(const char* name)
 
 Component::~Component()
 {
+
 }
 

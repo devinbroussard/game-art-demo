@@ -94,8 +94,8 @@ void Scene::destroyActorsInList()
         actorToDelete->onDestroy();
 
         //Delete the actor
-        actorToDelete = 0;
         delete actorToDelete;
+        actorToDelete = 0;
     }
 
     //Clear the array
