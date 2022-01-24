@@ -17,6 +17,9 @@ Character::Character(float x, float y, const char* name, float speed) :
 
 Character::~Character()
 {
+	m_healthComponent = 0;
+	m_moveComponent = 0;
+	m_attackComponent = 0;
 }
 
 

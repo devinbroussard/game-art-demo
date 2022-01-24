@@ -17,6 +17,12 @@ Enemy::Enemy(float x, float y, const char* name, float speed, Character* targetA
 	getTransform()->setScale({ 2.5, 2.5 });
 }
 
+Enemy::~Enemy()
+{
+	m_followComponent = 0;
+	m_targetActor = nullptr;
+}
+
 /// <summary>
 /// Creates and spawns the enemy's health UI and its components
 /// </summary>

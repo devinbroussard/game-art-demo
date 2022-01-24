@@ -13,7 +13,11 @@ HealthDisplay::HealthDisplay(float x, float y, Character* owner) :
 }
 
 HealthDisplay::~HealthDisplay()
- {
+{
+	m_firstHeart = 0;
+	m_secondHeart = 0;
+	m_thirdHeart = 0;
+	m_owner = nullptr;
 }
 
 /// <summary>
@@ -66,7 +70,10 @@ void HealthDisplay::checkHealth(float deltaTime)
 
 		m_deathTimeTracker += deltaTime;
 		if (m_deathTimeTracker > 2) {
-				Engine::destroy(this);
+			Engine::destroy(this);
+			Engine::destroy(m_firstHeart);
+			Engine::destroy(m_secondHeart);
+			Engine::destroy(m_thirdHeart);
 		}
 
 	}

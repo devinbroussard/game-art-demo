@@ -15,6 +15,6 @@ Component::Component(const char* name)
 
 Component::~Component()
 {
-
+	m_owner = nullptr;
 }
 

@@ -13,7 +13,7 @@ class Character :
 public:
 	Character(float x, float y, const char* name, float speed);
 	//decontructor for character
-	~Character();
+	~Character() override;
 
 	HealthComponent* getHealthComponent() { return m_healthComponent; }
 	float getSpeed() { return m_speed; }

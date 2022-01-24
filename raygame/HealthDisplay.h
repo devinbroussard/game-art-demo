@@ -8,7 +8,7 @@ class HealthDisplay :
 {
 public:
     HealthDisplay(float x, float y, Character* owner);
-    ~HealthDisplay();
+    ~HealthDisplay() override;
 
     void start() override;
     void update(float deltaTime) override;

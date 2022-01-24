@@ -9,7 +9,7 @@ class AttackComponent :
 public:
 	//Made a default contructor for the Attack Componet
 	AttackComponent(float fps, int attackFrames);
-	~AttackComponent() override {};
+	~AttackComponent() override { m_attackActor = nullptr; };
 
 	Character* getCharacterOwner() { return (Character*)getOwner(); }
 	bool getIsAttacking() { return m_isAttacking; }

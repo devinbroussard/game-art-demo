@@ -12,7 +12,7 @@ class Enemy :
 {
 public:
 	Enemy(float x, float y, const char* name, float speed, Character* targetActor);
-	~Enemy() {};
+	~Enemy() override;
 
 	void start() override;
 	void end() override;
@@ -28,8 +28,6 @@ private:
 	int m_maxHealth;
 	Character* m_targetActor;
 	FollowComponent* m_followComponent;
-	MainScene* m_mainScene;
-	AABBCollider* m_aabbCollider;
 	float m_deathTimeTracker;
 };
 

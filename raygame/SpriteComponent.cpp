@@ -24,6 +24,7 @@ SpriteComponent::SpriteComponent(Texture2D* texture, const char* name) :
 SpriteComponent::~SpriteComponent()
 {
 	RAYLIB_H::UnloadTexture(*m_texture);
+	m_texture = 0;
 }
 
 void SpriteComponent::setTexture(Texture2D* texture)
