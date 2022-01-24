@@ -3,6 +3,7 @@
 #include "Transform2D.h"
 #include "Enemy.h"
 #include "Actor.h"
+#include "HealthDisplay.h"
 
 
 /// <summary>
@@ -19,10 +20,11 @@ void EnemeySpawner::update(float deltaTime)
 		//Initializes a new Enemy with its stats...
 		Enemy* enemy = new Enemy(200, 200, "enemy", 20, m_player );
 		enemy->start();
-
-
-		//...adds the enemy to the scene
 		Engine::getCurrentScene()->addActor(enemy);
+		//Made a intece of healthDisplay
+		HealthDisplay* enemyHealthDisplay = new HealthDisplay(10, -3, enemy);
+		//added the healthDisplay to the currentScene
+		Engine::getCurrentScene()->addUIElement(enemyHealthDisplay);
 	}
 
 }

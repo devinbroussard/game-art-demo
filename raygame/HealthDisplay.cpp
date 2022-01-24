@@ -12,6 +12,14 @@ HealthDisplay::HealthDisplay(float x, float y, Character* owner) :
 	m_owner->getTransform()->addChild(getTransform());
 }
 
+HealthDisplay::~HealthDisplay()
+{
+	m_firstHeart = 0;
+	m_secondHeart = 0;
+	m_thirdHeart = 0;
+	m_owner = nullptr;
+}
+
 /// <summary>
 /// Called whenever the actor is added to the scene
 /// </summary>
@@ -39,8 +47,8 @@ void HealthDisplay::start()
 /// <param name="deltaTime"></param>
 void HealthDisplay::update(float deltaTime)
 {	
-	checkHealth(deltaTime); 
 	Actor::update(deltaTime);
+	checkHealth(deltaTime);
 }
 
 /// <summary>
@@ -57,6 +65,17 @@ void HealthDisplay::checkHealth(float deltaTime)
 	if (m_owner->getHealthComponent()->getHealth() < 2)
 		m_secondHeart->killHeart(deltaTime);
 	if (m_owner->getHealthComponent()->getHealth() < 1)
+	{
 		m_firstHeart->killHeart(deltaTime);
+
+		m_deathTimeTracker += deltaTime;
+		if (m_deathTimeTracker > 2) {
+			Engine::destroy(this);
+			Engine::destroy(m_firstHeart);
+			Engine::destroy(m_secondHeart);
+			Engine::destroy(m_thirdHeart);
+		}
+
+	}
 		
 }

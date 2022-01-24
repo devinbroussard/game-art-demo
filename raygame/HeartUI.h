@@ -10,6 +10,7 @@ class HeartUI :
 {
 public:
 	HeartUI(float x, float y, Character* owner, HealthDisplay* display);
+	~HeartUI() override;
 
 	void start() override;
 	void update(float deltaTime) override;

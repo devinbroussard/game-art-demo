@@ -13,6 +13,12 @@ HeartUI::HeartUI(float x, float y, Character* owner, HealthDisplay* display)
 	m_spinDuration = 1.2f;
 }
 
+HeartUI::~HeartUI()
+{
+	m_spriteComponent = 0;
+	m_owner = nullptr;
+}
+
 /// <summary>
 /// Adds the heart icon's sprite component
 /// </summary>

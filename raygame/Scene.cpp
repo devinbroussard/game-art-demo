@@ -95,6 +95,7 @@ void Scene::destroyActorsInList()
 
         //Delete the actor
         delete actorToDelete;
+        actorToDelete = 0;
     }
 
     //Clear the array
@@ -137,6 +138,8 @@ void Scene::update(float deltaTime)
 
 void Scene::updateUI(float deltaTime)
 {
+    destroyActorsInList();
+
     //Calls update for all actors in UI array
     for (int i = 0; i < m_UIElements.getLength(); i++)
     {

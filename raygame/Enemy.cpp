@@ -7,7 +7,7 @@
 
 int Enemy::m_enemyCount = 0;
 
-Enemy::Enemy(float x, float y, const char* name, float speed,Actor* targetActor) :
+Enemy::Enemy(float x, float y, const char* name, float speed, Character* targetActor) :
 	Character::Character(x, y, name, speed)
 {
 	m_targetActor = targetActor;
@@ -15,6 +15,12 @@ Enemy::Enemy(float x, float y, const char* name, float speed,Actor* targetActor)
 	Actor::setCollider(collider);
 	//sets the scale for the componet (sprite)
 	getTransform()->setScale({ 2.5, 2.5 });
+}
+
+Enemy::~Enemy()
+{
+	m_followComponent = 0;
+	m_targetActor = nullptr;
 }
 
 /// <summary>
@@ -27,11 +33,6 @@ void Enemy::start()
 	//called start
 	Character::start();
 	//incruments the enemy count
-
-	//Made a intece of healthDisplay
-	HealthDisplay* enemyHealthDisplay = new HealthDisplay(10, -3, this);
-	//added the healthDisplay to the currentScene
-	Engine::getCurrentScene()->addUIElement(enemyHealthDisplay);
 
 	//Made a intece of enemy animation
 	EnemyAnimationsComponent* enemyAnimationsComponent = new EnemyAnimationsComponent("Sprites/sprites/characters/skeleton.png", "sprites/sprites/characters/skeletonleft.png", 6, 5, 8);
@@ -58,6 +59,8 @@ void Enemy::end()
 
 void Enemy::update(float deltaTime)
 {
+
+
 	//DrawRectangleLines((getTransform()->getWorldPosition().x), (getTransform()->getWorldPosition().y), 40, 40, BLACK);
 
 	//allows the for the enmey to move my get the move Componet and setting its velocity and putting in the get mvoe Axis then multipling 
@@ -66,8 +69,15 @@ void Enemy::update(float deltaTime)
 		Character::getMoveComponent()->setVelocity(m_followComponent->getMoveAxis() * Character::getSpeed());
 	else
 	{
+		m_deathTimeTracker += deltaTime;
 		getMoveComponent()->setVelocity({ 0, 0 });
 		end();
+		
+		if (m_deathTimeTracker > 5)
+		{
+			Engine::getCurrentScene()->destroy(this);
+		}
+		
 	}
 
 

@@ -7,7 +7,7 @@ class Actor
 {
 public:
     Actor();
-    ~Actor();
+    virtual ~Actor();
 
     /// <param componentName="x">Position on the x axis</param>
     /// <param componentName="y">Position on the y axis</param>

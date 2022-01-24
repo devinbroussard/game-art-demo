@@ -9,7 +9,7 @@ class Player :
 {
 public:
 	Player(float x, float y, const char* name, float speed);
-	~Player() {};
+	~Player() override {};
 
 	//Made the getinput componet to return the input componet
 	InputComponent* getInputComponent() { return m_inputComponent; }
