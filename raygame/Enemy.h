@@ -24,10 +24,16 @@ public:
 	void  onCollision(Actor* other);
 
 private:
+	/// <summary>
+	/// Stores whether or not the end function has been called
+	/// </summary>
 	bool m_ended;
 	int m_maxHealth;
 	Character* m_targetActor;
 	FollowComponent* m_followComponent;
+	/// <summary>
+	/// How long the character has been dead
+	/// </summary>
 	float m_deathTimeTracker;
 };
 
