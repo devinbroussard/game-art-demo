@@ -74,6 +74,9 @@ void HealthDisplay::checkHealth(float deltaTime)
 			m_firstHeart->getTransform()->setParent(0);
 			m_secondHeart->getTransform()->setParent(0);
 			m_thirdHeart->getTransform()->setParent(0);
+
+			getTransform()->setChildCount(0);
+
 			Engine::destroy(m_firstHeart);
 			Engine::destroy(m_secondHeart);
 			Engine::destroy(m_thirdHeart);

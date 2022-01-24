@@ -152,7 +152,7 @@ bool Transform2D::removeChild(int index)
 }
 
 bool Transform2D::removeChild(Transform2D* child)
-{
+    {
     //Check to see if the actor was null
     if (!child || m_childCount <= 0)
     {

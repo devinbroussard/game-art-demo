@@ -17,6 +17,12 @@ public:
     MathLibrary::Vector2 getForward();
 
     /// <summary>
+    /// Changes child count
+    /// </summary>
+    /// <param name="count"></param>
+    void setChildCount(int count) { m_childCount = count; }
+
+    /// <summary>
     /// Rotates the object until its forward matches the value given normalized.
     /// </summary>
     /// <param name="value">The value to set the forward to</param>
